@@ -31,8 +31,17 @@ group :development do
 	gem 'nokogiri'
 	#gem 'hpricot', '0.8.6'
 	gem 'ruby_parser', '~> 3.1.1'
-	# erubis included in action pack
+	# erubis is already included in action pack
 	gem 'html2haml'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password
