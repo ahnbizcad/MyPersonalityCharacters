@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use Haml for views
+gem 'haml-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,11 +27,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'haml-rails'
-
 group :development do
 	gem 'nokogiri'
-	gem 'hpricot', '0.8.6'
+	#gem 'hpricot', '0.8.6'
 	gem 'ruby_parser', '~> 3.1.1'
 	# erubis included in action pack
 	gem 'html2haml'

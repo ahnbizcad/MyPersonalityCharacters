@@ -128,7 +128,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   haml-rails
-  hpricot (= 0.8.6)
   html2haml
   jbuilder (~> 1.2)
   jquery-rails

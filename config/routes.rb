@@ -1,4 +1,6 @@
 MyPersonalityCharacters::Application.routes.draw do
+  root "pages#about"
+  
   resources :characters
 
   get "pages/about"
