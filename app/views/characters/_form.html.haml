@@ -1,10 +1,16 @@
-= form_for @character do |f|
+= form_for(@character, :html => { :multipart => true }) do |f|
   - if @character.errors.any?
     #error_explanation
       %h2= "#{pluralize(@character.errors.count, "error")} prohibited this character from being saved:"
       %ul
         - @character.errors.full_messages.each do |msg|
           %li= msg
-
+  
+  = f.label :name
+  = f.text_field :name
+  
+  = f.label :image
+  = f.file_field :image
+	
   .actions
-    = f.submit 'Save'
+    = f.submit

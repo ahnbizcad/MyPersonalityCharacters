@@ -6,11 +6,13 @@
     %th
     %th
 
-  - @characters.each do |character|
+  - @characters.each do |char|
     %tr
-      %td= link_to 'Show', character
-      %td= link_to 'Edit', edit_character_path(character)
-      %td= link_to 'Destroy', character, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to image_tag(char.image.url), char
+      %td= link_to char.name, char
+      
+      %td= link_to 'Edit', edit_character_path(char)
+      %td= link_to 'Destroy', char, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
