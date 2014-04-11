@@ -28,6 +28,7 @@ end
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'paperclip', "~> 3.0"
+gem 'paperclip-dropbox', ">= 1.1.7"
 
 group :development do
 	gem 'nokogiri'
