@@ -24,9 +24,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use Hhml for views
 gem 'haml-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', "~> 3.0.3.0"
+
 gem 'paperclip', "~> 3.0"
 gem 'paperclip-dropbox', ">= 1.1.7"
 

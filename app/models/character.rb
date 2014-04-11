@@ -3,4 +3,7 @@ class Character < ActiveRecord::Base
 		:default_url => "default_character.png", 
 		:storage => :dropbox, 
 		:dropbox_credentials => Rails.root.join("config/dropbox.yml")
+
+	validates :name, presence: true
+	validates_attachment_presence :image 
 end

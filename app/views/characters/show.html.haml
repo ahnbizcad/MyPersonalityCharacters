@@ -4,7 +4,7 @@
 %h1
 	= @character.name
 %br/
-=# image_tag @character.image.url(:medium)
+= image_tag @character.image.url(:medium)
 
 = link_to 'Edit', edit_character_path(@character)
 \|

@@ -1,5 +1,5 @@
 MyPersonalityCharacters::Application.routes.draw do
-  root "pages#about"
+  root "characters#index"
   
   resources :characters
 

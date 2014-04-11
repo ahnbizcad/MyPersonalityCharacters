@@ -3,9 +3,11 @@
 %h1
 	= @character.name
 %br/
-=# image_tag @character.image.url(:medium)
+= image_tag @character.image.url(:medium)
 
 = render 'form'
+
+= link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 = link_to 'Show', @character
 \|
