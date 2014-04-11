@@ -44,6 +44,9 @@ GEM
       json
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.1)
@@ -73,8 +76,6 @@ GEM
     mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.2)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     paperclip (3.5.4)
@@ -152,6 +153,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
+  figaro
   haml-rails
   html2haml
   jbuilder (~> 1.2)
