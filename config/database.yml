@@ -19,7 +19,7 @@ test:
   timeout: 10000
 
 production:
-  adapter: pg
+  adapter: postgresql
   database: db/production.sqlite3
   pool: 5
   timeout: 10000
