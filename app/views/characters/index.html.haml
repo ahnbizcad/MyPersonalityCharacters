@@ -8,7 +8,7 @@
 
   - @characters.each do |character|
     %tr
-      %td= image_tag @character.image.url(:medium)
+      %td= image_tag character.image.url(:medium)
       %td= link_to character.name, character
       
       %td= link_to 'Edit', edit_character_path(character)
