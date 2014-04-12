@@ -1,7 +1,5 @@
 #Include the HTML class
-
-#require 'html2haml/html'
-require 'haml/html'
+require 'html2haml/html'
 namespace :hamlify do
   desc "Convert ERB to Haml"
   task :convert => :environment do
