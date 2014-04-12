@@ -151,9 +151,9 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
-  figaro
-  haml-rails
-  html2haml
+  figaro (~> 0.7.0)
+  haml-rails (= 0.5.1)
+  html2haml (~> 1.0.1)
   jbuilder (~> 1.2)
   jquery-rails
   nokogiri (~> 1.5.0)
