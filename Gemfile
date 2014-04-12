@@ -26,16 +26,14 @@ end
 
 gem 'haml-rails'
 gem 'bootstrap-sass', "~> 3.0.3.0"
-
+gem 'figaro'
+gem 'nokogiri', '~> 1.5.0'
 gem 'paperclip', "~> 3.0"
 gem 'paperclip-dropbox', ">= 1.1.7"
-gem 'figaro'
 
 group :development do
-	gem 'nokogiri'
-	#gem 'hpricot', '0.8.6'
-	gem 'ruby_parser', '~> 3.1.1'
 	# erubis is already included in action pack
+	gem 'ruby_parser', '~> 3.1.1'
 	gem 'html2haml'
 end
 
@@ -46,6 +44,8 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+
+  #gem 'aws-sdk', "~> 1.0"
 end
 
 # Use ActiveModel has_secure_password
