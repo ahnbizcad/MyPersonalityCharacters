@@ -8,7 +8,7 @@ class Character < ActiveRecord::Base
         :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "default.jpg",
         :storage => :dropbox,
         :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-        :path => "/characters/:id_:filename"
+        :path => "/characters/:filename_:id"
   end
 
 	validates :name, presence: true
