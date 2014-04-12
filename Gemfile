@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ruby', '2.0.0'
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,18 +14,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'haml-rails', "0.5.1"
-gem 'bootstrap-sass', "~> 3.0.3.0"
+gem 'haml-rails', '0.5.1'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
-gem 'figaro', "~> 0.7.0"
+gem 'figaro', '~> 0.7.0'
 gem 'nokogiri', '~> 1.5.0'
-gem 'paperclip', "~> 3.0"
-gem 'paperclip-dropbox', ">= 1.1.7"
+gem 'paperclip', '~> 3.0'
+gem 'paperclip-dropbox', '>= 1.1.7'
 
 group :development do
 	# erubis is already included in action pack
 	gem 'ruby_parser', '~> 3.1.1'
-	gem 'html2haml', "~> 1.0.1"
+	gem 'html2haml', '~> 1.0.1'
 end
 
 group :development, :test do
