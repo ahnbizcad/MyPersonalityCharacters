@@ -22,12 +22,11 @@ gem 'nokogiri', '~> 1.6.0'
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1.1.7'
 
-gem 'ruby_parser', '~> 3.1.1'
 gem 'html2haml', '~> 1.0.1'
 
 group :development do
 	# erubis is already included in action pack
-	
+	gem 'ruby_parser', '~> 3.1.1'
 end
 
 group :development, :test do

@@ -1,9 +1,8 @@
-# Dropbox access.
 app_key: "secx4jtqef0vra3"
-app_secret: <%= ENV["APP_SECRET"] %>
+app_secret: = ENV["APP_SECRET"]
 
 access_token: "7rk454ihhz8z03mx"
-access_token_secret: <%= ENV["APP_TOKEN_SECRET"] %>
+access_token_secret: = ENV["APP_TOKEN_SECRET"]
 
 user_id: "274250161"
 access_type: "app_folder"
