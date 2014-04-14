@@ -1,10 +1,16 @@
 MyPersonalityCharacters::Application.routes.draw do
-  root "characters#index"
   
+  root "characters#index"
+
+  #get 'login', to: "devise/sessions#new", as: :login
+  devise_for :users
+
   resources :characters
+
 
   get "pages/about"
   get "pages/contact"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
