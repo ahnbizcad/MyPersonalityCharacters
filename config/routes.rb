@@ -7,7 +7,6 @@ MyPersonalityCharacters::Application.routes.draw do
 
   resources :characters
 
-
   get "pages/about"
   get "pages/contact"
 

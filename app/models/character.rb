@@ -14,6 +14,6 @@ class Character < ActiveRecord::Base
   end
 
 	validates :name, presence: true
-	validates_attachment_presence :image 
+	#validates_attachment_presence :image 
 
 end
