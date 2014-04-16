@@ -1,5 +1,8 @@
 class Character < ActiveRecord::Base
+	belongs_to :universe
 
+	validates :name, presence: true
+	#validates_attachment_presence :image 
   if Rails.env.development?
     has_attached_file :image, 
       								:styles => { :medium => "200x", :thumb => "100x100>" }, 
@@ -13,7 +16,6 @@ class Character < ActiveRecord::Base
         							:path => "/characters/:filename_:id_:style"
   end
 
-	validates :name, presence: true
-	#validates_attachment_presence :image 
+	
 
 end
