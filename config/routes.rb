@@ -1,9 +1,20 @@
 MyPersonalityCharacters::Application.routes.draw do
-  
   root "characters#index"
+  
+  #devise_scope :user do
+  #  get '/login', to: "devise/sessions#new", as: :login
+  #  delete '/logout', to: "devise/sessions#destroy", as: :logout
+  #  get '/sign_up', to: "devise/registration#new", as: :sign_up
+  #end
+  
+  devise_for :users, :skip => [:sessions] 
+  as :user do
+      get    "/login"  => "devise/sessions#new",     :as => :new_user_session
+      post   "/login"  => "devise/sessions#create",  :as => :user_session
+      delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
+  end  
 
-  #get 'login', to: "devise/sessions#new", as: :login
-  devise_for :users
+  resources :users
 
   resources :characters
 
