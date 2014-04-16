@@ -6,7 +6,7 @@
   %ul    
     %li
       - if user_signed_in?
-        = link_to current_user.username, user_path
+        = link_to current_user.username, user_path(current_user)
         = link_to "Account Settings", edit_user_registration_path
       - else 
         = link_to "Join", new_user_registration_path
