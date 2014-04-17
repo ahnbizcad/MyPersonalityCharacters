@@ -9,12 +9,15 @@ MyPersonalityCharacters::Application.routes.draw do
   #  get '/sign_up', to: "devise/registration#new", as: :sign_up
   #end
   
-  devise_for :users, :skip => [:sessions] 
-  as :user do
-      get    "/login"  => "devise/sessions#new",     :as => :new_user_session
-      post   "/login"  => "devise/sessions#create",  :as => :user_session
-      delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
-  end
+  devise_for :users, :skip => [:sessions]
+
+  devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  #as :user do
+  #    get    "/login"  => "devise/sessions#new",     :as => :new_user_session
+  #    post   "/login"  => "devise/sessions#create",  :as => :user_session
+  #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
+  #end
+
   resources :users
 
   resources :characters

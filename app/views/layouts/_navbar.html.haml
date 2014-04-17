@@ -1,18 +1,19 @@
-.nav.navbar
-  %h1 NAVBAR
-  %ul
-    %li= link_to "About", pages_about_path
-    %li= link_to "Contact", pages_contact_path
-  %ul    
-    %li
-      - if user_signed_in?
-        = link_to current_user.username, user_path(current_user)
-        = link_to "Account Settings", edit_user_registration_path
-      - else 
-        = link_to "Join", new_user_registration_path
+%nav
+  .affixable
+    %h1 NAVBAR
+    %ul
+      %li= link_to "About", pages_about_path
+      %li= link_to "Contact", pages_contact_path
+    %ul    
+      %li
+        - if user_signed_in?
+          = link_to current_user.username, user_path(current_user)
+          = link_to "Account Settings", edit_user_registration_path
+        - else 
+          = link_to "Join", new_user_registration_path
 
-    %li
-      - if user_signed_in?
-        = link_to "Log Out", destroy_user_session_path, method: :delete 
-      - else 
-        = link_to "Log In", new_user_session_path
+      %li
+        - if user_signed_in?
+          = link_to "Log Out", destroy_user_session_path, method: :delete 
+        - else 
+          = link_to "Log In", new_user_session_path
