@@ -13,6 +13,9 @@
  */
 
 
+/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
 /* 
 For dev visual distinguishability.
 */
@@ -32,6 +35,32 @@ Minor:
 900
 */
 
+@media only screen and (max-device-width: 480px) { 
+	.width-container { 
+		width: 100%;
+	}
+}
+@media only screen and (max-device-width: 768px) { 
+	.width-container { 
+		width: 100%;
+	}
+}
+@media only screen and (max-device-width: 1024px) { 
+	.width-container { 
+		width: 900px;
+	}
+}
+@media only screen and (min-device-width: 1025px) { 
+	.width-container { 
+		width: 1000px;
+	}
+}
+
+.width-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 header, footer, .navbar {
 
 }
@@ -41,29 +70,55 @@ header {
 footer {
 	border: 1px solid black;
 }
+footer ul {
+	list-style: none;
+}
+footer ul li {
+
+}
 nav {
 	border: 1px solid yellow;
 }
 .sidebar-one, .sidebar-two {
 	border: 1px solid green;
 }
+.sidebar-one {
+
+}
+.sidebar-two {
+
+}
 .main {
 	border: 1px solid blue;
-	height: 500px;
+	height: 700px;
 }
 
-/*
+/*------------------------------
 Navbar top affixing with js.
-*/
-nav {
+-------------------------------*/
+.affixable {
 	background: -webkit-linear-gradient(rgba(0,0,255,1), rgba(0,0,255,1) 90%, rgba(0,0,255,0)); /*Safari 5.1-6*/
 	background: -o-linear-gradient(     rgba(0,0,255,1), rgba(0,0,255,1) 90%, rgba(0,0,255,0)); /*Opera 11.1-12*/
 	background: -moz-linear-gradient(   rgba(0,0,255,1), rgba(0,0,255,1) 90%, rgba(0,0,255,0)); /*Fx 3.6-15*/
 	background: linear-gradient(        rgba(0,0,255,1), rgba(0,0,255,1) 90%, rgba(0,0,255,0)); /*Standard*/
+
+	margin: 0px;
+}
+nav ul {
+	display: inline-block;
+}
+nav ul #links {
+	float: left;
+}
+nav ul #settings {
+	float: right;
+}
+nav ul li {
+	list-style: none;
+	display: inline-block;
 }
 .affix {
     position: fixed;
     top: 0px;
     width: 100%;
-    background-color: #129;
 }
