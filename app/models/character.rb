@@ -17,5 +17,7 @@ class Character < ActiveRecord::Base
   end
 
 	
-
+  def to_param
+    "#{id}-#{name}"
+  end
 end

@@ -10,6 +10,7 @@ class UniversesController < ApplicationController
   # GET /universes/1
   # GET /universes/1.json
   def show
+    @characters = Universe.find(params[:id]).characters
   end
 
   # GET /universes/new

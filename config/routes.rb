@@ -1,5 +1,4 @@
 MyPersonalityCharacters::Application.routes.draw do
-  resources :universes
 
   root "characters#index"
   
@@ -19,10 +18,10 @@ MyPersonalityCharacters::Application.routes.draw do
   #end
 
   resources :users
-
   resources :characters
   resources :universes
   
+
   get "pages/about"
   get "pages/contact"
 

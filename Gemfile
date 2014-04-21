@@ -18,7 +18,7 @@ end
 
 gem 'html2haml', '~> 1.0.1'
 gem 'haml-rails', '0.5.1'
-gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'figaro', '~> 0.7.0'
 gem 'nokogiri', '~> 1.6.0'
