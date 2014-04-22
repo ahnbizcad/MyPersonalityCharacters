@@ -21,6 +21,79 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 
 
+
+/*
+General Variables
+*/
+
+
+
+
+
+/*
+Main Items
+*/
+
+header {
+	border: 1px solid black;
+}
+
+footer {
+	border: 1px solid black;
+	ul#links {
+		li {
+			list-style: none;
+		}
+	}
+}
+/*------------------------------
+Navbar top affixing with js.
+-------------------------------*/
+
+nav {
+	border: 1px solid purple;
+	background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
+	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
+	ul#links {
+		@extend .pull-left;
+	}
+	ul#login {
+		@extend .pull-right;
+	}
+	ul {
+		display: inline-block;
+		li {
+			list-style: none;
+			display: inline-block;
+			a {
+				display: block;
+			}
+		}
+	}
+}
+.affix {
+    position: fixed;
+    top: 0px;
+}
+.sidebar {
+	border: 1px solid green;
+}
+#sidebar-one {
+	left: 0px;
+	@extend .sidebar;
+}
+#sidebar-two {
+	right: 0px;
+	@extend .sidebar;
+}
+#main {
+	border: 1px solid blue;
+	height: 900px;
+
+}
+
 /*
 RESPONSIVE CUTOFF WIDTHS
 Widths for site (device in portrait mode)
@@ -30,75 +103,23 @@ Widths for site (device in portrait mode)
 /* No media query since this is the default in Bootstrap */
 /*@media only screen and (max-width: @screen-xs-min) { 
 }*/
+.container {
+	width: 100%;
+}
 
 /* Small devices (tablets, 768px and up) */
-//@media only screen and (min-width: @screen-sm){ 
+//@media only screen and (min-width: $screen-sm) and (max-width: $screen-sm-max) { 
 
 //}
 
 /* Medium devices (desktops, 992px and up) */
-//@media only screen and (min-width: @screen-md){ 
+//@media only screen and (min-width: $screen-md) and (max-width: $screen-md-max) { 
 
 //}
 
 /* Large devices (large desktops, 1200px and up) */
-//@media only screen and (min-width: @screen-lg){ 
-
-//}
-
-header, footer, .navbar {
-
-}
-header {
-	border: 1px solid black;
-}
-footer {
-	border: 1px solid black;
-}
-footer ul {
-
-}
-footer ul li {
-	list-style: none;
-}
-nav {
-	border: 1px solid purple;
-}
-
-#sidebar-one, #sidebar-two {
-	border: 1px solid green;
-}
-#sidebar-one {
-
-}
-#sidebar-two {
-
-}
-#main {
-	border: 1px solid blue;
-	height: 900px;
-}
-
-/*------------------------------
-Navbar top affixing with js.
--------------------------------*/
-nav {
-	//background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Safari 5.1-6*/
-	//background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
-	//background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
-	//background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
-}
-nav ul {
-	display: inline-block;
-}
-nav ul li {
-	list-style: none;
-	display: inline-block;
-}
-nav ul li a{
-	display: block;
-}
-.affix {
-    position: fixed;
-    top: 0px;
+@media only screen and (min-width: $screen-lg){ 
+	.container {
+		max-width: 1200px;
+	}
 }

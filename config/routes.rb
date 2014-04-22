@@ -17,10 +17,11 @@ MyPersonalityCharacters::Application.routes.draw do
   #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #end
 
-  resources :users
+  resources :users 
+  resources :universes do
+    
+  end
   resources :characters
-  resources :universes
-  
 
   get "pages/about"
   get "pages/contact"

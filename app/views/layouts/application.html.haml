@@ -7,9 +7,11 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width", :name => "viewport"}/
   %body
-    .container-fluid
-      = render 'layouts/header'
-      = render 'layouts/navbar'
+    .container
+      .row
+        = render 'layouts/header'
+      .row
+        = render 'layouts/navbar'
       .row
         = render 'layouts/sidebar_one'      
         #main.col-xs-12.col-sm-8
@@ -17,4 +19,5 @@
           %alert= alert
           = yield
         = render 'layouts/sidebar_two'
-      = render 'layouts/footer'
+      .row
+        = render 'layouts/footer'
