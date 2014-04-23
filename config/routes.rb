@@ -1,5 +1,7 @@
 MyPersonalityCharacters::Application.routes.draw do
 
+  resources :celebrities
+
   root "characters#index"
   
   #devise_scope :user do
@@ -17,11 +19,11 @@ MyPersonalityCharacters::Application.routes.draw do
   #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #end
 
-  resources :users 
-  resources :universes do
-    
-  end
+  resources :users
+  resources :celebrities
   resources :characters
+  resources :universes
+
 
   get "pages/about"
   get "pages/contact"

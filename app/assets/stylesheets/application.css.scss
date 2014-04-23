@@ -76,6 +76,14 @@ nav {
 .affix {
     position: fixed;
     top: 0px;
+    z-index: 99;
+}
+#search-navbar {
+	@extend .navbar-form;
+	@extend .navbar-left;
+	.input {
+		@extend .form-control
+	}
 }
 .sidebar {
 	border: 1px solid green;
