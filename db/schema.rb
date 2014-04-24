@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423195233) do
+ActiveRecord::Schema.define(version: 20140424131717) do
 
   create_table "celebrities", force: true do |t|
     t.string   "name"
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(version: 20140423195233) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "vote_count_entp"
+    t.integer  "vote_count_isfp"
+    t.integer  "vote_count_esfj"
+    t.integer  "vote_count_intj"
+    t.integer  "vote_count_enfj"
+    t.integer  "vote_count_istj"
+    t.integer  "vote_count_estp"
+    t.integer  "vote_count_infp"
+    t.integer  "vote_count_esfp"
+    t.integer  "vote_count_intp"
+    t.integer  "vote_count_entj"
+    t.integer  "vote_count_isfj"
+    t.integer  "vote_count_estj"
+    t.integer  "vote_count_infj"
+    t.integer  "vote_count_enfp"
+    t.integer  "vote_count_istp"
+    t.integer  "socionics_type_id"
   end
 
   create_table "characters", force: true do |t|
@@ -31,6 +48,43 @@ ActiveRecord::Schema.define(version: 20140423195233) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "name"
+    t.integer  "vote_count_entp"
+    t.integer  "vote_count_isfp"
+    t.integer  "vote_count_esfj"
+    t.integer  "vote_count_intj"
+    t.integer  "vote_count_enfj"
+    t.integer  "vote_count_istj"
+    t.integer  "vote_count_estp"
+    t.integer  "vote_count_infp"
+    t.integer  "vote_count_esfp"
+    t.integer  "vote_count_intp"
+    t.integer  "vote_count_entj"
+    t.integer  "vote_count_isfj"
+    t.integer  "vote_count_estj"
+    t.integer  "vote_count_infj"
+    t.integer  "vote_count_enfp"
+    t.integer  "vote_count_istp"
+    t.integer  "socionics_type_id"
+  end
+
+  create_table "socionics_types", force: true do |t|
+    t.string   "im_1st"
+    t.string   "im_2nd"
+    t.string   "im_3rd"
+    t.string   "im_4th"
+    t.string   "im_5th"
+    t.string   "im_6th"
+    t.string   "im_7th"
+    t.string   "im_8th"
+    t.string   "quadra"
+    t.string   "club"
+    t.string   "temperament"
+    t.string   "communication_style"
+    t.string   "romance_style"
+    t.string   "type_four_letter"
+    t.string   "type_three_letter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "universes", force: true do |t|

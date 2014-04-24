@@ -1,0 +1,2 @@
+module SocionicsPagesHelper
+end
