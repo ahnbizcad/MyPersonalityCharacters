@@ -1,5 +1,7 @@
 MyPersonalityCharacters::Application.routes.draw do
 
+  resources :worlds
+
   resources :celebrities
 
   root "characters#index"

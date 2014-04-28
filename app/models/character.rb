@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-	belongs_to :universe
+  has_and_belongs_to_many :worlds
 
 	validates :name, presence: true
 	#validates_attachment_presence :image 

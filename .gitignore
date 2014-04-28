@@ -18,6 +18,7 @@
 # Ignore application configuration.
 /config/application.yml
 /config/dropbox.yml
+/config/database.yml
 
 # Ignore local images.
 /public/system

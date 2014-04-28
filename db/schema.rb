@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424131717) do
+ActiveRecord::Schema.define(version: 20140426083509) do
 
   create_table "celebrities", force: true do |t|
     t.string   "name"
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(version: 20140424131717) do
     t.integer  "socionics_type_id"
   end
 
+  create_table "characters_worlds", id: false, force: true do |t|
+    t.integer "character_id", null: false
+    t.integer "world_id",     null: false
+  end
+
+  add_index "characters_worlds", ["character_id", "world_id"], name: "index_characters_worlds_on_character_id_and_world_id", unique: true
+
   create_table "socionics_types", force: true do |t|
     t.string   "im_1st"
     t.string   "im_2nd"
@@ -85,12 +92,6 @@ ActiveRecord::Schema.define(version: 20140424131717) do
     t.string   "type_three_letter"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "universes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "users", force: true do |t|
@@ -115,5 +116,11 @@ ActiveRecord::Schema.define(version: 20140424131717) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "worlds", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
 end
