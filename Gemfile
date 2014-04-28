@@ -30,22 +30,25 @@ gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'devise'
 
+gem 'pg', '0.17.1'
+
+
 group :development do
 	# For html2haml mass conversion
 	# erubis is already included in action pack
 	gem 'ruby_parser', '~> 3.1.1'
 end
 
-group :development, :test do
-  gem 'sqlite3'
+group :test do
+
 end
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  gem 'rails_12factor', '0.0.2'
 
   #gem 'aws-sdk', "~> 1.0"
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
