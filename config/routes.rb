@@ -1,10 +1,10 @@
 MyPersonalityCharacters::Application.routes.draw do
-
-  resources :worlds
-
-  resources :celebrities
-
   root "characters#index"
+
+  resources :universes
+  resources :characters
+  resources :celebrities
+  resources :users
   
   #devise_scope :user do
   #  get '/login', to: "devise/sessions#new", as: :login
@@ -20,12 +20,6 @@ MyPersonalityCharacters::Application.routes.draw do
   #    post   "/login"  => "devise/sessions#create",  :as => :user_session
   #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #end
-
-  resources :users
-  resources :celebrities
-  resources :characters
-  resources :universes
-
 
   get "pages/about"
   get "pages/contact"
