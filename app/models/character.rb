@@ -1,5 +1,6 @@
 class Character < ActiveRecord::Base
   has_many :universes, through: :character_associations
+  has_many :character_associations
 
 	validates :name, presence: true
 	#validates_attachment_presence :image 
