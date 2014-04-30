@@ -14,8 +14,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+gem 'turbolinks', '~>2.2.2'
+gem 'jquery-turbolinks', '~>2.0.2'
 gem 'jbuilder', '~> 1.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
@@ -28,7 +28,7 @@ gem 'figaro', '~> 0.7.0'
 gem 'nokogiri', '~> 1.6.0'
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1.1.7'
-gem 'devise'
+gem 'devise', '3.2.3'
 
 gem 'pg', '0.17.1'
 

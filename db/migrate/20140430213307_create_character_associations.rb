@@ -11,5 +11,3 @@ class CreateCharacterAssociations < ActiveRecord::Migration
     add_index :character_associations, :universe_id
   end
 end
-
-
