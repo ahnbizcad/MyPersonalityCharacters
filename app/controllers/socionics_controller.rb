@@ -1,4 +1,7 @@
-class SocionicsPagesController < ApplicationController
+class SocionicsController < ApplicationController
+	def index
+	end
+
 	def information_elements
 	end
 

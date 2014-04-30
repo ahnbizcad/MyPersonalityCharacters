@@ -56,12 +56,7 @@ nav {
 	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
 	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
 	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
-	ul#links {
-		@extend .pull-left;
-	}
-	ul#login {
-		@extend .pull-right;
-	}
+
 	ul {
 		display: inline-block;
 		li {
@@ -71,6 +66,12 @@ nav {
 				display: block;
 			}
 		}
+	}
+	ul#links {
+		@extend .pull-left;
+	}
+	ul#login {
+		@extend .pull-right;
 	}
 }
 .affix {
@@ -127,7 +128,7 @@ Widths for site (device in portrait mode)
 
 /* Large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: $screen-lg){ 
-	.container {
-		max-width: 1200px;
-	}
+	//.container {
+	//	max-width: 1200px;
+	//}
 }

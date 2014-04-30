@@ -1,6 +1,13 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
+  get "pages/about"
+  get "pages/contact"
+  
+  get 'socionics', to: 'socionics#index', as: 'socionics'
+
+  get 'mbti', to: 'mbti#index', as: 'mbti'
+
   resources :universes
   resources :characters
   resources :celebrities
@@ -12,17 +19,18 @@ MyPersonalityCharacters::Application.routes.draw do
   #  get '/sign_up', to: "devise/registration#new", as: :sign_up
   #end
   
-  devise_for :users, :skip => [:sessions]
+  devise_for :users, :skip => [:sessions, :registration]
 
-  devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  devise_for :user, :path => '', :path_names => { :sign_in => "login", 
+                                                  :sign_out => "logout", 
+                                                  :sign_up => "register", 
+                                                  :account_update => "account-settings" }
   #as :user do
   #    get    "/login"  => "devise/sessions#new",     :as => :new_user_session
   #    post   "/login"  => "devise/sessions#create",  :as => :user_session
   #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #end
 
-  get "pages/about"
-  get "pages/contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
