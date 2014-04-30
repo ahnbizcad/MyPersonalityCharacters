@@ -1,16 +1,17 @@
-%h1 Listing celebrities
+%h1 Celebrities
 
 %table
-  %tr
-    %th
-    %th
-    %th
+	%tr
+		%th
+		%th
+		%th
 
-  - @celebrities.each do |celebrity|
-    %tr
-      %td= link_to 'Show', celebrity
-      %td= link_to 'Edit', edit_celebrity_path(celebrity)
-      %td= link_to 'Destroy', celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
+	- @celebrities.each do |celebrity|
+		%tr
+			%td= link_to "#{celebrity.name}", celebrity
+			
+			%td= link_to 'Edit', edit_celebrity_path(celebrity)
+			%td= link_to 'Destroy', celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

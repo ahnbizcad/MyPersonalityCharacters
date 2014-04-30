@@ -128,7 +128,7 @@ Widths for site (device in portrait mode)
 
 /* Large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: $screen-lg){ 
-	//.container {
-	//	max-width: 1200px;
-	//}
+	.container {
+		max-width: 1200px;
+	}
 }

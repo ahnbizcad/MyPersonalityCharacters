@@ -1,10 +1,14 @@
 = form_for @universe do |f|
-  - if @universe.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@universe.errors.count, "error")} prohibited this universe from being saved:"
-      %ul
-        - @universe.errors.full_messages.each do |msg|
-          %li= msg
+	- if @universe.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@universe.errors.count, "error")} prohibited this universe from being saved:"
+			%ul
+				- @universe.errors.full_messages.each do |msg|
+					%li= msg
 
-  .actions
-    = f.submit 'Save'
+	.form-group
+		= f.label :name
+		= f.text_field :name
+
+	.actions
+		= f.submit 'Save'
