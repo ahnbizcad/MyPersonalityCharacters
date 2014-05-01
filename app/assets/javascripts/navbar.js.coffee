@@ -1,6 +1,6 @@
 ready = ->
 	$('.affixable').affix({
-		offset: { top: $('.affixable').offset().top, bottom: 400 }
+		offset: { top: $('.affixable').offset().top }
 	});
 	$('nav').height($('.affixable').height());
 
