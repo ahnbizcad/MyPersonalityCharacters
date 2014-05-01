@@ -19,18 +19,22 @@ gem 'jquery-turbolinks', '~>2.0.2'
 gem 'jbuilder', '~> 1.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
+gem 'pg', '0.17.1'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+# For spritemapping, and more.
+#gem 'compass'
 gem 'figaro', '~> 0.7.0'
 gem 'nokogiri', '~> 1.6.0'
 gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'devise', '3.2.3'
 
-gem 'pg', '0.17.1'
+
 
 
 group :development do

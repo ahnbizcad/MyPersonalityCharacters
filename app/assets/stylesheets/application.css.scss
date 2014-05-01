@@ -13,31 +13,45 @@
  */
 @import "bootstrap";
 
-
-/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
-
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
-
-
-
-/*
-General Variables
-*/
+/**************************
+CSS RESETS
+**************************/
 
 
 
 
+/**************************
+GENERAL VARIABLES
+**************************/
 
 /*
-Main Items
+Mixins - Colors
 */
 
-header {
-	border: 1px solid black;
+@mixin background-color() {
+	background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
+	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
 }
 
+/*
+Mixins - Dimensions
+*/
+$nav-height: 50px;
+
+/*
+Mixins - Positioning
+*/
+
+
+/**************************
+STYLING
+**************************/
+
+/*----------
+footer
+----------*/
 footer {
 	border: 1px solid black;
 	ul#links {
@@ -46,16 +60,33 @@ footer {
 		}
 	}
 }
-/*------------------------------
-Navbar top affixing with js.
--------------------------------*/
+/*----------
+header
+----------*/
+header {
+	border: 1px solid black;
+	a {
+		height: auto;
+	}
+}
 
+
+
+/*----------
+nav
+----------*/
 nav {
 	border: 1px solid purple;
-	background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Safari 5.1-6*/
-	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
-	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
-	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
+	height: $nav-height;
+	@include background-color();
+	
+	.affixable {
+		width: 100%;
+		height: $nav-height;
+
+		@include background-color;
+		white-space: nowrap;
+	}
 
 	ul {
 		display: inline-block;
@@ -67,25 +98,33 @@ nav {
 			}
 		}
 	}
+
 	ul#links {
-		@extend .pull-left;
+		#search-navbar {
+			@extend .navbar-form;
+			.input {
+				@extend .form-control
+			}
+		}
 	}
 	ul#login {
-		@extend .pull-right;
+		
 	}
 }
+
+
+/*------------------------------
+Navbar top affixing with js.
+-------------------------------*/
 .affix {
-    position: fixed;
-    top: 0px;
-    z-index: 99;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
 }
-#search-navbar {
-	@extend .navbar-form;
-	@extend .navbar-left;
-	.input {
-		@extend .form-control
-	}
-}
+
+/*----------
+sidebars
+----------*/
 .sidebar {
 	border: 1px solid green;
 }
@@ -97,38 +136,64 @@ nav {
 	right: 0px;
 	@extend .sidebar;
 }
-#main {
+
+/*----------
+main
+----------*/
+main {
 	border: 1px solid blue;
 	height: 900px;
 
 }
 
-/*
-RESPONSIVE CUTOFF WIDTHS
-Widths for site (device in portrait mode)
-*/
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-/*@media only screen and (max-width: @screen-xs-min) { 
-}*/
+/**************************
+RESPONSIVE CUTOFF WIDTHS
+**************************/
+
+/* xs is default. Smaller sizes cascade to larger sizes. */
+
 .container {
 	width: 100%;
 }
 
-/* Small devices (tablets, 768px and up) */
-//@media only screen and (min-width: $screen-sm) and (max-width: $screen-sm-max) { 
 
-//}
+/*----------
+xs devices (phones, 1px to 767px) (doesn't cascade)
+----------*/
+@media only screen and (max-width: $screen-xs-max) { 
 
-/* Medium devices (desktops, 992px and up) */
-//@media only screen and (min-width: $screen-md) and (max-width: $screen-md-max) { 
 
-//}
+}
 
-/* Large devices (large desktops, 1200px and up) */
+
+/*----------
+sm devices (tablets, 768px to 991px) (doesn't cascade)
+----------*/
+@media only screen and (min-width: $screen-sm) and (max-width: $screen-sm-max) { 
+
+
+
+}
+
+
+/*----------
+md devices (desktops, 992px to 1199px) (doesn't cascade)
+----------*/
+@media only screen and (min-width: $screen-md) and (max-width: $screen-md-max) { 
+
+
+
+}
+
+
+/*----------
+lg devices (large desktops, 1200px and up)
+----------*/
 @media only screen and (min-width: $screen-lg){ 
+
 	.container {
 		max-width: 1200px;
 	}
+
 }

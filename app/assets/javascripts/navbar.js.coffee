@@ -1,9 +1,8 @@
 ready = ->
-	$('nav').affix({
-		offset: { top: $('nav').offset().top }
+	$('.affixable').affix({
+		offset: { top: $('.affixable').offset().top, bottom: 400 }
 	});
-	$(".row#nav-affixed").height($('nav').height());
-	
+	$('nav').height($('.affixable').height());
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
