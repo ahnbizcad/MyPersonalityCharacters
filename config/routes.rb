@@ -1,12 +1,69 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
-  get "pages/about"
-  get "pages/contact"
+  namespace :pages do
+    get "about"
+    get "contact"
+  end
   
+
   get 'socionics', to: 'socionics#index', as: 'socionics'
+  namespace :socionics do
+
+    # Types.
+    get 'entp'
+    get 'isfp'
+    get 'esfj'
+    get 'intj'
+
+    get 'estp'
+    get 'infp'
+    get 'enfj'
+    get 'istj'
+
+    get 'esfp'
+    get 'intp'
+    get 'entj'
+    get 'isfj'
+
+    get 'estj'
+    get 'infj'
+    get 'enfp'
+    get 'istp'
+
+    # Intertype Relations.
+    get 'intertype_relations'
+
+    # Information Elements.
+    get 'information_elements'
+    get 'si'
+    get 'se'
+    get 'ni'
+    get 'ne'
+    get 'ti'
+    get 'te'
+    get 'fi'
+    get 'fe'
+    # Functions.
+    get 'functions'
+    get 'function_dichotomies'
+    # Type Dichotomies.
+    get 'dichotomies'
+    get 'jungian_dichotomies'
+    get 'socionics_jungian_dichotomies'
+    # Small groups.
+    get 'small_groups'
+    get 'quadras'
+    get 'clubs'
+    get 'temperaments'
+    get 'communication_styles'
+    get 'romance_styles'
+  end
 
   get 'mbti', to: 'mbti#index', as: 'mbti'
+  namespace :mbti do
+    get '', to: 'mbti#index'
+  end
 
   resources :universes
   resources :characters

@@ -1,33 +1,35 @@
 class SocionicsController < ApplicationController
+	before_action 
+
 	def index
 	end
 
+# Information elements.
 	def information_elements
 	end
 
-# Information elements.
-	def Si
+	def si
 	end
 
-	def Se
+	def se
 	end
 
-	def Ni
+	def ni
 	end
 
-	def Ne
+	def ne
 	end
 
-	def Ti
+	def ti
 	end
 
-	def Te
+	def te
 	end
 
-	def Fi
+	def fi
 	end
 
-	def Fe
+	def fe
 	end
 
 # Functions.
@@ -37,7 +39,20 @@ class SocionicsController < ApplicationController
 	def function_dichotomies
 	end
 
+# Dichotomies.
+	def dichotomies
+	end
+
+	def jungian_dichotomies
+	end
+
+	def reinin_dichotomies
+	end
+
 # Small Groups.
+	def small_groups
+	end
+
 	def quadra
 	end
 
@@ -54,6 +69,7 @@ class SocionicsController < ApplicationController
 	end
 
 # Types
+
 # Alpha quadra.
 	def ENTp
 	end
@@ -105,4 +121,10 @@ class SocionicsController < ApplicationController
 
 	def ISTp
 	end
+
+	private
+		def get_socionics_types
+			@socionics_types = Socionics
+		end
+
 end
