@@ -11,6 +11,11 @@
  *= require_tree .
   *= require_self
  */
+
+/**************************
+only include/require partials. Split out into files.
+**************************/
+
 @import "bootstrap";
 
 /**************************
