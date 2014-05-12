@@ -76,6 +76,7 @@ class SocionicsController < ApplicationController
 # Alpha quadra.
 	def entp
 		@socionics_type = SocionicsType.find_by(type_four_letter: 'ENTp')
+		render 'socionics/types/entp'
 	end
 
 	def isfp

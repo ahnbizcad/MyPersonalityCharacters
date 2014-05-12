@@ -3,6 +3,17 @@
 %section 
 	%p Meet the 16 Socionics types
 
+	<div class="spritzer" id="spritzer1" data-role="spritzer" data-url="http://www.wikisocion.org/en/index.php?title=Classical_socionics">
+	<select id="textList" size="1">
+		<option value="">Select Text</option>
+		<option value="text1">Hello World</option>
+		<option value="text2">Wilbur Wright</option> 
+	</select>
+	</div>
+	
+	#spritzer
+		%p A sample paragraph.
+
 	%table
 		- @socionics_types.each do |type|
 			%tr

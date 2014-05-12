@@ -9,12 +9,9 @@ MyPersonalityCharacters::Application.routes.draw do
     get "login_success"
   end
   
-  get 'socionics/type_dichotomies/entp', to: 'socionics#entp'
+
   get 'socionics', to: 'socionics#index', as: 'socionics'
   namespace :socionics do
-
-
-
     # Types.
     get 'entp'
     get 'isfp'
@@ -62,7 +59,8 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'communication_styles'
     get 'romance_styles'
   end
-
+    get 'socionics/types/entp', to: 'socionics#entp'
+  
   get 'mbti', to: 'mbti#index', as: 'mbti'
   namespace :mbti do
     get '', to: 'mbti#index'
