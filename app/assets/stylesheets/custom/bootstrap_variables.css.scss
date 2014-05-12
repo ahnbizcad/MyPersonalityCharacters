@@ -1,0 +1,29 @@
+/**************************
+GENERAL VARIABLES
+**************************/
+
+/*
+Mixins - Colors
+*/
+
+@mixin background-color() {
+	background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Fx 3.6-15*/
+	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 90%, rgba(0,0,125,0)); /*Standard*/
+}
+
+/*
+Mixins - Dimensions
+*/
+
+
+
+/*
+Mixins - Positioning
+*/
+
+@mixin vertical-padding($pixels: 8px) {
+	padding-top: 		$pixels;
+	padding-bottom: $pixels;
+}

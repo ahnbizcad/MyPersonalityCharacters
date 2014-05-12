@@ -1,7 +1,7 @@
 class SocionicsController < ApplicationController
-	before_action 
 
 	def index
+		set_socionics_types
 	end
 
 # Information elements.
@@ -68,63 +68,68 @@ class SocionicsController < ApplicationController
 	def romance_styles
 	end
 
+# Intertype Relations
+	def intertype_relations
+	end
+
 # Types
-
 # Alpha quadra.
-	def ENTp
+	def entp
+		@socionics_type = SocionicsType.find_by(type_four_letter: 'ENTp')
 	end
 
-	def ISFp
+	def isfp
+		@socionics_type = SocionicsType.find_by(type_four_letter: 'ISFp')
 	end
 
-	def ESFj
+	def esfj
 	end
 
-	def INTj
+	def intj
 	end
 
 # Beta quadra.
-	def ENFj
+	def enfj
 	end
 
-	def ISTj
+	def istj
 	end
 
-	def ESTp
+	def estp
 	end
 
-	def INFp
+	def infp
 	end
 
 # Gamma quadra.
-	def ESFp
+	def esfp
 	end
 
-	def INTp
+	def intp
 	end
 
-	def ENTj
+	def entj
 	end
 
-	def ISFj
+	def isfj
 	end
 
 # Delta quadra.
-	def ESTj
+	def estj
 	end
 
-	def INFj
+	def infj
 	end
 
-	def ENFp
+	def enfp
 	end
 
-	def ISTp
+	def istp
 	end
 
 	private
-		def get_socionics_types
-			@socionics_types = Socionics
+		def set_socionics_types
+			@socionics_types = SocionicsType.all
 		end
 
 end

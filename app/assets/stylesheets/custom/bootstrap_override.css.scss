@@ -1,0 +1,132 @@
+/**************************
+STYLING
+**************************/
+
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+
+/*----------
+footer
+----------*/
+footer {
+	border: 1px solid black;
+	ul#links {
+		li {
+			list-style: none;
+		}
+	}
+}
+/*----------
+header
+----------*/
+header {
+	a {
+		height: auto;
+	}
+}
+
+
+/*----------
+nav
+----------*/
+nav {
+	@include background-color();
+	font-family: Helvetica;
+	font-weight: 500;
+	font-size: 1.2em;
+	
+
+	.affixable {
+		width: 100%;
+
+		@include background-color;
+		
+	}
+
+	ul {
+		@extend .list-inline;
+		white-space: nowrap;
+		li {
+			list-style: none;
+			a {
+				display: block;
+				&:hover {
+					text-decoration: none;
+				}
+				&:focus {
+					text-decoration: none;
+				}
+			}
+			ul.dropdown-menu {
+				padding: 0px;
+				li {
+					display: block;
+					padding: 0px;
+				}
+			}
+		}
+	}
+
+	ul#links {
+		#search-navbar {
+			@extend .navbar-form;
+			.form-group {
+				input {
+					@extend .form-control;
+				}
+				button {
+					@extend .btn;
+					@extend .btn-default ;
+					@extend .form-control;
+				}
+			}
+		}
+	}
+	ul#login {
+		//@extend .pull-right;
+		vertical-align: 50%;
+		@extend .col-xs-pull-0;
+	}
+}
+
+
+/*------------------------------
+Navbar top affixing with js.
+-------------------------------*/
+.affix {
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+}
+
+/*----------
+sidebars
+----------*/
+.sidebar {
+	outline: 1px solid green;
+	@include vertical-padding();
+	@extend .hidden-xs;
+}
+#sidebar-one {
+	left: 0px;
+	@extend .sidebar;
+}
+#sidebar-two {
+	right: 0px;
+	@extend .sidebar;
+}
+
+/*----------
+main
+----------*/
+main {
+	outline: 1px solid blue;
+	@include vertical-padding();
+
+	height: 900px;
+}
+
+

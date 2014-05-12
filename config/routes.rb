@@ -1,14 +1,19 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
+
+
   namespace :pages do
     get "about"
     get "contact"
+    get "login_success"
   end
   
-
+  get 'socionics/type_dichotomies/entp', to: 'socionics#entp'
   get 'socionics', to: 'socionics#index', as: 'socionics'
   namespace :socionics do
+
+
 
     # Types.
     get 'entp'
@@ -30,10 +35,8 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'infj'
     get 'enfp'
     get 'istp'
-
     # Intertype Relations.
     get 'intertype_relations'
-
     # Information Elements.
     get 'information_elements'
     get 'si'
@@ -48,7 +51,7 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'functions'
     get 'function_dichotomies'
     # Type Dichotomies.
-    get 'dichotomies'
+    get 'type_dichotomies'
     get 'jungian_dichotomies'
     get 'socionics_jungian_dichotomies'
     # Small groups.

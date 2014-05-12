@@ -1,20 +1,33 @@
 %h1 Socionics Theory
 
 %section 
+	%p Meet the 16 Socionics types
+
+	%table
+		- @socionics_types.each do |type|
+			%tr
+				%td= type.type_four_letter
+				%td= type.type_three_letter
+				%td= type.type_two_im
+
+%section 
 	(app)
 
 %section Socionics Theory - Map
-%section
-	=link_to "Personality Types (Socions)", "#"
-%section
-	=link_to "Intertype Relations", "socionics_intertype_relations_path"
+
 %section
 	=link_to "Information Elements", "#"
 %section
 	=link_to "Functions", "#"
 %section
-	=link_to "Functions Dichotomies", "#"
+	=link_to "Function Dichotomies", "#"
+%section
+	=link_to "Personality Types", "#"
 %section
 	=link_to "Type Dichotomies", "#"
 %section
 	=link_to "Small Groups", "#"
+%section
+	=link_to "Intertype Relations", socionics_intertype_relations_path
+
+

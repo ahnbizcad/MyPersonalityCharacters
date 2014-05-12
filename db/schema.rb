@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430213307) do
+ActiveRecord::Schema.define(version: 20140510102138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20140430213307) do
     t.string   "type_three_letter"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type_two_im"
   end
 
   create_table "universes", force: true do |t|

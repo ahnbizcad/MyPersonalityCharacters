@@ -1,0 +1,53 @@
+/**************************
+RESPONSIVE CUTOFF WIDTHS
+**************************/
+
+/* xs is default. Smaller sizes cascade to larger sizes. */
+
+.container {
+	width: 100%;
+}
+
+
+/*----------
+xs devices (phones, 1px to 767px) (doesn't cascade)
+----------*/
+/*
+@media only screen and (max-width: $screen-xs-max) { 
+
+
+}
+*/
+
+/*----------
+sm devices (tablets, 768px to 991px)
+----------*/
+@media only screen and (min-width: $screen-sm){ 
+	.sidebar {
+
+	}
+
+
+}
+
+
+/*----------
+md devices (desktops, 992px to 1199px)
+----------*/
+@media only screen and (min-width: $screen-md){ 
+
+
+
+}
+
+
+/*----------
+lg devices (large desktops, 1200px and up)
+----------*/
+@media only screen and (min-width: $screen-lg){ 
+
+	.container {
+		max-width: 1200px;
+	}
+
+}
