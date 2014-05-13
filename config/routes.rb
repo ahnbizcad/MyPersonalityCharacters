@@ -9,29 +9,49 @@ MyPersonalityCharacters::Application.routes.draw do
     get "login_success"
   end
   
+  get 'socionics/entp', to: 'socionics#neti'
+  get 'socionics/isfp', to: 'socionics#sife'
+  get 'socionics/esfj', to: 'socionics#fesi'
+  get 'socionics/intj', to: 'socionics#tine'
+
+  get 'socionics/enfj', to: 'socionics#feni'
+  get 'socionics/istj', to: 'socionics#tise'
+  get 'socionics/estp', to: 'socionics#seti'
+  get 'socionics/infp', to: 'socionics#nife'  
+
+  get 'socionics/esfp', to: 'socionics#sefi'
+  get 'socionics/intp', to: 'socionics#nite'
+  get 'socionics/entj', to: 'socionics#teni'
+  get 'socionics/isfj', to: 'socionics#fise'
+
+  get 'socionics/estj', to: 'socionics#tesi'
+  get 'socionics/infj', to: 'socionics#fine'
+  get 'socionics/enfp', to: 'socionics#nefi'
+  get 'socionics/istp', to: 'socionics#site'
 
   get 'socionics', to: 'socionics#index', as: 'socionics'
   namespace :socionics do
     # Types.
-    get 'entp'
-    get 'isfp'
-    get 'esfj'
-    get 'intj'
+    get 'neti'
+    get 'sife'
+    get 'fesi'
+    get 'tine'
 
-    get 'estp'
-    get 'infp'
-    get 'enfj'
-    get 'istj'
+    get 'feni'
+    get 'tise'
+    get 'seti'
+    get 'nife'
 
-    get 'esfp'
-    get 'intp'
-    get 'entj'
-    get 'isfj'
+    get 'sefi'
+    get 'nite'
+    get 'teni'
+    get 'fise'
 
-    get 'estj'
-    get 'infj'
-    get 'enfp'
-    get 'istp'
+    get 'tesi'
+    get 'fine'
+    get 'nefi'
+    get 'site'
+
     # Intertype Relations.
     get 'intertype_relations'
     # Information Elements.
@@ -59,8 +79,8 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'communication_styles'
     get 'romance_styles'
   end
-    get 'socionics/types/entp', to: 'socionics#entp'
   
+
   get 'mbti', to: 'mbti#index', as: 'mbti'
   namespace :mbti do
     get '', to: 'mbti#index'

@@ -74,58 +74,71 @@ class SocionicsController < ApplicationController
 
 # Types
 # Alpha quadra.
-	def entp
-		@socionics_type = SocionicsType.find_by(type_four_letter: 'ENTp')
-		render 'socionics/types/entp'
+	def neti
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Ti')
 	end
 
-	def isfp
-		@socionics_type = SocionicsType.find_by(type_four_letter: 'ISFp')
+	def sife
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Si-Fe')
 	end
 
-	def esfj
+	def fesi
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Si')
 	end
 
-	def intj
+	def tine
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Ne')
 	end
 
 # Beta quadra.
-	def enfj
+	def feni
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Ni')
 	end
 
-	def istj
+	def tise
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Se')
 	end
 
-	def estp
+	def seti
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Se-Ti')
 	end
 
-	def infp
+	def nife
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Fe')
 	end
 
 # Gamma quadra.
-	def esfp
+	def sefi
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Se-Fi')
 	end
 
-	def intp
+	def nite
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Te')
 	end
 
-	def entj
+	def teni
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Te-Ni')
 	end
 
-	def isfj
+	def fise
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Se')
 	end
 
 # Delta quadra.
-	def estj
+	def tesi
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Te-Si')
 	end
 
-	def infj
+	def fine
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Ne')
 	end
 
-	def enfp
+	def nefi
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Fi')
 	end
 
-	def istp
+	def site
+		@socionics_type = SocionicsType.find_by(type_two_im: 'Si-Te')
 	end
 
 	private

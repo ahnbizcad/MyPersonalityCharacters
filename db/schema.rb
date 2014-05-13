@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513120409) do
+ActiveRecord::Schema.define(version: 20140513130327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140513120409) do
     t.integer  "vote_fine"
     t.integer  "vote_nefi"
     t.integer  "vote_site"
+    t.integer  "socionics_type_id"
   end
 
   create_table "characters", force: true do |t|
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140513120409) do
     t.integer  "vote_fine"
     t.integer  "vote_nefi"
     t.integer  "vote_site"
+    t.integer  "socionics_type_id"
   end
 
   create_table "characters_to_universes", id: false, force: true do |t|
@@ -140,6 +142,7 @@ ActiveRecord::Schema.define(version: 20140513120409) do
     t.integer  "vote_fine"
     t.integer  "vote_nefi"
     t.integer  "vote_site"
+    t.integer  "socionics_type_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

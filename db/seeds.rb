@@ -9,45 +9,45 @@
 #
 # Socionics Types
 #                    0      1       2       3     4     5     6    7      8     9    10     11         12           13            14         15
-socionics_entp = ["ENTp", "ILE", "Ne-Ti", "Ne", "Ti", "Se", "Fi", "Si", "Fe", "Ni", "Te", "alpha", "infantile", "researchers",   "EP", "firm",        ]
-socionics_isfp = ["ISFp", "SEI", "Si-Fe", "Si", "Fe", "Ni", "Te", "Ne", "Ti", "Se", "Fi", "alpha", "caregiver", "socials",       "IP", "sincere",     ]
-socionics_esfj = ["ESFj", "ESE", "Fe-Si", "Fe", "Si", "Te", "Ni", "Ti", "Ne", "Fi", "Se", "alpha", "caregiver", "socials",       "EJ", "passionate",  ]
-socionics_intj = ["INTj", "LII", "Ti-Ne", "Ti", "Ne", "Fi", "Se", "Fe", "Si", "Te", "Ni", "alpha", "infantile", "researchers",   "IJ", "cold-blooded",]
+socionics_neti = ["ENTp", "ILE", "Ne-Ti", "Ne", "Ti", "Se", "Fi", "Si", "Fe", "Ni", "Te", "alpha", "infantile", "researchers",   "EP", "firm",        ]
+socionics_sife = ["ISFp", "SEI", "Si-Fe", "Si", "Fe", "Ni", "Te", "Ne", "Ti", "Se", "Fi", "alpha", "caregiver", "socials",       "IP", "sincere",     ]
+socionics_fesi = ["ESFj", "ESE", "Fe-Si", "Fe", "Si", "Te", "Ni", "Ti", "Ne", "Fi", "Se", "alpha", "caregiver", "socials",       "EJ", "passionate",  ]
+socionics_tine = ["INTj", "LII", "Ti-Ne", "Ti", "Ne", "Fi", "Se", "Fe", "Si", "Te", "Ni", "alpha", "infantile", "researchers",   "IJ", "cold-blooded",]
 
-socionics_enfj = ["ENFj", "EIE", "Fe-Ni", "Fe", "Ni", "Te", "Si", "Ti", "Se", "Fi", "Ne", "beta",  "victim",    "humanitarians", "EJ", "passionate",  ]
-socionics_istj = ["ISTj", "LSI", "Ti-Se", "Ti", "Se", "Fi", "Ne", "Fe", "Ni", "Te", "Si", "beta",  "aggressor", "pragmatists",   "IJ", "cold-blooded",]
-socionics_estp = ["ESTp", "SLE", "Se-Ti", "Se", "Ti", "Ne", "Fi", "Ni", "Fe", "Si", "Te", "beta",  "aggressor", "pragmatists",   "EP", "firm",        ]
-socionics_infp = ["INFp", "IEI", "Ni-Fe", "Ni", "Fe", "Si", "Te", "Se", "Ti", "Ne", "Fi", "beta",  "victim",    "humanitarians", "IP", "sincere",     ]
+socionics_feni = ["ENFj", "EIE", "Fe-Ni", "Fe", "Ni", "Te", "Si", "Ti", "Se", "Fi", "Ne", "beta",  "victim",    "humanitarians", "EJ", "passionate",  ]
+socionics_site = ["ISTj", "LSI", "Ti-Se", "Ti", "Se", "Fi", "Ne", "Fe", "Ni", "Te", "Si", "beta",  "aggressor", "pragmatists",   "IJ", "cold-blooded",]
+socionics_seti = ["ESTp", "SLE", "Se-Ti", "Se", "Ti", "Ne", "Fi", "Ni", "Fe", "Si", "Te", "beta",  "aggressor", "pragmatists",   "EP", "firm",        ]
+socionics_nife = ["INFp", "IEI", "Ni-Fe", "Ni", "Fe", "Si", "Te", "Se", "Ti", "Ne", "Fi", "beta",  "victim",    "humanitarians", "IP", "sincere",     ]
 
-socionics_esfp = ["ESFp", "SEE", "Se-Fi", "Se", "Fi", "Ne", "Ti", "Ni", "Te", "Si", "Fe", "gamma", "aggressor", "socials",       "EP", "passionate",  ]
-socionics_intp = ["INTp", "ILI", "Ni-Te", "Ni", "Te", "Si", "Fe", "Se", "Fi", "Ne", "Ti", "gamma", "victim",    "researchers",   "IP", "cold-blooded",]
-socionics_entj = ["ENTj", "LIE", "Te-Ni", "Te", "Ni", "Fe", "Si", "Fi", "Se", "Ti", "Ne", "gamma", "victim",    "researchers",   "EJ", "firm",        ]
-socionics_isfj = ["ISFj", "ESI", "Se-Fi", "Fi", "Se", "Ti", "Ne", "Te", "Ni", "Fe", "Si", "gamma", "aggressor", "socials",       "IJ", "sincere",     ]
+socionics_sefi = ["ESFp", "SEE", "Se-Fi", "Se", "Fi", "Ne", "Ti", "Ni", "Te", "Si", "Fe", "gamma", "aggressor", "socials",       "EP", "passionate",  ]
+socionics_nite = ["INTp", "ILI", "Ni-Te", "Ni", "Te", "Si", "Fe", "Se", "Fi", "Ne", "Ti", "gamma", "victim",    "researchers",   "IP", "cold-blooded",]
+socionics_teni = ["ENTj", "LIE", "Te-Ni", "Te", "Ni", "Fe", "Si", "Fi", "Se", "Ti", "Ne", "gamma", "victim",    "researchers",   "EJ", "firm",        ]
+socionics_fise = ["ISFj", "ESI", "Se-Fi", "Fi", "Se", "Ti", "Ne", "Te", "Ni", "Fe", "Si", "gamma", "aggressor", "socials",       "IJ", "sincere",     ]
 
-socionics_estj = ["ESTj", "LSE", "Te-Si", "Te", "Si", "Fe", "Ni", "Fi", "Ne", "Ti", "Se", "delta", "caregiver", "pragmatists",   "EJ", "firm",        ]
-socionics_infj = ["INFJ", "EII", "Fi-Ne", "Fi", "Ne", "Ti", "Se", "Te", "Si", "Fe", "Ni", "delta", "infantile", "humanitarians", "IJ", "sincere",     ]
-socionics_enfp = ["ENFp", "IEE", "Ne-Fi", "Ne", "Fi", "Se", "Ti", "Si", "Te", "Ni", "Fe", "delta", "infantile", "humanitarians", "EP", "passionate",  ]
-socionics_istp = ["ISTp", "SLI", "Si-Te", "Si", "Te", "Ni", "Fe", "Ne", "Fi", "Se", "Ti", "delta", "caregiver", "pragmatists",   "IP", "cold-blooded",]
+socionics_tesi = ["ESTj", "LSE", "Te-Si", "Te", "Si", "Fe", "Ni", "Fi", "Ne", "Ti", "Se", "delta", "caregiver", "pragmatists",   "EJ", "firm",        ]
+socionics_fine = ["INFJ", "EII", "Fi-Ne", "Fi", "Ne", "Ti", "Se", "Te", "Si", "Fe", "Ni", "delta", "infantile", "humanitarians", "IJ", "sincere",     ]
+socionics_nefi = ["ENFp", "IEE", "Ne-Fi", "Ne", "Fi", "Se", "Ti", "Si", "Te", "Ni", "Fe", "delta", "infantile", "humanitarians", "EP", "passionate",  ]
+socionics_site = ["ISTp", "SLI", "Si-Te", "Si", "Te", "Ni", "Fe", "Ne", "Fi", "Se", "Ti", "delta", "caregiver", "pragmatists",   "IP", "cold-blooded",]
 
-socionics_types = [socionics_entp,
-									 socionics_isfp,
-									 socionics_esfj,
-									 socionics_intj,
+socionics_types = [socionics_neti,
+									 socionics_sife,
+									 socionics_fesi,
+									 socionics_tine,
 
-									 socionics_enfj,
-									 socionics_istj,
-									 socionics_estp,
-									 socionics_infp,
+									 socionics_feni,
+									 socionics_tise,
+									 socionics_seti,
+									 socionics_nife,
 
-									 socionics_esfp,
-									 socionics_intp,
-									 socionics_entj,
-									 socionics_isfj,
+									 socionics_sefi,
+									 socionics_nite,
+									 socionics_teni,
+									 socionics_fise,
 
-									 socionics_estj,
-									 socionics_infj,
-									 socionics_enfp,
-									 socionics_istp]
+									 socionics_tesi,
+									 socionics_fine,
+									 socionics_nefi,
+									 socionics_site]
 
 def socionics_type_factory(socionics_types)
 	socionics_types.each do |type|

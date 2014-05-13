@@ -3,7 +3,6 @@ class SocionicsType < ActiveRecord::Base
 	has_many :users
 	has_many :celebrities
 
-
 	def reinin_e
 	end
 
