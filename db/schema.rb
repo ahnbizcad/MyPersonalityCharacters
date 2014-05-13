@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510102138) do
+ActiveRecord::Schema.define(version: 20140513120409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,35 +24,23 @@ ActiveRecord::Schema.define(version: 20140510102138) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "vote_count_entp"
-    t.integer  "vote_count_isfp"
-    t.integer  "vote_count_esfj"
-    t.integer  "vote_count_intj"
-    t.integer  "vote_count_enfj"
-    t.integer  "vote_count_istj"
-    t.integer  "vote_count_estp"
-    t.integer  "vote_count_infp"
-    t.integer  "vote_count_esfp"
-    t.integer  "vote_count_intp"
-    t.integer  "vote_count_entj"
-    t.integer  "vote_count_isfj"
-    t.integer  "vote_count_estj"
-    t.integer  "vote_count_infj"
-    t.integer  "vote_count_enfp"
-    t.integer  "vote_count_istp"
-    t.integer  "socionics_type_id"
+    t.integer  "vote_neti"
+    t.integer  "vote_sife"
+    t.integer  "vote_fesi"
+    t.integer  "vote_tine"
+    t.integer  "vote_feni"
+    t.integer  "vote_tise"
+    t.integer  "vote_seti"
+    t.integer  "vote_nife"
+    t.integer  "vote_sefi"
+    t.integer  "vote_nite"
+    t.integer  "vote_teni"
+    t.integer  "vote_fise"
+    t.integer  "vote_tesi"
+    t.integer  "vote_fine"
+    t.integer  "vote_nefi"
+    t.integer  "vote_site"
   end
-
-  create_table "character_associations", id: false, force: true do |t|
-    t.integer  "universe_id"
-    t.integer  "character_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "character_associations", ["character_id"], name: "index_character_associations_on_character_id", using: :btree
-  add_index "character_associations", ["universe_id", "character_id"], name: "index_character_associations_on_universe_id_and_character_id", unique: true, using: :btree
-  add_index "character_associations", ["universe_id"], name: "index_character_associations_on_universe_id", using: :btree
 
   create_table "characters", force: true do |t|
     t.datetime "created_at"
@@ -62,24 +50,34 @@ ActiveRecord::Schema.define(version: 20140510102138) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "name"
-    t.integer  "vote_count_entp"
-    t.integer  "vote_count_isfp"
-    t.integer  "vote_count_esfj"
-    t.integer  "vote_count_intj"
-    t.integer  "vote_count_enfj"
-    t.integer  "vote_count_istj"
-    t.integer  "vote_count_estp"
-    t.integer  "vote_count_infp"
-    t.integer  "vote_count_esfp"
-    t.integer  "vote_count_intp"
-    t.integer  "vote_count_entj"
-    t.integer  "vote_count_isfj"
-    t.integer  "vote_count_estj"
-    t.integer  "vote_count_infj"
-    t.integer  "vote_count_enfp"
-    t.integer  "vote_count_istp"
-    t.integer  "socionics_type_id"
+    t.integer  "vote_neti"
+    t.integer  "vote_sife"
+    t.integer  "vote_fesi"
+    t.integer  "vote_tine"
+    t.integer  "vote_feni"
+    t.integer  "vote_tise"
+    t.integer  "vote_seti"
+    t.integer  "vote_nife"
+    t.integer  "vote_sefi"
+    t.integer  "vote_nite"
+    t.integer  "vote_teni"
+    t.integer  "vote_fise"
+    t.integer  "vote_tesi"
+    t.integer  "vote_fine"
+    t.integer  "vote_nefi"
+    t.integer  "vote_site"
   end
+
+  create_table "characters_to_universes", id: false, force: true do |t|
+    t.integer  "universe_id"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "characters_to_universes", ["character_id"], name: "index_characters_to_universes_on_character_id", using: :btree
+  add_index "characters_to_universes", ["universe_id", "character_id"], name: "index_characters_to_universes_on_universe_id_and_character_id", unique: true, using: :btree
+  add_index "characters_to_universes", ["universe_id"], name: "index_characters_to_universes_on_universe_id", using: :btree
 
   create_table "socionics_types", force: true do |t|
     t.string   "im_1st"
@@ -97,9 +95,9 @@ ActiveRecord::Schema.define(version: 20140510102138) do
     t.string   "romance_style"
     t.string   "type_four_letter"
     t.string   "type_three_letter"
+    t.string   "type_two_im"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type_two_im"
   end
 
   create_table "universes", force: true do |t|
@@ -126,6 +124,22 @@ ActiveRecord::Schema.define(version: 20140510102138) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "vote_neti"
+    t.integer  "vote_sife"
+    t.integer  "vote_fesi"
+    t.integer  "vote_tine"
+    t.integer  "vote_feni"
+    t.integer  "vote_tise"
+    t.integer  "vote_seti"
+    t.integer  "vote_nife"
+    t.integer  "vote_sefi"
+    t.integer  "vote_nite"
+    t.integer  "vote_teni"
+    t.integer  "vote_fise"
+    t.integer  "vote_tesi"
+    t.integer  "vote_fine"
+    t.integer  "vote_nefi"
+    t.integer  "vote_site"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

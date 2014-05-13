@@ -71,4 +71,9 @@ class CharactersController < ApplicationController
     def character_params
       params.require(:character).permit(:name, :image)
     end
+
+    def set_character_socionics_type
+      # get max vote of character's type, and get corresponding socionics type.
+      #@socionics_type = SocionicsType.find(...)
+    end
 end

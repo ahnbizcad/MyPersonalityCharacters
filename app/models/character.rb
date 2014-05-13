@@ -2,6 +2,8 @@ class Character < ActiveRecord::Base
   has_many :universes, through: :character_associations
   has_many :character_associations
 
+  belongs_to :socionics_type
+
 	validates :name, presence: true
 	#validates_attachment_presence :image 
   if Rails.env.development?

@@ -16,6 +16,7 @@ class CreateSocionicsTypes < ActiveRecord::Migration
       t.string :romance_style
       t.string :type_four_letter
       t.string :type_three_letter
+      t.string :type_two_im
 
       t.timestamps
     end
