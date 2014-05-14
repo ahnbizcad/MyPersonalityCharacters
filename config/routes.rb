@@ -84,6 +84,7 @@ MyPersonalityCharacters::Application.routes.draw do
   get 'mbti', to: 'mbti#index', as: 'mbti'
   namespace :mbti do
     get '', to: 'mbti#index'
+    get 'tests'
   end
 
   resources :universes

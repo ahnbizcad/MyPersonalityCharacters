@@ -69,7 +69,6 @@ nav {
 			}
 		}
 	}
-
 	ul#links {
 		#search-navbar {
 			@extend .navbar-form;
@@ -100,6 +99,7 @@ Navbar top affixing with js.
   position: fixed;
   top: 0px;
   z-index: 99;
+  box-shadow: 0 4px 2px -2px #888;
 }
 
 /*----------
