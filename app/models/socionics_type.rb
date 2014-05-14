@@ -4,15 +4,35 @@ class SocionicsType < ActiveRecord::Base
 	has_many :celebrities
 
 	def reinin_e
+		if type_four_letter_downcase[0] == "e"
+			"extraverted"
+		else
+			"introverted"
+		end
 	end
 
 	def reinin_n
+		if type_four_letter_downcase[1] == "n"
+			"intuitive"
+		else
+			"sensing"
+		end
 	end
 
 	def reinin_t
+		if type_four_letter_downcase[2] == "t"
+			"thinking"
+		else
+			"feeling"
+		end
 	end
 
 	def reinin_p
+		if type_four_letter_downcase[3] == "p"
+			"perceiving"
+		else
+			"judging"
+		end
 	end
 
 	def reinin_en
@@ -45,9 +65,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive second
 
 		if (positive == true)
-			"carefree"
+			"static"
 		else
-			"farsighted"
+			"dynamic"
 		end
 	end
 
@@ -57,9 +77,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive second
 
 		if (positive == true)
-			"carefree"
+			"democratic"
 		else
-			"farsighted"
+			"aristocratic"
 		end
 	end
 
@@ -69,9 +89,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive second
 
 		if (positive == true)
-			"carefree"
+			"tactical"
 		else
-			"farsighted"
+			"strategic"
 		end
 	end
 
@@ -81,9 +101,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive second
 
 		if (positive == true)
-			"carefree"
+			"constructivist"
 		else
-			"farsighted"
+			"emotivist"
 		end
 	end
 
@@ -95,9 +115,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive @third
 
 		if (positive == true)
-			"carefree"
+			"positivist"
 		else
-			"farsighted"
+			"negativist"
 		end
 	end
 
@@ -109,9 +129,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive @third
 
 		if (positive == true)
-			"carefree"
+			"judicious"
 		else
-			"farsighted"
+			"decisive"
 		end
 	end
 
@@ -123,9 +143,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive @third
 
 		if (positive == true)
-			"carefree"
+			"merry"
 		else
-			"farsighted"
+			"serious"
 		end
 	end
 
@@ -137,9 +157,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive @third
 
 		if (positive == true)
-			"carefree"
+			"process"
 		else
-			"farsighted"
+			"result"
 		end
 	end
 
@@ -153,9 +173,9 @@ class SocionicsType < ActiveRecord::Base
 		positive = xnor positive @fourth
 
 		if (positive == true)
-			"carefree"
+			"asking"
 		else
-			"farsighted"
+			"declaring"
 		end
 	end
 

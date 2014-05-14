@@ -1,75 +1,97 @@
 class SocionicsController < ApplicationController
+	before_action :set_socionics_types
 
 	def index
-		set_socionics_types
+		
 	end
 
 # Information elements.
 	def information_elements
+
 	end
 
 	def si
+
 	end
 
 	def se
+
 	end
 
 	def ni
+
 	end
 
 	def ne
+
 	end
 
 	def ti
+
 	end
 
 	def te
+
 	end
 
 	def fi
+
 	end
 
 	def fe
+
 	end
 
 # Functions.
 	def functions
+
 	end
 
 	def function_dichotomies
+
 	end
 
 # Dichotomies.
 	def dichotomies
+
 	end
 
 	def jungian_dichotomies
+
 	end
 
 	def reinin_dichotomies
+
 	end
 
 # Small Groups.
 	def small_groups
+
 	end
 
 	def quadra
+
 	end
 
 	def clubs
+
 	end
 
 	def temperaments
+
 	end
 
 	def communication_styles
+
 	end
 
 	def romance_styles
+
 	end
 
 # Intertype Relations
 	def intertype_relations
+		
 	end
 
 # Types

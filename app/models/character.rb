@@ -1,8 +1,11 @@
 class Character < ActiveRecord::Base
-  has_many :universes, through: :character_associations
-  has_many :character_associations
-
   belongs_to :socionics_type
+
+  has_many :universes, through: :character_universe_ties
+  has_many :character_universe_ties
+
+  has_many :celebrities, through: :character_celebrity_ties
+  has_many :character_celebrity_ties
 
 	validates :name, presence: true
 	#validates_attachment_presence :image 

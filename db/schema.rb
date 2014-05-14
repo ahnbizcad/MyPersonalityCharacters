@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513130327) do
+ActiveRecord::Schema.define(version: 20140514081904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,28 @@ ActiveRecord::Schema.define(version: 20140513130327) do
     t.integer  "socionics_type_id"
   end
 
+  create_table "character_celebrity_ties", id: false, force: true do |t|
+    t.integer  "celebrity_id"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "character_celebrity_ties", ["celebrity_id"], name: "index_character_celebrity_ties_on_celebrity_id", using: :btree
+  add_index "character_celebrity_ties", ["character_id", "celebrity_id"], name: "index_character_celebrity_ties_on_character_id_and_celebrity_id", unique: true, using: :btree
+  add_index "character_celebrity_ties", ["character_id"], name: "index_character_celebrity_ties_on_character_id", using: :btree
+
+  create_table "character_universe_ties", id: false, force: true do |t|
+    t.integer  "universe_id"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "character_universe_ties", ["character_id"], name: "index_character_universe_ties_on_character_id", using: :btree
+  add_index "character_universe_ties", ["universe_id", "character_id"], name: "index_character_universe_ties_on_universe_id_and_character_id", unique: true, using: :btree
+  add_index "character_universe_ties", ["universe_id"], name: "index_character_universe_ties_on_universe_id", using: :btree
+
   create_table "characters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -70,17 +92,6 @@ ActiveRecord::Schema.define(version: 20140513130327) do
     t.integer  "socionics_type_id"
   end
 
-  create_table "characters_to_universes", id: false, force: true do |t|
-    t.integer  "universe_id"
-    t.integer  "character_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "characters_to_universes", ["character_id"], name: "index_characters_to_universes_on_character_id", using: :btree
-  add_index "characters_to_universes", ["universe_id", "character_id"], name: "index_characters_to_universes_on_universe_id_and_character_id", unique: true, using: :btree
-  add_index "characters_to_universes", ["universe_id"], name: "index_characters_to_universes_on_universe_id", using: :btree
-
   create_table "socionics_types", force: true do |t|
     t.string   "im_1st"
     t.string   "im_2nd"
@@ -106,6 +117,7 @@ ActiveRecord::Schema.define(version: 20140513130327) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "medium"
   end
 
   create_table "users", force: true do |t|

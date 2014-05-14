@@ -1,0 +1,2 @@
+module SocionicsTypesHelper
+end
