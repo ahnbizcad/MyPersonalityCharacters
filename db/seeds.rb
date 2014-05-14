@@ -15,7 +15,7 @@ socionics_fesi = ["ESFj", "ESE", "Fe-Si", "Fe", "Si", "Te", "Ni", "Ti", "Ne", "F
 socionics_tine = ["INTj", "LII", "Ti-Ne", "Ti", "Ne", "Fi", "Se", "Fe", "Si", "Te", "Ni", "alpha", "infantile", "researchers",   "IJ", "cold-blooded",]
 
 socionics_feni = ["ENFj", "EIE", "Fe-Ni", "Fe", "Ni", "Te", "Si", "Ti", "Se", "Fi", "Ne", "beta",  "victim",    "humanitarians", "EJ", "passionate",  ]
-socionics_site = ["ISTj", "LSI", "Ti-Se", "Ti", "Se", "Fi", "Ne", "Fe", "Ni", "Te", "Si", "beta",  "aggressor", "pragmatists",   "IJ", "cold-blooded",]
+socionics_tise = ["ISTj", "LSI", "Ti-Se", "Ti", "Se", "Fi", "Ne", "Fe", "Ni", "Te", "Si", "beta",  "aggressor", "pragmatists",   "IJ", "cold-blooded",]
 socionics_seti = ["ESTp", "SLE", "Se-Ti", "Se", "Ti", "Ne", "Fi", "Ni", "Fe", "Si", "Te", "beta",  "aggressor", "pragmatists",   "EP", "firm",        ]
 socionics_nife = ["INFp", "IEI", "Ni-Fe", "Ni", "Fe", "Si", "Te", "Se", "Ti", "Ne", "Fi", "beta",  "victim",    "humanitarians", "IP", "sincere",     ]
 
