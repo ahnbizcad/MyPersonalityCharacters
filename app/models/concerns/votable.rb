@@ -1,3 +1,3 @@
 module Votable
-	extend ActiveSuppoert::Concern
+	extend ActiveSupport::Concern
 end
