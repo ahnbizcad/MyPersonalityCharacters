@@ -27,12 +27,18 @@ end
 
 # For spritemapping, and more.
 #gem 'compass'
-gem 'figaro', '~> 0.7.0'
+#
 gem 'nokogiri', '~> 1.6.0'
+# Secret keys.
+gem 'figaro', '~> 0.7.0'
+# Images.
 gem 'paperclip', '~> 3.0'
+# Image storage.
 gem 'paperclip-dropbox', '>= 1.1.7'
+# Authentication.
 gem 'devise'#, '3.2.3'
-
+# Votes.
+gem 'acts_as_votable', '~> 0.9.0'
 
 group :development do
 	# For html2haml mass conversion

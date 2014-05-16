@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-	belongs_to :socionics_type
+  acts_as_votable
+  acts_as_voter
 
+	belongs_to :socionics_type
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

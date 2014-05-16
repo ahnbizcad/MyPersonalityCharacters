@@ -1,7 +1,7 @@
 class SocionicsType < ActiveRecord::Base	
-	has_many :characters
-	has_many :users
-	has_many :celebrities
+	has_many :users,       as: :votable
+	has_many :characters,  as: :votable
+	has_many :celebrities, as: :votable
 
 	def reinin_e
 		if type_four_letter_downcase[0] == "e"
