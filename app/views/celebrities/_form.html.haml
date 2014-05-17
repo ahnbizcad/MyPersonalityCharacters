@@ -1,12 +1,20 @@
-= form_for @celebrity do |f|
+= form_for(@celebrity, :html => { :multipart => true }) do |f|
 	- if @celebrity.errors.any?
 		#error_explanation
 			%h2= "#{pluralize(@celebrity.errors.count, "error")} prohibited this celebrity from being saved:"
 			%ul
 				- @celebrity.errors.full_messages.each do |msg|
 					%li= msg
+	#stripe_error.alert.alert-danger{ :style => "display:none" }
+		%noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 	.form-group
 		= f.label :name
 		= f.text_field :name
+	.form-group
+		= f.label :image
+		= f.file_field :image
+	.form-group
+		= f.label :character
+		= f.collection_select(:character, :celebrity_id, @characters, :id, :name) 
 	.actions
 		= f.submit 'Save'

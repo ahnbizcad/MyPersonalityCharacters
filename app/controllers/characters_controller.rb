@@ -10,8 +10,8 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
-    @universes   = @character.universes.all
-    @celebrities = @character.celebrities.all
+    #@celebrities ||= @character.celebrities.all
+    #@universes   ||= @character.universes.all
   end
 
   # GET /characters/new

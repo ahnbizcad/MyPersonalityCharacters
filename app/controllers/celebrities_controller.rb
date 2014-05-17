@@ -10,6 +10,9 @@ class CelebritiesController < ApplicationController
   # GET /celebrities/1
   # GET /celebrities/1.json
   def show
+    @characters = @celebrity.characters
+    @universes = @celebrity.universes    
+
   end
 
   # GET /celebrities/new
@@ -69,6 +72,6 @@ class CelebritiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def celebrity_params
-      params.require(:celebrity).permit(:name)
+      params.require(:celebrity).permit(:name, :image, :character)
     end
 end

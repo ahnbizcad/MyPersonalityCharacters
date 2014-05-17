@@ -24,23 +24,6 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "vote_neti"
-    t.integer  "vote_sife"
-    t.integer  "vote_fesi"
-    t.integer  "vote_tine"
-    t.integer  "vote_feni"
-    t.integer  "vote_tise"
-    t.integer  "vote_seti"
-    t.integer  "vote_nife"
-    t.integer  "vote_sefi"
-    t.integer  "vote_nite"
-    t.integer  "vote_teni"
-    t.integer  "vote_fise"
-    t.integer  "vote_tesi"
-    t.integer  "vote_fine"
-    t.integer  "vote_nefi"
-    t.integer  "vote_site"
-    t.integer  "socionics_type_id"
   end
 
   create_table "character_celebrity_ties", id: false, force: true do |t|
@@ -54,17 +37,6 @@ ActiveRecord::Schema.define(version: 20140515024433) do
   add_index "character_celebrity_ties", ["character_id", "celebrity_id"], name: "index_character_celebrity_ties_on_character_id_and_celebrity_id", unique: true, using: :btree
   add_index "character_celebrity_ties", ["character_id"], name: "index_character_celebrity_ties_on_character_id", using: :btree
 
-  create_table "character_universe_ties", id: false, force: true do |t|
-    t.integer  "universe_id"
-    t.integer  "character_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "character_universe_ties", ["character_id"], name: "index_character_universe_ties_on_character_id", using: :btree
-  add_index "character_universe_ties", ["universe_id", "character_id"], name: "index_character_universe_ties_on_universe_id_and_character_id", unique: true, using: :btree
-  add_index "character_universe_ties", ["universe_id"], name: "index_character_universe_ties_on_universe_id", using: :btree
-
   create_table "characters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -73,23 +45,6 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "name"
-    t.integer  "vote_neti"
-    t.integer  "vote_sife"
-    t.integer  "vote_fesi"
-    t.integer  "vote_tine"
-    t.integer  "vote_feni"
-    t.integer  "vote_tise"
-    t.integer  "vote_seti"
-    t.integer  "vote_nife"
-    t.integer  "vote_sefi"
-    t.integer  "vote_nite"
-    t.integer  "vote_teni"
-    t.integer  "vote_fise"
-    t.integer  "vote_tesi"
-    t.integer  "vote_fine"
-    t.integer  "vote_nefi"
-    t.integer  "vote_site"
-    t.integer  "socionics_type_id"
   end
 
   create_table "socionics_types", force: true do |t|
@@ -112,6 +67,17 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "universe_character_ties", id: false, force: true do |t|
+    t.integer  "universe_id"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "universe_character_ties", ["character_id"], name: "index_universe_character_ties_on_character_id", using: :btree
+  add_index "universe_character_ties", ["universe_id", "character_id"], name: "index_universe_character_ties_on_universe_id_and_character_id", unique: true, using: :btree
+  add_index "universe_character_ties", ["universe_id"], name: "index_universe_character_ties_on_universe_id", using: :btree
 
   create_table "universes", force: true do |t|
     t.datetime "created_at"
@@ -138,23 +104,6 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "vote_neti"
-    t.integer  "vote_sife"
-    t.integer  "vote_fesi"
-    t.integer  "vote_tine"
-    t.integer  "vote_feni"
-    t.integer  "vote_tise"
-    t.integer  "vote_seti"
-    t.integer  "vote_nife"
-    t.integer  "vote_sefi"
-    t.integer  "vote_nite"
-    t.integer  "vote_teni"
-    t.integer  "vote_fise"
-    t.integer  "vote_tesi"
-    t.integer  "vote_fine"
-    t.integer  "vote_nefi"
-    t.integer  "vote_site"
-    t.integer  "socionics_type_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -168,7 +117,6 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.boolean  "vote_flag"
     t.string   "vote_scope"
     t.integer  "vote_weight"
-    t.integer  "socionics_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

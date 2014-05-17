@@ -1,8 +1,6 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
-
-
   namespace :pages do
     get "about"
     get "contact"
@@ -78,8 +76,7 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'temperaments'
     get 'communication_styles'
     get 'romance_styles'
-  end
-  
+  end  
 
   get 'mbti', to: 'mbti#index', as: 'mbti'
   namespace :mbti do

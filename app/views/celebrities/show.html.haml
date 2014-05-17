@@ -1,6 +1,14 @@
-%p#notice= notice
+= @celebrity.name
+= @celebrity.image
 
+- if @characters
+	- @characters.each do |character|
+		= link_to character.name, character
+- if @universes
+	- @universes.each do |universe|
+		= link_to universe.name, universe
 
+%br/
 = link_to 'Edit', edit_celebrity_path(@celebrity)
 \|
 = link_to 'Back', celebrities_path

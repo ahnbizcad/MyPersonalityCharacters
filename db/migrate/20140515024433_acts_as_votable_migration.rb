@@ -9,9 +9,6 @@ class ActsAsVotableMigration < ActiveRecord::Migration
       t.string :vote_scope
       t.integer :vote_weight
 
-      # Cast a vote for which socionics type they think the votable object is.
-      t.references :socionics_type
-
       t.timestamps
     end
 
