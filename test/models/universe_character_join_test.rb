@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UniverseCharacterTieTest < ActiveSupport::TestCase
+class UniverseCharacterJoinTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

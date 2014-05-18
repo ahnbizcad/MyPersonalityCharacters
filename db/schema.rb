@@ -26,16 +26,16 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.datetime "updated_at"
   end
 
-  create_table "character_celebrity_ties", id: false, force: true do |t|
+  create_table "char_celeb_joins", id: false, force: true do |t|
     t.integer  "celebrity_id"
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "character_celebrity_ties", ["celebrity_id"], name: "index_character_celebrity_ties_on_celebrity_id", using: :btree
-  add_index "character_celebrity_ties", ["character_id", "celebrity_id"], name: "index_character_celebrity_ties_on_character_id_and_celebrity_id", unique: true, using: :btree
-  add_index "character_celebrity_ties", ["character_id"], name: "index_character_celebrity_ties_on_character_id", using: :btree
+  add_index "char_celeb_joins", ["celebrity_id"], name: "index_char_celeb_joins_on_celebrity_id", using: :btree
+  add_index "char_celeb_joins", ["character_id", "celebrity_id"], name: "index_char_celeb_joins_on_character_id_and_celebrity_id", unique: true, using: :btree
+  add_index "char_celeb_joins", ["character_id"], name: "index_char_celeb_joins_on_character_id", using: :btree
 
   create_table "characters", force: true do |t|
     t.datetime "created_at"
@@ -68,16 +68,16 @@ ActiveRecord::Schema.define(version: 20140515024433) do
     t.datetime "updated_at"
   end
 
-  create_table "universe_character_ties", id: false, force: true do |t|
+  create_table "univ_char_joins", id: false, force: true do |t|
     t.integer  "universe_id"
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "universe_character_ties", ["character_id"], name: "index_universe_character_ties_on_character_id", using: :btree
-  add_index "universe_character_ties", ["universe_id", "character_id"], name: "index_universe_character_ties_on_universe_id_and_character_id", unique: true, using: :btree
-  add_index "universe_character_ties", ["universe_id"], name: "index_universe_character_ties_on_universe_id", using: :btree
+  add_index "univ_char_joins", ["character_id"], name: "index_univ_char_joins_on_character_id", using: :btree
+  add_index "univ_char_joins", ["universe_id", "character_id"], name: "index_univ_char_joins_on_universe_id_and_character_id", unique: true, using: :btree
+  add_index "univ_char_joins", ["universe_id"], name: "index_univ_char_joins_on_universe_id", using: :btree
 
   create_table "universes", force: true do |t|
     t.datetime "created_at"
