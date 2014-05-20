@@ -10,13 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// The order matters here //
 //= require jquery
 //= require jquery.turbolinks
+//= require jquery.ui.all
 //= require jquery_ujs
 //
+// Files files below //
 //= require bootstrap
+//= require jquery.tokeninput
 //
-//= require_tree .
+// Place files above //
 //= require_self
-//
+//= require_tree .
 //= require turbolinks

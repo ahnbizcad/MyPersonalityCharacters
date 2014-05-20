@@ -85,8 +85,17 @@ MyPersonalityCharacters::Application.routes.draw do
   end
 
   resources :universes
+  namespace :universes do
+    get 'form_results'
+  end
+
   resources :characters
+
   resources :celebrities
+  namespace :celebrities do
+    get 'form_results'
+  end
+
   resources :users
   
   #devise_scope :user do

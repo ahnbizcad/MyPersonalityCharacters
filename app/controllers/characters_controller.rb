@@ -10,8 +10,8 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
-    #@celebrities ||= @character.celebrities.all
-    #@universes   ||= @character.universes.all
+    @celebrities ||= @character.celebrities
+    @universes   ||= @character.universes
   end
 
   # GET /characters/new
@@ -71,7 +71,7 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :image)
+      params.require(:character).permit(:name, :image, :universe_tokens, :celebrity_tokens)
     end
 
     def set_character_socionics_type

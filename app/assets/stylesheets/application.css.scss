@@ -17,7 +17,10 @@
 @import "custom/bootstrap_override";
 @import "custom/bootstrap_responsive";
 
-/*= require_self
+/*
+ *= require token-input-facebook
+ *
+ *= require_self
  *= require_tree .
  */
 

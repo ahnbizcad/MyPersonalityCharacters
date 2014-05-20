@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby "2.0.0"
 
 gem 'rails', '4.0.0'
@@ -9,8 +10,9 @@ gem 'html2haml', '~> 1.0.1'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 
-gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~>2.2.2'
@@ -39,6 +41,8 @@ gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'devise'#, '3.2.3'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
+# Form Helpers with models
+
 
 group :development do
 	# For html2haml mass conversion

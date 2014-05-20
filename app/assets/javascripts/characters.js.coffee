@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ->
+	$('#character_universe_tokens').tokenInput '/universes.json',
+		theme: 'facebook',
+		prePopulate: $('character_universe_tokens').data('load')
+	$('#character_celebrity_tokens').tokenInput '/celebrities.json',
+		theme: 'facebook',
+		prePopulate: $('character_celebrity_tokens').data('load')
+
+

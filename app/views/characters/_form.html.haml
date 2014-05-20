@@ -5,13 +5,25 @@
 			%ul
 				- @character.errors.full_messages.each do |msg|
 					%li= msg
+					
 	#stripe_error.alert.alert-danger{ :style => "display:none" }
 		%noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+
 	.form-group
 		= f.label :name
-		= f.text_field :name	
+		= f.text_field :name, autofocus: true
 	.form-group
 		= f.label :image
 		= f.file_field :image
+
+	.form-group
+		.field
+			= f.label :universe_tokens, "Universes"
+			= f.text_field :universe_tokens, data: { load: @character.universes }
+	.form-group
+		.field
+			= f.label :celebrity_tokens, "Celebrities"
+			= f.text_field :celebrity_tokens, data: { load: @character.celebrities }
+
 	.action
 		= f.submit

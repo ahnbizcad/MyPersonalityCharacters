@@ -4,14 +4,18 @@ class CelebritiesController < ApplicationController
   # GET /celebrities
   # GET /celebrities.json
   def index
-    @celebrities = Celebrity.all
+    @celebrities = Celebrity.order(:name)
+    respond_to do |format|
+      format.html
+      format.json { render json: @celebrities.tokens(params[:q]) }
+    end
   end
 
   # GET /celebrities/1
   # GET /celebrities/1.json
   def show
-    @characters = @celebrity.characters
-    @universes = @celebrity.universes    
+    @characters ||= @celebrity.characters
+    @universes ||= @celebrity.universes
 
   end
 
@@ -63,6 +67,11 @@ class CelebritiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def form_results
+    @celebrities = Celebrity.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @celebrities.map(&:name)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,6 +81,6 @@ class CelebritiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def celebrity_params
-      params.require(:celebrity).permit(:name, :image, :character)
+      params.require(:celebrity).permit(:name, :image, :celebrity_tokens)
     end
 end

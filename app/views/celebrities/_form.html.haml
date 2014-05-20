@@ -13,8 +13,5 @@
 	.form-group
 		= f.label :image
 		= f.file_field :image
-	.form-group
-		= f.label :character
-		= f.collection_select(:character, :celebrity_id, @characters, :id, :name) 
-	.actions
+	.action
 		= f.submit 'Save'
