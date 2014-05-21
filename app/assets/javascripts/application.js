@@ -18,7 +18,9 @@
 //
 // Files files below //
 //= require bootstrap
+//= require resets
 //= require jquery.tokeninput
+//= require spritz
 //
 // Place files above //
 //= require_self
