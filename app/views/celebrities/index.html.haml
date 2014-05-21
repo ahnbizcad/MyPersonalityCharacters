@@ -10,8 +10,8 @@
 
 	- @celebrities.each do |celeb|
 		%tr
-			%td= link_to image_tag(@celebrity.image.url(:small)), celeb
-			%td= link_to "#{celebrity.name}", celebr
+			%td= link_to image_tag(celeb.image.url(:thumb)), celeb
+			%td= link_to celeb.name, celeb
 			
 			%td= link_to 'Edit', edit_celebrity_path(celeb)
 			%td= link_to 'Destroy', celeb, :method => :delete, :data => { :confirm => 'Are you sure?' }

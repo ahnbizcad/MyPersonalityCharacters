@@ -4,7 +4,7 @@
 	Characters: 
 	%br/
 	- @characters.each do |char|
-		= link_to image_tag(char.image.url(:small)), char
+		= link_to image_tag(char.image.url(:thumb)), char
 		= link_to char.name, char
 		%br/
 

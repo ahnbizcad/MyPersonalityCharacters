@@ -1,10 +1,18 @@
 %h1= @celebrity.name
 %br/
+= image_tag @celebrity.image.url(:medium)
+
+%br/
+= link_to 'Edit', edit_celebrity_path(@celebrity)
+\|
+= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br/
 - if @characters
 	Characters: 
 	%br/
 	- @characters.each do |char|
-		= link_to image_tag(char.image.url(:small)), char
+		= link_to image_tag(char.image.url(:thumb)), char
 		= link_to char.name, char
 		%br/
 
@@ -14,11 +22,3 @@
 	- @universes.each do |univ|
 		= link_to univ.name, univ
 		%br/
-
-%br/
-= image_tag @celebrity.image.url(:medium)
-
-%br/
-= link_to 'Edit', edit_celebrity_path(@celebrity)
-\|
-= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }

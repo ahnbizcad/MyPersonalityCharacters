@@ -11,6 +11,6 @@
 %br/
 - if @characters
 	- @characters.each do |char|
-		= image_tag char.image.url(:small)
+		= image_tag char.image.url(:thumb)
 		= link_to char.name, char
 		%br/
