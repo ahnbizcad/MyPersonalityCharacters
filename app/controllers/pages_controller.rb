@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def login_success
 	end
+	
 	def example1
 	end
 
