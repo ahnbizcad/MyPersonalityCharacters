@@ -1,7 +1,11 @@
-%h1 Editing character
-
 %h1
 	= @character.name
+- @character.universes.each do |univ|
+	= univ.name
+%br/
+- @character.celebrities.each do |celeb|
+	= celeb.name
+
 %br/
 = image_tag @character.image.url(:medium)
 

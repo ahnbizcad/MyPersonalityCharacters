@@ -1,7 +1,14 @@
 %h1
 	= @character.name
+- @character.universes.each do |univ|
+	= univ.name
+- @character.celebrities.each do |celeb|
+	= celeb.name
+
 %br/
 = image_tag @character.image.url(:medium)
+
+
 
 
 =# @character.vote_by voter: current_user, vote_scope: 'neti'

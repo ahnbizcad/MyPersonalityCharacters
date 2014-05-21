@@ -11,12 +11,13 @@ class Character < ActiveRecord::Base
 
   #
 
-  attr_reader :universe_tokens, :celebrity_tokens
+  attr_reader :universe_tokens
 
   def universe_tokens=(tokens)
     self.universe_ids = Universe.ids_from_tokens(tokens)
   end
 
+  attr_reader :celebrity_tokens
   def celebrity_tokens=(tokens)
     self.celebrity_ids = Celebrity.ids_from_tokens(tokens)
   end
