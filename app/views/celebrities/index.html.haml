@@ -1,18 +1,21 @@
 %h1 Celebrities
 
+= link_to 'New Celebrity', new_celebrity_path
+
 %table
 	%tr
 		%th
 		%th
 		%th
 
-	- @celebrities.each do |celebrity|
+	- @celebrities.each do |celeb|
 		%tr
-			%td= link_to "#{celebrity.name}", celebrity
+			%td= link_to image_tag(@celebrity.image.url(:small)), celeb
+			%td= link_to "#{celebrity.name}", celebr
 			
-			%td= link_to 'Edit', edit_celebrity_path(celebrity)
-			%td= link_to 'Destroy', celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
+			%td= link_to 'Edit', edit_celebrity_path(celeb)
+			%td= link_to 'Destroy', celeb, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Celebrity', new_celebrity_path
+

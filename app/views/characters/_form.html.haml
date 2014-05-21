@@ -5,7 +5,7 @@
 			%ul
 				- @character.errors.full_messages.each do |msg|
 					%li= msg
-					
+
 	#stripe_error.alert.alert-danger{ :style => "display:none" }
 		%noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 
@@ -18,11 +18,11 @@
 
 	.form-group
 		.field
-			= f.label :universe_tokens, "Universes"
+			= f.label :universe_tokens, "Link Universe(s)"
 			= f.text_field :universe_tokens, data: { load: @character.universes }
 	.form-group
 		.field
-			= f.label :celebrity_tokens, "Celebrities"
+			= f.label :celebrity_tokens, "Link Celebritie(s)"
 			= f.text_field :celebrity_tokens, data: { load: @character.celebrities }
 
 	.action

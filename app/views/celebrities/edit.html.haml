@@ -1,7 +1,14 @@
-%h1 Editing celebrity
+%h1= @celebrity.name
+- @characters.each do |char|
+	= char.name
+%br/
+- @universes.each do |univ|
+	= univ.name
+%br/
+= image_tag @celebrity.image.url(:medium)
 
 = render 'form'
 
 = link_to 'Show', @celebrity
 \|
-= link_to 'Back', celebrities_path
+= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }

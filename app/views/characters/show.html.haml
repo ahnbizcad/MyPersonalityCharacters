@@ -1,15 +1,21 @@
-%h1
-	= @character.name
-- @character.universes.each do |univ|
-	= univ.name
-- @character.celebrities.each do |celeb|
-	= celeb.name
-
+%h1= @character.name
+%br/
+- if @universes
+	Universes: 
+	%br/
+	- @universes.each do |univ|	
+		= link_to image_tag(univ.image.url(:small)), univ
+		= link_to univ.name, univ
+		%br/
+%br/
+- if @celebrities
+	Celebrities: 
+	%br/
+	- @celebrities.each do |celeb|
+		= link_to celeb.name, celeb
+		%br/
 %br/
 = image_tag @character.image.url(:medium)
-
-
-
 
 =# @character.vote_by voter: current_user, vote_scope: 'neti'
 =# @character.vote_by voter: current_user, vote_scope: 'sife'
@@ -28,8 +34,7 @@
 =# @character.vote_by voter: current_user, vote_scope: 'nefi'
 =# @character.vote_by voter: current_user, vote_scope: 'site'
 
-
 %br/
 = link_to 'Edit', edit_character_path(@character)
 \|
-= link_to 'Back', characters_path
+= link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }

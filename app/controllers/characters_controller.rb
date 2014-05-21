@@ -1,5 +1,8 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :set_universes, only: [:show, :edit, :update, :destroy]
+  before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
+
 
   # GET /characters
   # GET /characters.json
@@ -65,6 +68,14 @@ class CharactersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_character
       @character = Character.find(params[:id])
+    end
+
+    def set_universes
+      @universes = Character.find(params[:id]).universes
+    end
+
+    def set_celebrities
+      @celebrities = Character.find(params[:id]).celebrities
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

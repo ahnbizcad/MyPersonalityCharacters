@@ -1,14 +1,24 @@
-= @celebrity.name
-= @celebrity.image
-
+%h1= @celebrity.name
+%br/
 - if @characters
-	- @characters.each do |character|
-		= link_to character.name, character
+	Characters: 
+	%br/
+	- @characters.each do |char|
+		= link_to image_tag(char.image.url(:small)), char
+		= link_to char.name, char
+		%br/
+
 - if @universes
-	- @universes.each do |universe|
-		= link_to universe.name, universe
+	Universes: 
+	%br/
+	- @universes.each do |univ|
+		= link_to univ.name, univ
+		%br/
+
+%br/
+= image_tag @celebrity.image.url(:medium)
 
 %br/
 = link_to 'Edit', edit_celebrity_path(@celebrity)
 \|
-= link_to 'Back', celebrities_path
+= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }

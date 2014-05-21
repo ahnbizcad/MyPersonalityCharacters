@@ -1,7 +1,16 @@
-%h1 Editing universe
+%h1= @universe.name
+
+= image_tag @universe.image.url(:medium)
 
 = render 'form'
 
 = link_to 'Show', @universe
 \|
-= link_to 'Back', universes_path
+= link_to 'Destroy', @universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br/
+- if @characters
+	- @characters.each do |char|
+		= image_tag char.image.url(:small)
+		= link_to char.name, char
+		%br/
