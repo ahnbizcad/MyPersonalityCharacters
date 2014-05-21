@@ -6,4 +6,3 @@
     redirectUri:"http://characterpersonalities.com/pages/login_success.html"
   };
 </script>
-
