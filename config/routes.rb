@@ -5,6 +5,7 @@ MyPersonalityCharacters::Application.routes.draw do
     get "about"
     get "contact"
     get "login_success"
+    get "example1"
   end
   
   get 'socionics/entp', to: 'socionics#neti'
