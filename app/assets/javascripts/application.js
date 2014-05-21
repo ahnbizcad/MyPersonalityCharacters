@@ -16,9 +16,9 @@
 //= require jquery.ui.all
 //= require jquery_ujs
 //
-// Files files below //
+// Place files below //
 //= require bootstrap
-//= require resets
+//= require custom
 //= require jquery.tokeninput
 //= require spritz
 //
