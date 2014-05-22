@@ -6,4 +6,3 @@ jQuery ->
 		theme: 'facebook',
 		prePopulate: $('#character_celebrity_tokens').data('load')
 
-
