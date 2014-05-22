@@ -3,14 +3,20 @@ GENERAL VARIABLES
 **************************/
 
 /*
-Mixins - Colors
+Mixins - Colors, Styling
 */
 
-@mixin background-color() {
-	background: -webkit-linear-gradient(rgba(0,0,125,1), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Safari 5.1-6*/
-	background: -o-linear-gradient(     rgba(0,0,125,1), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Opera 11.1-12*/
-	background: -moz-linear-gradient(   rgba(0,0,125,1), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Fx 3.6-15*/
-	background: linear-gradient(        rgba(0,0,125,1), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Standard*/
+@mixin background-color($r: 0, $g: 0, $b: 125, $t: 1) {
+	background: -webkit-linear-gradient(rgba($r,$g,$b,$t), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(     rgba($r,$g,$b,$t), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(   rgba($r,$g,$b,$t), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Fx 3.6-15*/
+	background: linear-gradient(        rgba($r,$g,$b,$t), rgba(0,0,125,1) 50%, rgba(0,0,125,1)); /*Standard*/
+}
+
+@mixin body-item-box-shadow($horizontal: 1px, $vertical: 1px, $blur: 3px, $spread: 1px, $color: #888) {
+	box-shadow: 				$horizontal $vertical $blur $spread $color;
+	-moz-box-shadow: 		$horizontal $vertical $blur $spread $color;
+	-webkit-box-shadow: $horizontal $vertical $blur $spread $color;
 }
 
 /*
@@ -27,3 +33,5 @@ Mixins - Positioning
 	padding-top: 		$pixels;
 	padding-bottom: $pixels;
 }
+
+

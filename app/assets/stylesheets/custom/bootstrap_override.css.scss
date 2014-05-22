@@ -32,19 +32,13 @@ header {
 /*----------
 nav
 ----------*/
+
 nav {
 	@include background-color();
 	font-family: Helvetica;
 	font-weight: 500;
 	font-size: 1.2em;
-	
-
-	.affixable {
-		width: 100%;
-
-		@include background-color;
-		
-	}
+	width: 100%;	
 
 	ul {
 		@extend .list-inline;
@@ -99,32 +93,40 @@ Navbar top affixing with js.
   position: fixed;
   top: 0px;
   z-index: 99;
-  box-shadow: 0 4px 2px -2px #888;
+  box-shadow: 0px 4px 2px -2px #888;
+}
+
+.affixable {		
+	@include background-color();
+
 }
 
 /*----------
 sidebars
 ----------*/
 .sidebar {
-	outline: 1px solid green;
 	@include vertical-padding();
-	@extend .hidden-xs;
 }
 #sidebar-one {
-	left: 0px;
 	@extend .sidebar;
+	margin: 1em 0px;	
+	@include body-item-box-shadow();
 }
 #sidebar-two {
-	right: 0px;
 	@extend .sidebar;
+	
+}
+.sidebar-element {
+	@include vertical-padding();
 }
 
 /*----------
 main
 ----------*/
 main {
-	outline: 1px solid blue;
+	@include body-item-box-shadow();
 	@include vertical-padding();
+	margin: 1em 0px;
 
 	height: 900px;
 }

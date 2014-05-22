@@ -9,9 +9,9 @@ RESPONSIVE CUTOFF WIDTHS
 }
 
 
-/*----------
+/*----------------------------------------
 xs devices (phones, 1px to 767px) (doesn't cascade)
-----------*/
+----------------------------------------*/
 /*
 @media only screen and (max-width: $screen-xs-max) { 
 
@@ -19,21 +19,18 @@ xs devices (phones, 1px to 767px) (doesn't cascade)
 }
 */
 
-/*----------
+/*----------------------------------------
 sm devices (tablets, 768px to 991px)
-----------*/
+----------------------------------------*/
 @media only screen and (min-width: $screen-sm){ 
-	.sidebar {
-
-	}
 
 
 }
 
 
-/*----------
+/*----------------------------------------
 md devices (desktops, 992px to 1199px)
-----------*/
+----------------------------------------*/
 @media only screen and (min-width: $screen-md){ 
 
 
@@ -41,9 +38,9 @@ md devices (desktops, 992px to 1199px)
 }
 
 
-/*----------
+/*----------------------------------------
 lg devices (large desktops, 1200px and up)
-----------*/
+----------------------------------------*/
 @media only screen and (min-width: $screen-lg){ 
 
 	.container {

@@ -1,5 +1,6 @@
 (function() {
   var spritzController = null;
+  
 
   var onSpritzifySuccess = function(spritzText) {
     spritzController.startSpritzing(spritzText);
@@ -23,6 +24,12 @@
     }
   };
 
+  var texts = {};
+
+  function getTexts(){
+
+  }
+
   function onStartSpritzClick(event) {    
     var locale = "en_us;";
     var text = $('#si').text();
@@ -37,12 +44,14 @@
   };
 
   var init = function() {     
+
+    getTexts();
     $("#startSpritz").on("click", onStartSpritzClick);  
 
     // Construct a SpritzController passing the customization options
     spritzController = new SPRITZ.spritzinc.SpritzerController(customOptions);
     
-    // Attach the controller's container to this page's "spritzer" element
+    // Attach the controller's container to this page's "#spritzer" element
     spritzController.attach($("#spritzer"));
     
     // Supply custom progress reporter
