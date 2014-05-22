@@ -25,7 +25,7 @@
 
   function onStartSpritzClick(event) {    
     var locale = "en_us;";
-    var text = $('#si');
+    var text = $('#si').text();
 
     // Send to SpritzEngine to translate
     SpritzClient.spritzify(text, locale, onSpritzifySuccess, onSpritzifyError);
