@@ -1,6 +1,5 @@
 (function() {
   var spritzController = null;
-  
 
   var onSpritzifySuccess = function(spritzText) {
     spritzController.startSpritzing(spritzText);
@@ -27,12 +26,16 @@
   var texts = {};
 
   function getTexts(){
-
-  }
+    var receivedTexts;
+    $('main').filter(function(){
+      this.id.match(/spritzable-[0-9]+/)
+    });
+    //texts.push(receivedTexts);
+  };
 
   function onStartSpritzClick(event) {    
     var locale = "en_us;";
-    var text = $('#si').text();
+    var text = $('#spritzable-2').text();
 
     // Send to SpritzEngine to translate
     SpritzClient.spritzify(text, locale, onSpritzifySuccess, onSpritzifyError);
@@ -46,12 +49,13 @@
   var init = function() {     
 
     getTexts();
+
     $("#startSpritz").on("click", onStartSpritzClick);  
 
     // Construct a SpritzController passing the customization options
     spritzController = new SPRITZ.spritzinc.SpritzerController(customOptions);
     
-    // Attach the controller's container to this page's "#spritzer" element
+    // Attach the controller's container to this page's "spritzer" element
     spritzController.attach($("#spritzer"));
     
     // Supply custom progress reporter
