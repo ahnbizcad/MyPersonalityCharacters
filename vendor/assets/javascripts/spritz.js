@@ -23,31 +23,31 @@
     }
   };
 
-  function onStartSpritzClick(event) {
-    var text = $('#si').val();
+  function onStartSpritzClick(event) {    
     var locale = "en_us;";
-    
+    var text = $('#si');
+
     // Send to SpritzEngine to translate
     SpritzClient.spritzify(text, locale, onSpritzifySuccess, onSpritzifyError);
   };
 
   function showProgress(completed, total) {
-    $("#spritzer1WordProgress").text(completed);
-    $("#spritzer1WordTotal").text(total);
-  }
+    $("#spritzerWordProgress").text(completed);
+    $("#spritzerWordTotal").text(total);
+  };
 
   var init = function() {     
+    $("#startSpritz").on("click", onStartSpritzClick);  
 
     // Construct a SpritzController passing the customization options
     spritzController = new SPRITZ.spritzinc.SpritzerController(customOptions);
     
     // Attach the controller's container to this page's "spritzer" element
-    spritzController.attach($("#spritzer1"));
+    spritzController.attach($("#spritzer"));
     
     // Supply custom progress reporter
     spritzController.setProgressReporter(showProgress);
-
-    $("#startSpritzer1").on("click", onStartSpritzClick);    
+      
   };
 
   $(document).ready(function() {
