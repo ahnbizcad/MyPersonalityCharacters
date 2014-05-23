@@ -1,4 +1,3 @@
 #spritzer {
-	outline: 3px solid black;
+	@include body-item-box-shadow();
 }
-

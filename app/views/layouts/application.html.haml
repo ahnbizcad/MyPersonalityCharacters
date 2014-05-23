@@ -19,32 +19,29 @@
     %meta{:content => "width=device-width", :name => "viewport"}/
     
   %body
-    %header
-      .container
-        .row
-          = render 'layouts/header'
-    .affixable
-      %nav      
-        .container
-          .row
-            = render 'layouts/navbar'
-    #likasomebodeeh
-      .container
+    %header.wrapper
+      .wrap
+        = render 'layouts/header'
+    .wrapper
+      .wrap
+        %aside#sidebar-two
+          = render 'layouts/sidebar_two'
+
+    .affixable-wrapper
+      %nav.affixable.wrapper
+        .wrap
+          = render 'layouts/navbar'
+    #likasomebodeeh.wrapper
+      .wrap
         %notice= notice
         %alert= alert
-        .row
-          .hidden-xs.col-sm-3
-            .row
-              .col-sm-12
-                = render 'layouts/sidebar_one'      
-          .col-xs-12.col-sm-9
-            .row
-              .col-xs-12
-                %main                  
-                  = yield
-                =# render 'layouts/sidebar_two'
-    %footer
-      .container
-        .row
-          = render 'layouts/footer'
+        %aside#sidebar-one.flex
+          = render 'layouts/sidebar_one'  
+        .spacer
+        %main
+          = yield
+        
+    %footer.wrapper
+      .wrap
+        = render 'layouts/footer'
   = debug(params) if Rails.env.development?

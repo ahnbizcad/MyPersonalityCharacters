@@ -10,17 +10,17 @@
  *
  *
  */
-@import "bootstrap";
 @import "resets";
-@import "custom/bootstrap_variables";
-/**/
-@import "custom/bootstrap_override";
-@import "custom/bootstrap_responsive";
+@import "bootstrap";
 
+@import "custom/cp_variables";
+/**/
+@import "custom/cp_custom";
+@import "custom/cp_responsive";
+/**/
+@import "spritz";
 /*
  *= require token-input-facebook
- *
- *= require spritz
  *
  *= require_self
  *= require_tree .

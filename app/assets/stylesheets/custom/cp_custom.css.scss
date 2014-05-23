@@ -1,0 +1,211 @@
+/**************************
+STYLING
+**************************/
+
+/*----------
+custom-reset
+----------*/
+
+body {
+	font-family: sans-serif;
+	font-size: 20px;
+}
+
+
+/*----------
+positioning elements
+----------*/
+
+.flex {
+	display: flex;
+}
+
+.wrapper {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.wrap {
+	display: flex;
+	width: 100%;
+	padding: 0em $gutter-h;
+}
+
+/*----------
+footer
+----------*/
+footer {
+	background-color: rgb(0, 50, 125);
+
+	ul#links {
+		li {
+			list-style: none;
+		}
+	}
+}
+/*----------
+header
+----------*/
+header {
+	a {
+		height: auto;
+	}
+}
+
+
+/*----------
+nav
+----------*/
+
+/*------------------------------
+Navbar top affixing with js.
+-------------------------------*/
+.affix {
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  box-shadow: 0px 4px 2px -2px #888;
+
+}
+
+.affixable {		
+	@include nav-background-color();
+}
+
+nav {
+	display: flex;
+	
+	@include nav-background-color();
+	font-family: Helvetica;
+	font-weight: 500;
+	font-size: 1.2em;
+	width: 100%;	
+
+	ul {
+		@extend .list-inline;
+		white-space: nowrap;
+		li {
+			list-style: none;
+			a {
+				display: block;
+				&:hover {
+					text-decoration: none;
+				}
+				&:focus {
+					text-decoration: none;
+				}
+			}
+			ul.dropdown-menu {
+				padding: 0;
+				li {
+					display: block;
+					padding: 0;
+				}
+			}
+		}
+	}
+	ul#links {
+		#search-navbar {
+			@extend .navbar-form;
+			.form-group {
+				input {
+					@extend .form-control;
+				}
+				button {
+					@extend .btn;
+					@extend .btn-default ;
+					@extend .form-control;
+				}
+			}
+		}
+	}
+	ul#login {
+		vertical-align: 50%;
+	}
+}
+
+
+
+/*----------
+likeasomebodeeh
+----------*/
+
+#likasomebodeeh {
+	margin: $gutter-v 0;
+}
+
+/*----------
+sidebars
+----------*/
+.sidebar {
+
+}
+
+/*----------
+sidebar-one
+----------*/
+
+#sidebar-one {
+	flex-flow: column nowrap;
+	flex: 0 0 $sidebar-width;
+	
+	@extend .sidebar;
+
+	#spritzer {
+		margin: 0 -($gutter-h);
+	}
+
+	.sidebar-one-element {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-content: center;
+		
+		margin:  0 0 1em;
+		padding: $gutter-v $gutter-h;
+
+		@include body-item-box-shadow();
+
+		.element-title {
+			margin:  $gutter-v -$gutter-h $gutter-v;
+			padding: $gutter-v $gutter-h 0;
+
+			text-align: center;
+			font-weight: 600;
+			color: white;
+			background-color: rgb(0, 100, 200);
+		}
+	}
+}
+
+
+
+/*----------
+sidebar-two
+----------*/
+#sidebar-two {
+	@extend .sidebar;
+	
+}
+
+
+/*----------
+main
+----------*/
+main {
+	flex-flow: ltr wrap;	
+	flex: 1 1 ($max-width - $sidebar-width - $spacer-width);
+
+	@include body-item-box-shadow();
+
+	padding: $gutter-v $gutter-h;
+	min-height: 900px;
+}
+
+
+/*----------
+spacers
+----------*/
+.spacer {
+	flex: 1 1 $spacer-width;
+}

@@ -1,0 +1,55 @@
+/**************************
+GENERAL VARIABLES
+**************************/
+
+/*----------
+Mixins - Dimensions
+----------*/
+
+/* 
+Responsive widths
+*/
+$screen-xs: 900px;
+$screen-sm: 900px;
+$screen-lg: 1200px;
+
+
+/* 
+likeasomebodeeh widths
+*/
+$max-width: 		1200px;
+$sidebar-width: 260px;
+$spacer-width: 20px;
+
+
+/* 
+details widths
+*/
+$gutter-h: 0.75em;
+$gutter-v: 0.5em;
+
+
+/*----------
+Mixins - Positioning
+----------*/
+
+/*
+@mixin vertical-padding($pixels: 0.5em) {
+	padding-top: 		$pixels;
+	padding-bottom: $pixels;
+}
+*/
+
+/*----------
+Mixins - Colors, Styling
+----------*/
+
+@mixin nav-background-color($r: 10, $g: 10, $b: 185, $t: 1) {
+	background: linear-gradient(rgba($r, $g, $b, $t), rgba(0, 0, 127, 1) 90%, rgba(0, 50, 127, 0.8)); 
+}
+
+
+@mixin body-item-box-shadow($horizontal: 1px, $vertical: 1px, $blur: 3px, $spread: 1px, $color: #888) {
+	box-shadow: 				$horizontal $vertical $blur $spread $color;
+}
+
