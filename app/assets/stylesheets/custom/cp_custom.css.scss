@@ -35,7 +35,7 @@ positioning elements
 footer
 ----------*/
 footer {
-	background-color: rgb(0, 50, 125);
+	background-color: rgb(0,50,125);
 
 	ul#links {
 		li {
@@ -47,8 +47,12 @@ footer {
 header
 ----------*/
 header {
+	background-color: rgb(0,0,0);
 	a {
 		height: auto;
+	}
+	#logo {
+		position: absolute;
 	}
 }
 
@@ -164,16 +168,18 @@ sidebar-one
 		margin:  0 0 1em;
 		padding: $gutter-v $gutter-h;
 
+		@include sidebar-top-corners();
 		@include body-item-box-shadow();
 
 		.element-title {
-			margin:  $gutter-v -$gutter-h $gutter-v;
-			padding: $gutter-v $gutter-h 0;
+			margin:  -$gutter-v (-$gutter-h) 2*$gutter-v;
+			padding: $gutter-v $gutter-h;
 
 			text-align: center;
 			font-weight: 600;
 			color: white;
 			background-color: rgb(0, 100, 200);
+			@include sidebar-top-corners();
 		}
 	}
 }
@@ -186,6 +192,9 @@ sidebar-two
 #sidebar-two {
 	@extend .sidebar;
 	
+	.sidebar-two-element {
+
+	}	
 }
 
 
