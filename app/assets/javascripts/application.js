@@ -19,6 +19,8 @@
 // Place files below 
 //= require bootstrap
 //= require jquery.tokeninput
+//= require select2
+//= require select2_locale_"any possible language"
 //= require spritz
 //
 // Place files above 
