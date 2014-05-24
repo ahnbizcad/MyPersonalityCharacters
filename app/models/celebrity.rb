@@ -29,18 +29,8 @@ class Celebrity < ActiveRecord::Base
 
   #
 
-  def self.tokens(query)
-  	celebrities = where("name ILIKE ?", "%#{query}%")
-  	if celebrities.empty?
-  		[{ id:"<<<#{query}>>>", name: "New: \"#{query}\"" }]
-  	else
-  		celebrities
-  	end
+	def to_param
+    "#{id}-#{name}"
   end
-
-  def self.ids_from_tokens(tokens)
-		tokens.gsub!(/<<<(.+?)>>>/) { create!(name: $1).id }
-		tokens.split(',')
-	end
 
 end

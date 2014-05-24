@@ -80,7 +80,7 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :image, :universe_tokens, :celebrity_tokens)
+      params.require(:character).permit(:name, :image, :universe_ids, :celebrity_ids)
     end
 
     def set_character_socionics_type

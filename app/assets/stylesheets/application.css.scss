@@ -12,16 +12,16 @@
  */
 @import "resets";
 @import "bootstrap";
-
 @import "custom/cp_variables";
 /**/
 @import "custom/cp_custom";
 @import "custom/cp_responsive";
 /**/
 @import "spritz";
+ 
 /*
- *= require token-input-facebook
- *
+ */
+/* 
  *= require_self
  *= require_tree .
  */

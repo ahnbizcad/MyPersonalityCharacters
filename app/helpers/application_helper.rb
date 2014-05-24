@@ -1,26 +1,12 @@
 module ApplicationHelper
 
-	# Form helpers.
-	def link_to_remove_fields(name, f)
-		f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
-	end
-
-	def link_to_add_fields(name, f, association)
-	  new_object = f.object.class.reflect_on_association(association).klass.new
-	  fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
-	    render(association.to_s.singularize + "_fields", :f => builder)
-	  end
-	  link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
-	end
-
-
-	def options_all_characters(selected=nil)
-		options = Character.all.map{ |char| [char.id, char.name] }
-		options_for_select(options, selected)
-	end
-
-	def options_form_characters
-		options = options_from_collection_for_select(Character.all, 'id', 'name')
-	end
+#	def options_all_characters(selected=nil)
+#		options = Character.all.map{ |char| [char.id, char.name] }
+#		options_for_select(options, selected)
+#	end
+#
+#	def options_form_characters
+#		options = options_from_collection_for_select(Character.all, 'id', 'name')
+#	end
 
 end

@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title CharacterPersonalities
+    %title CharacterPersonalities    
     :plain
       <script type="text/javascript" src="//sdk.spritzinc.com/jQuery/jquery-2.1.0.min.js"></script>
       <script type="text/javascript" src="//sdk.spritzinc.com/js/1.0/js/spritz.min.js"></script>
@@ -14,10 +14,7 @@
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-    :plain
-      <meta charset="utf-8" />
-    %meta{:content => "width=device-width", :name => "viewport"}/
-    
+    %meta{:content => "width=device-width", :name => "viewport"}/    
   %body
     %header.wrapper
       .wrap
@@ -26,7 +23,6 @@
       .wrap
         %aside#sidebar-two
           = render 'layouts/sidebar_two'
-
     .affixable-wrapper
       %nav.affixable.wrapper
         .wrap
@@ -36,11 +32,10 @@
         %notice= notice
         %alert= alert
         %aside#sidebar-one.flex
-          = render 'layouts/sidebar_one'  
+          = render 'layouts/sidebar_one'
         .spacer
         %main
           = yield
-        
     %footer.wrapper
       .wrap
         = render 'layouts/footer'

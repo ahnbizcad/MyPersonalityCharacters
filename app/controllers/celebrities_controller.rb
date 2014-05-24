@@ -89,6 +89,6 @@ class CelebritiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def celebrity_params
-      params.require(:celebrity).permit(:name, :image, :celebrity_tokens)
+      params.require(:celebrity).permit(:name, :image)
     end
 end

@@ -1,7 +1,7 @@
 %ul#links
   %li= link_to "Characters", characters_path
   %li= link_to "Universes", universes_path
-  %li= link_to "Celebrities", celebrities_path    
+  %li= link_to "Celebrities", celebrities_path
   %li= link_to "Friends", users_path
   %li
     %form#search-navbar{ role: "search"}        
@@ -16,7 +16,6 @@
       %li= link_to "Myers-Briggs", mbti_path
   %li= link_to "Tests & Tools", users_path
   %li= link_to "Blog", users_path
-.col-xs-2
 %ul#login
   - if user_signed_in?
     %li.dropdown

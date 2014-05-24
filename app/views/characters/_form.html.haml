@@ -15,15 +15,17 @@
 	.form-group
 		= f.label :image
 		= f.file_field :image
-
+	#characters_universe_ids
 	.form-group
-		.field
-			= f.label :universe_tokens, "Link Universe(s)"
-			= f.text_field :universe_tokens, data: { load: @character.universes }
+		= f.label :universe_ids, "Link Universes"
+		= f.collection_select :universe_ids, Universe.order(:name), :id, :name, {}, {multiple: true}
 	.form-group
-		.field
-			= f.label :celebrity_tokens, "Link Celebritie(s)"
-			= f.text_field :celebrity_tokens, data: { load: @character.celebrities }
-
+		= f.label :celebrity_ids, "Link Celebrities"
+		= f.collection_select :celebrity_ids, Universe.order(:name), :id, :name, {}, {multiple: true}
+		
+		<select multiple id="e1">
+		<option value="AL">Alabama</option>
+		<option value="WY">Wyoming</option>
+		</select>
 	.action
 		= f.submit

@@ -8,13 +8,11 @@ gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
 
 gem 'sass-rails', '~> 4.0.0'
-gem "autoprefixer-rails"
+gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
-#gem "select2-rails"
 
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~>2.2.2'
@@ -29,6 +27,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# International localization.
+#gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # For spritemapping, and more.
 #gem 'compass'
 #
@@ -43,8 +43,8 @@ gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'devise'#, '3.2.3'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
-# Form Helpers with models
-
+# Autocomplete form.
+gem 'select2-rails'
 
 group :development do
 	# For html2haml mass conversion

@@ -20,20 +20,10 @@ class Universe < ActiveRecord::Base
         							:path => "/universes/:filename_:id_:style"
   end
 
-  #
+	#
 
-  def self.tokens(query)
-  	universes = where("name ILIKE ?", "%#{query}%")
-  	if universes.empty?
-  		[{ id:"<<<#{query}>>>", name: "New: \"#{query}\"" }]
-  	else
-  		universes
-  	end
+	def to_param
+    "#{id}-#{name}"
   end
-
-  def self.ids_from_tokens(tokens)
-		tokens.gsub!(/<<<(.+?)>>>/) { create!(name: $1).id }
-		tokens.split(',')
-	end
 
 end
