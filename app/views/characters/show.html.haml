@@ -3,11 +3,9 @@
 - if @universes
 	%div
 		Universes: 
-		%br/
 		- @universes.each do |univ|	
 			= link_to image_tag(univ.image.url(:thumb)), univ
 			= link_to univ.name, univ
-			%br/
 
 %br/
 - if @celebrities

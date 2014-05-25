@@ -7,10 +7,6 @@ class UniversesController < ApplicationController
   # GET /universes.json
   def index
     @universes = Universe.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @universes.tokens(params[:q]) }
-    end
   end
 
   # GET /universes/1
@@ -67,11 +63,6 @@ class UniversesController < ApplicationController
     end
   end
 
-  def form_results
-    @universes = Universe.order(:name).where("name like ?", "%#{params[:term]}%")
-    render json: @universes.map(&:name)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_universe
@@ -80,7 +71,7 @@ class UniversesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def universe_params
-      params.require(:universe).permit(:name, :image)
+      params.require(:universe).permit(:name, :image, :character_ids)
     end
 
     def set_characters

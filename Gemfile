@@ -28,7 +28,7 @@ group :doc do
 end
 
 # International localization.
-#gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # For spritemapping, and more.
 #gem 'compass'
 #

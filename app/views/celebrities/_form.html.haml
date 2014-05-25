@@ -15,9 +15,9 @@
 	.form-group
 		= f.label :image
 		= f.file_field :image
-	.form-group
-		= f.label :character_ids, "Link Characters"
-		= f.collection_select :character_ids, Character.order(:name), :id, :name, {}, {multiple: true}
+
+	= f.label :character_ids, "Link Characters"
+	= f.collection_select :character_ids, Character.order(:name), :id, :name, {}, {multiple: true}
 
 	.actions
 		= f.submit

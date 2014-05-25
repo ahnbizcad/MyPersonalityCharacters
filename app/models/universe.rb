@@ -23,7 +23,7 @@ class Universe < ActiveRecord::Base
 	#
 
 	def to_param
-    "#{id}-#{name}"
-  end
+		"#{id}-#{name}"
+	end
 
 end

@@ -2,8 +2,7 @@
 %br/
 - if @characters
 	%div
-		Characters:
-		%br/
+		Characters: 
 		- @characters.each do |char|
 			= link_to image_tag(char.image.url(:thumb)), char
 			= link_to char.name, char

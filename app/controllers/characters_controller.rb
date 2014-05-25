@@ -60,9 +60,6 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.json
   def destroy
-    @character.universe_ids.destroy
-    @character.celebrity_ids.destroy
-
     @character.destroy
     respond_to do |format|
       format.html { redirect_to characters_url }
@@ -76,13 +73,13 @@ class CharactersController < ApplicationController
       @character = Character.find(params[:id])
     end
 
-    def set_universes
-      @universes = Character.find(params[:id]).universes
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
       params.require(:character).permit(:name, :image, :universe_ids, :celebrity_ids)
+    end
+
+    def set_universes
+      @universes = Character.find(params[:id]).universes
     end
 
     def set_celebrities

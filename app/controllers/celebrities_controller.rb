@@ -7,10 +7,6 @@ class CelebritiesController < ApplicationController
   # GET /celebrities.json
   def index
     @celebrities = Celebrity.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @celebrities.tokens(params[:q]) }
-    end
   end
 
   # GET /celebrities/1
@@ -66,11 +62,6 @@ class CelebritiesController < ApplicationController
       format.html { redirect_to celebrities_url }
       format.json { head :no_content }
     end
-  end
-  
-  def form_results
-    @celebrities = Celebrity.order(:name).where("name like ?", "%#{params[:term]}%")
-    render json: @celebrities.map(&:name)
   end
 
   private
