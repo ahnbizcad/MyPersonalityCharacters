@@ -6,28 +6,27 @@ RESPONSIVE CUTOFF WIDTHS
 ONLY xs devices (phones, 1px to 767px) (doesn't cascade)
 ----------------------------------------*/
 @media only screen and (max-width: $screen-xs-max) { 
-	#sidebar-one {
-		display: none;
-	}
-
+	
 }
 
 
 /*----------------------------------------
 xs is default. Smaller sizes cascade to larger sizes. Flow structure.
 ----------------------------------------*/
+/*----------
+positioning elements
+----------*/
 
-
-
+#sidebar-one, #sidebar-two, .spacer-one, .spacer-two {
+	display: none;
+}
 
 
 /*----------------------------------------
 sm devices (tablets, 768px to 991px)
 ----------------------------------------*/
 @media only screen and (min-width: $screen-sm){ 
-	#sidebar-one {
-		display: flex;
-	}
+	
 }
 
 
@@ -35,18 +34,28 @@ sm devices (tablets, 768px to 991px)
 
 md devices (desktops, 992px to 1199px)
 ----------------------------------------*/
-/*@media only screen and (min-width: $screen-md){ 
-
-}*/
+@media only screen and (min-width: $screen-md){ 
+	#sidebar-one,  {
+		display: flex;
+	}
+	.spacer-one {
+		display: block;
+	}
+}
 
 
 /*----------------------------------------
 lg devices (large desktops, 1200px and up)
 ----------------------------------------*/
 @media only screen and (min-width: $screen-lg){ 
-
 	.wrap {
 		max-width: $max-width;
+	}
+	#sidebar-two {
+		display: block;
+	}
+	.spacer-two {
+		display: block;
 	}
 
 }

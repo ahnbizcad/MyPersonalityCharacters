@@ -12,11 +12,6 @@ body {
 	background-image: url(https://www.dropbox.com/s/wxa4dmsf6mh7ijm/45degreee_fabric_2x.png);
 }
 
-
-/*----------
-positioning elements
-----------*/
-
 .flex {
 	display: flex;
 }
@@ -31,6 +26,7 @@ positioning elements
 	width: 100%;
 	padding: 0em $gutter-h;
 }
+
 
 /*----------
 footer
@@ -79,7 +75,9 @@ Navbar top affixing with js.
 
 nav {
 	display: flex;
-	
+	flex-flow: row nowrap;
+	align-items: center;
+
 	@include nav-background-color();
 	font-family: Helvetica;
 	font-weight: 500;
@@ -89,19 +87,24 @@ nav {
 	ul {
 		@extend .list-inline;
 		white-space: nowrap;
+
 		li {
+			white-space: nowrap;
 			list-style: none;
+
 			a {
 				display: block;
+
 				&:hover {
 					text-decoration: none;
-				}
+				}				
 				&:focus {
 					text-decoration: none;
 				}
 			}
 			ul.dropdown-menu {
 				padding: 0;
+
 				li {
 					display: block;
 					padding: 0;
@@ -110,12 +113,16 @@ nav {
 		}
 	}
 	ul#links {
+
 		#search-navbar {
 			@extend .navbar-form;
+
 			.form-group {
+
 				input {
 					@extend .form-control;
 				}
+
 				button {
 					@extend .btn;
 					@extend .btn-default ;
@@ -135,7 +142,7 @@ likeasomebodeeh
 ----------*/
 
 #likasomebodeeh {
-	margin: $gutter-v 0;
+	padding: $gutter-v 0 ;
 }
 
 /*----------
@@ -191,11 +198,14 @@ sidebar-two
 ----------*/
 #sidebar-two {
 	@extend .sidebar;
-	
+	@include body-item-box-shadow();
+	flex: 0 0 $sidebar-width;;
+
 	.film-h {
 
 	}	
 }
+
 
 
 /*----------
@@ -209,12 +219,17 @@ main {
 
 	padding: $gutter-v $gutter-h;
 	min-height: 900px;
+
+	.tag-list {
+
+	}
 }
 
 
 /*----------
 spacers
 ----------*/
-.spacer {
-	flex: 1 1 $spacer-width;
+
+.spacer-one, .spacer-two {
+	flex: 0 0 $spacer-width;
 }

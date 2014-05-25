@@ -12,21 +12,18 @@
         };
       </script>
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true    
     = csrf_meta_tags
-    %meta{:content => "width=device-width", :name => "viewport"}/    
+    %meta{ :content => "width=device-width", :name => "viewport" }/    
   %body
     %header.wrapper
       .wrap
         = render 'layouts/header'
-    .wrapper
-      .wrap
-        %aside#sidebar-two
-          = render 'layouts/sidebar_two'
     .affixable-wrapper
-      %nav.affixable.wrapper
+      .wrapper.affixable
         .wrap
-          = render 'layouts/navbar'
+          %nav
+            = render 'layouts/navbar'
     #alerts.wrapper
       .wrap
         %notice= notice
@@ -35,10 +32,14 @@
       .wrap
         %aside#sidebar-one.flex
           = render 'layouts/sidebar_one'
-        .spacer
+        .spacer-one
         %main
           = yield
+        .spacer-two
+        %aside#sidebar-two
+          = render 'layouts/sidebar_two'
     %footer.wrapper
       .wrap
         = render 'layouts/footer'
   = debug(params) if Rails.env.development?
+  = params.inspect if Rails.env.development?

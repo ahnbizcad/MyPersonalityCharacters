@@ -1,7 +1,7 @@
 %h1= @character.name
 
 %br/
-%div
+.tag_list
 	Universes: 
 	- if @universes.empty?
 		none
@@ -13,7 +13,7 @@
 			%br/
 
 %br/
-%div
+.tag_list
 	Celebrities: 
 	- if @celebrities.empty?
 		none

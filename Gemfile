@@ -44,7 +44,7 @@ gem 'devise'#, '3.2.3'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
 # Autocomplete form.
-gem 'select2-rails', '3.4.8' #not the latest version. syncs to the guide's version http://ivaynberg.github.io/select2/index.html
+gem 'select2-rails'
 
 group :development do
 	# For html2haml mass conversion
