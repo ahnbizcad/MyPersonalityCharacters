@@ -27,10 +27,12 @@
       %nav.affixable.wrapper
         .wrap
           = render 'layouts/navbar'
-    #likasomebodeeh.wrapper
+    #alerts.wrapper
       .wrap
         %notice= notice
         %alert= alert
+    #likasomebodeeh.wrapper      
+      .wrap
         %aside#sidebar-one.flex
           = render 'layouts/sidebar_one'
         .spacer

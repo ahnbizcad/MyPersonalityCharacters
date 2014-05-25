@@ -6,7 +6,7 @@ class UniversesController < ApplicationController
   # GET /universes
   # GET /universes.json
   def index
-    @universes = Universe.order(:name)
+    @universes = Universe.all
     respond_to do |format|
       format.html
       format.json { render json: @universes.tokens(params[:q]) }
@@ -78,6 +78,11 @@ class UniversesController < ApplicationController
       @universe = Universe.find(params[:id])
     end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def universe_params
+      params.require(:universe).permit(:name, :image)
+    end
+
     def set_characters
       @characters = Universe.find(params[:id]).characters
     end
@@ -86,8 +91,4 @@ class UniversesController < ApplicationController
       @celebrities = Universe.find(params[:id]).celebrities
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def universe_params
-      params.require(:universe).permit(:name, :image)
-    end
 end

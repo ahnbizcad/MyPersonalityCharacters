@@ -17,7 +17,7 @@
 //
 // Place files below 
 //= require bootstrap
-//
+//= require select2
 //= require spritz
 //
 // Place files above 

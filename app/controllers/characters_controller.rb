@@ -3,11 +3,14 @@ class CharactersController < ApplicationController
   before_action :set_universes, only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
 
-
   # GET /characters
   # GET /characters.json
   def index
     @characters = Character.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @characters.tokens(params[:q]) }
+    end
   end
 
   # GET /characters/1
@@ -57,6 +60,9 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.json
   def destroy
+    @character.universe_ids.destroy
+    @character.celebrity_ids.destroy
+
     @character.destroy
     respond_to do |format|
       format.html { redirect_to characters_url }
@@ -74,13 +80,13 @@ class CharactersController < ApplicationController
       @universes = Character.find(params[:id]).universes
     end
 
-    def set_celebrities
-      @celebrities = Character.find(params[:id]).celebrities
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
       params.require(:character).permit(:name, :image, :universe_ids, :celebrity_ids)
+    end
+
+    def set_celebrities
+      @celebrities = Character.find(params[:id]).celebrities
     end
 
     def set_character_socionics_type

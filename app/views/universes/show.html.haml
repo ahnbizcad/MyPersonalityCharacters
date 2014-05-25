@@ -1,12 +1,13 @@
 %h1= @universe.name
 %br/
 - if @characters
-	Characters: 
-	%br/
-	- @characters.each do |char|
-		= link_to image_tag(char.image.url(:thumb)), char
-		= link_to char.name, char
+	%div
+		Characters:
 		%br/
+		- @characters.each do |char|
+			= link_to image_tag(char.image.url(:thumb)), char
+			= link_to char.name, char
+			%br/
 
 %br/
 = link_to 'Edit', edit_universe_path(@universe)

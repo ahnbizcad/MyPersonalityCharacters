@@ -154,9 +154,10 @@ sidebar-one
 	flex: 0 0 $sidebar-width;
 	
 	@extend .sidebar;
+	@include body-item-box-shadow();
 
 	#spritzer {
-		margin: 0 -($gutter-h);
+		margin: 0 (-$gutter-h) $gutter-v;
 	}
 
 	.sidebar-one-element {
@@ -166,13 +167,12 @@ sidebar-one
 		align-content: center;
 		
 		margin:  0 0 1em;
-		padding: $gutter-v $gutter-h;
+		padding: $gutter-v $gutter-h 0;
 
 		@include sidebar-top-corners();
-		@include body-item-box-shadow();
 
 		.element-title {
-			margin:  -$gutter-v (-$gutter-h) 2*$gutter-v;
+			margin:  (-$gutter-v) (-$gutter-h) 2*$gutter-v;
 			padding: $gutter-v $gutter-h;
 
 			text-align: center;

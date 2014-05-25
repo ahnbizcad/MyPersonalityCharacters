@@ -1,19 +1,21 @@
 %h1= @character.name
 %br/
 - if @universes
-	Universes: 
-	%br/
-	- @universes.each do |univ|	
-		= link_to image_tag(univ.image.url(:thumb)), univ
-		= link_to univ.name, univ
+	%div
+		Universes: 
 		%br/
+		- @universes.each do |univ|	
+			= link_to image_tag(univ.image.url(:thumb)), univ
+			= link_to univ.name, univ
+			%br/
+
 %br/
 - if @celebrities
-	Celebrities: 
-	%br/
-	- @celebrities.each do |celeb|
-		= link_to celeb.name, celeb
+	%div
+		Celebrities: 
 		%br/
+		- @celebrities.each do |celeb|
+			= link_to celeb.name, celeb
 %br/
 = image_tag @character.image.url(:medium)
 

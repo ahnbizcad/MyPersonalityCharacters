@@ -15,17 +15,12 @@
 	.form-group
 		= f.label :image
 		= f.file_field :image
-	#characters_universe_ids
 	.form-group
 		= f.label :universe_ids, "Link Universes"
 		= f.collection_select :universe_ids, Universe.order(:name), :id, :name, {}, {multiple: true}
 	.form-group
 		= f.label :celebrity_ids, "Link Celebrities"
-		= f.collection_select :celebrity_ids, Universe.order(:name), :id, :name, {}, {multiple: true}
+		= f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, {}, {multiple: true}
 		
-		<select multiple id="e1">
-		<option value="AL">Alabama</option>
-		<option value="WY">Wyoming</option>
-		</select>
-	.action
+	.actions
 		= f.submit

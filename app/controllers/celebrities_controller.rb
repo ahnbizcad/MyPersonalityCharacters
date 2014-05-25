@@ -6,7 +6,7 @@ class CelebritiesController < ApplicationController
   # GET /celebrities
   # GET /celebrities.json
   def index
-    @celebrities = Celebrity.order(:name)
+    @celebrities = Celebrity.all
     respond_to do |format|
       format.html
       format.json { render json: @celebrities.tokens(params[:q]) }
@@ -79,6 +79,11 @@ class CelebritiesController < ApplicationController
       @celebrity = Celebrity.find(params[:id])
     end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def celebrity_params
+      params.require(:celebrity).permit(:name, :image, :character_ids)
+    end
+
     def set_characters
       @characters = Celebrity.find(params[:id]).characters
     end
@@ -87,8 +92,4 @@ class CelebritiesController < ApplicationController
       @universes = Celebrity.find(params[:id]).universes
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def celebrity_params
-      params.require(:celebrity).permit(:name, :image)
-    end
 end
