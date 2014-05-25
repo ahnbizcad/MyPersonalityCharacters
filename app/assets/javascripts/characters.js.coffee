@@ -1,3 +1,7 @@
 jQuery ->
-  $("#character_universe_ids").select2();
-  $("#character_celebrity_ids").select2();
+  $("#character_universe_ids").select2(
+  	allowClear: true,
+  	placeholder: "Select Universe");
+  $("#character_celebrity_ids").select2(
+  	allowClear: true,
+  	placeholder: "Select Celebrity");

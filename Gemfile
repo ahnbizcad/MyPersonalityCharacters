@@ -1,34 +1,34 @@
 source 'https://rubygems.org'
-
+#
 ruby "2.0.0"
-
+#
 gem 'rails', '4.0.0'
-
+#
 gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
-
+#
 gem 'sass-rails', '~> 4.0.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
-
+#
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-
+#
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~>2.2.2'
 gem 'jquery-turbolinks', '~>2.0.2'
 gem 'jbuilder', '~> 1.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-
+#
 gem 'pg', '0.17.1'
-
+#
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 # International localization.
-gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+#gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # For spritemapping, and more.
 #gem 'compass'
 #
@@ -58,7 +58,6 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-
   #gem 'aws-sdk', "~> 1.0"
 end
 

@@ -1,16 +1,12 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
-  before_action :set_universes, only: [:show, :edit, :update, :destroy]
+  before_action :set_character,   only: [:show, :edit, :update, :destroy]
+  before_action :set_universes,   only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
 
   # GET /characters
   # GET /characters.json
   def index
     @characters = Character.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @characters.tokens(params[:q]) }
-    end
   end
 
   # GET /characters/1

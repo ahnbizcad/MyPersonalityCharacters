@@ -16,12 +16,12 @@
 		= f.label :image
 		= f.file_field :image
 		
-	.form-group
+	.field
 		= f.label :universe_ids, "Link Universes"
-		= f.collection_select :universe_ids, Universe.order(:name), :id, :name, {}, {multiple: true}
-
+		= f.collection_select :universe_ids, Universe.order(:name), :id, :name, {}, { multiple: true }
+	.field
 		= f.label :celebrity_ids, "Link Celebrities"
-		= f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, {}, {multiple: true}
+		= f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, {}, { multiple: true }
 
-	.actions
+	.action
 		= f.submit

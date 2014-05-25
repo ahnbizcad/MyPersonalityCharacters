@@ -1,6 +1,6 @@
 class UniversesController < ApplicationController
-  before_action :set_universe, only: [:show, :edit, :update, :destroy]
-  before_action :set_characters, only: [:show, :edit, :update, :destroy]
+  before_action :set_universe,    only: [:show, :edit, :update, :destroy]
+  before_action :set_characters,  only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
 
   # GET /universes

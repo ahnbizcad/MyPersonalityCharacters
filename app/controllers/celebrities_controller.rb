@@ -1,7 +1,7 @@
 class CelebritiesController < ApplicationController
-  before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
-  before_action :set_characters, only: [:show, :edit, :update, :destroy]
-  before_action :set_universes, only: [:show, :edit, :update, :destroy]
+  before_action :set_celebrity,   only: [:show, :edit, :update, :destroy]
+  before_action :set_characters,  only: [:show, :edit, :update, :destroy]
+  before_action :set_universes,   only: [:show, :edit, :update, :destroy]
 
   # GET /celebrities
   # GET /celebrities.json

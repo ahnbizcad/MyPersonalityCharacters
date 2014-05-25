@@ -1,19 +1,29 @@
 %h1= @character.name
+
 %br/
-- if @universes
-	%div
-		Universes: 
+%div
+	Universes: 
+	- if @universes.empty?
+		none
+		= link_to "Add", edit_character_path
+	-else
 		- @universes.each do |univ|	
 			= link_to image_tag(univ.image.url(:thumb)), univ
 			= link_to univ.name, univ
+			%br/
 
 %br/
-- if @celebrities
-	%div
-		Celebrities: 
-		%br/
-		- @celebrities.each do |celeb|
+%div
+	Celebrities: 
+	- if @celebrities.empty?
+		none
+		= link_to "Add", edit_character_path
+	-else
+		- @celebrities.each do |celeb|	
+			= link_to image_tag(celeb.image.url(:thumb)), celeb
 			= link_to celeb.name, celeb
+			%br/
+
 %br/
 = image_tag @character.image.url(:medium)
 
