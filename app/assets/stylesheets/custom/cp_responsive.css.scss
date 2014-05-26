@@ -5,9 +5,12 @@ RESPONSIVE CUTOFF WIDTHS
 /*----------------------------------------
 ONLY xs devices (phones, 1px to 767px) (doesn't cascade)
 ----------------------------------------*/
-@media only screen and (max-width: $screen-xs-max) { 
+/*@media only screen and (max-width: $screen-xs-max) { 
 	
-}
+}*/
+
+
+/*--------------------------------------------------------------------------------*/
 
 
 /*----------------------------------------
@@ -17,8 +20,86 @@ xs is default. Smaller sizes cascade to larger sizes. Flow structure.
 positioning elements
 ----------*/
 
-#sidebar-one, #sidebar-two, .spacer-one, .spacer-two {
+.flex {
+	display: flex;
+}
+
+.wrapper {	
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.wrap {
+	width: 100%;
+	display: flex;	
+	padding: 0em $gutter-h;
+}
+
+nav {
+	display: flex;
+	flex-flow: row nowrap;
+
+	.wrap {
+		justify-content: space-between;
+	}
+	ul {
+		display: flex;
+		flex: 0 0 auto;
+		flex-flow: row nowrap;
+	}
+
+	ul#links {
+
+		form {
+			display: flex;
+		}
+	}
+}
+#likeasomebodeeh {
+	
+}
+#sidebar-one {
 	display: none;
+
+	flex-flow: column nowrap;
+	flex: 0 0 $sidebar-one-width;
+
+	.sidebar-one-element {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-content: center;
+	}
+}
+
+#sidebar-two {
+	display: none;
+	flex-flow: column nowrap;
+	flex: 0 0 $sidebar-two-width;
+	.film-v {
+		flex: 0 0 auto;
+	}
+}
+
+#sidebar-three {
+	display: flex;
+	flex-flow: row nowrap;
+	
+}
+
+
+.spacer-one {
+	display: none;
+	flex: 0 0 $spacer-width;
+}
+.spacer-two {
+	display: none;
+	flex: 0 0 $spacer-width;
+}
+
+main {
+	flex-flow: row wrap;	
+	flex: 1 1 ($max-width - $sidebar-one-width - $spacer-width);
 }
 
 
@@ -34,14 +115,16 @@ sm devices (tablets, 768px to 991px)
 
 md devices (desktops, 992px to 1199px)
 ----------------------------------------*/
-@media only screen and (min-width: $screen-md){ 
-	#sidebar-one,  {
+@media only screen and (min-width: $screen-md){
+
+	#sidebar-one {
 		display: flex;
 	}
 	.spacer-one {
-		display: block;
-	}
+		display: flex;
+	}	
 }
+
 
 
 /*----------------------------------------
@@ -51,11 +134,17 @@ lg devices (large desktops, 1200px and up)
 	.wrap {
 		max-width: $max-width;
 	}
-	#sidebar-two {
-		display: block;
-	}
+
 	.spacer-two {
-		display: block;
+		display: flex;
+	}
+
+	#sidebar-two {
+		display: flex;
+	}	
+	#sidebar-three {
+		display: none;
 	}
 
 }
+	

@@ -7,6 +7,10 @@ class UniversesController < ApplicationController
   # GET /universes.json
   def index
     @universes = Universe.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @universes }
+    end
   end
 
   # GET /universes/1
@@ -16,7 +20,7 @@ class UniversesController < ApplicationController
 
   # GET /universes/new
   def new
-    @universe = Universe.new
+    @universe = Universe.new    
   end
 
   # GET /universes/1/edit

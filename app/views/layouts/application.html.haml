@@ -20,24 +20,31 @@
       .wrap
         = render 'layouts/header'
     .affixable-wrapper
-      .wrapper.affixable
+      %nav.wrapper.affixable
         .wrap
-          %nav
-            = render 'layouts/navbar'
+          = render 'layouts/navbar'
     #alerts.wrapper
       .wrap
         %notice= notice
         %alert= alert
-    #likasomebodeeh.wrapper      
+    #likasomebodeeh.wrapper
       .wrap
-        %aside#sidebar-one.flex
+        %aside#sidebar-one
           = render 'layouts/sidebar_one'
+
         .spacer-one
+
         %main
           = yield
+
         .spacer-two
+
         %aside#sidebar-two
           = render 'layouts/sidebar_two'
+    .wrapper
+      .wrap        
+        %aside#sidebar-three
+          = render 'layouts/sidebar_three'
     %footer.wrapper
       .wrap
         = render 'layouts/footer'

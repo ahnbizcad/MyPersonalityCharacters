@@ -6,23 +6,34 @@ GENERAL VARIABLES
 Mixins - Dimensions
 ----------*/
 
+@mixin font-size($font-size: 20px) {
+	font-size: $font-size;
+}
+
+
 /* 
 Responsive widths
 */
-
 
 /* 
 likeasomebodeeh widths
 */
 $max-width: 		1200px;
-$sidebar-width: 260px;
-$spacer-width: 	20px;
+$sidebar-one-width: 260px;
+$sidebar-two-width: 140px;
+$sidebar-three-height: 140px;
+/*must be px for addition*/
+$spacer-width: 	10px;
+
+$nav-icon-width: 2em;
+$nav-icon-height: 2em;
+
 
 
 /* 
 details widths
 */
-$gutter-h: 0.75em;
+$gutter-h: 0.5em;
 $gutter-v: 0.5em;
 
 
@@ -30,12 +41,23 @@ $gutter-v: 0.5em;
 Mixins - Positioning
 ----------*/
 
+@mixin navbar-icon {
+	text-indent: -9999px;
 
-
+	width: $nav-icon-width;
+	height: auto;
+	
+	background-size: cover;
+	background-repeat: repeat-y;
+}
 
 /*----------
 Mixins - Colors, Styling
 ----------*/
+
+@mixin non-background-color($r: 255, $g: 255, $b: 255) {
+	background-color: rgb($r,$g,$b);
+}
 
 @mixin nav-background-color($r: 50, $g: 80, $b: 220, $t: 1) {
 	background: linear-gradient(rgba($r, $g, $b, $t), rgba(0, 0, 127, 1) 90%, rgba(0, 50, 127, 0.8)); 
@@ -45,6 +67,7 @@ Mixins - Colors, Styling
 @mixin body-item-box-shadow($horizontal: 1px, $vertical: 1px, $blur: 3px, $spread: 1px, $color: #888) {
 	box-shadow: 				$horizontal $vertical $blur $spread $color;
 }
+
 
 @mixin sidebar-top-corners($radius: 0.25em){
 	border-top-left-radius: $radius;

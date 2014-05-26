@@ -7,25 +7,12 @@ custom-reset
 ----------*/
 
 body {
+	@include font-size();
 	font-family: sans-serif;
-	font-size: 20px;
-	background-image: url(https://www.dropbox.com/s/wxa4dmsf6mh7ijm/45degreee_fabric_2x.png);
+	background-image: url("45degreee_fabric_2x.png");
 }
 
-.flex {
-	display: flex;
-}
 
-.wrapper {
-	display: flex;
-	width: 100%;
-	justify-content: center;
-}
-.wrap {
-	display: flex;
-	width: 100%;
-	padding: 0em $gutter-h;
-}
 
 
 /*----------
@@ -44,6 +31,7 @@ footer {
 header
 ----------*/
 header {
+	overflow: hidden;
 	background-color: rgb(0,0,0);
 	a {
 		height: auto;
@@ -53,10 +41,6 @@ header {
 	}
 }
 
-
-/*----------
-nav
-----------*/
 
 /*------------------------------
 Navbar top affixing with js.
@@ -73,23 +57,58 @@ Navbar top affixing with js.
 	@include nav-background-color();
 }
 
+/*----------
+nav
+----------*/
+
 nav {
-	display: flex;
-	flex-flow: row nowrap;
 	align-items: center;
 
 	@include nav-background-color();
 	font-family: Helvetica;
 	font-weight: 500;
 	font-size: 1.2em;
-	width: 100%;	
+	width: 100%;
 
 	ul {
+		align-items: center;
 		@extend .list-inline;
 		white-space: nowrap;
 
+		#characters-navbar {
+			background: url("character_pikachu.png");
+			@include navbar-icon;
+		}
+		#universes-navbar {
+			background: url("universe.jpg");
+			@include navbar-icon;
+		}
+		#celebrities-navbar {
+			background: url("star_blue_1.png");
+			@include navbar-icon;
+		}
+		#friends-navbar {
+			background: url("node_1.jpg");
+			@include navbar-icon;
+		}
+		#personalites-navbar {
+			background: url("puzzle_personality_1.jpg");
+			@include navbar-icon;
+		}
+		#tests-navbar {
+			background: url("clipboard_3d.jpg");
+			@include navbar-icon;
+		}
+		#tools-navbar {
+			background: url("tools_1.png");
+			@include navbar-icon;
+		}
+		#login-navbar {
+			background: url("log_1.jpg");
+			@include navbar-icon;
+		}
+
 		li {
-			white-space: nowrap;
 			list-style: none;
 
 			a {
@@ -114,7 +133,7 @@ nav {
 	}
 	ul#links {
 
-		#search-navbar {
+		form {
 			@extend .navbar-form;
 
 			.form-group {
@@ -149,7 +168,7 @@ likeasomebodeeh
 sidebars
 ----------*/
 .sidebar {
-
+	@include non-background-color();
 }
 
 /*----------
@@ -157,10 +176,8 @@ sidebar-one
 ----------*/
 
 #sidebar-one {
-	flex-flow: column nowrap;
-	flex: 0 0 $sidebar-width;
-	
 	@extend .sidebar;
+		
 	@include body-item-box-shadow();
 
 	#spritzer {
@@ -168,11 +185,7 @@ sidebar-one
 	}
 
 	.sidebar-one-element {
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: flex-start;
-		align-content: center;
-		
+				
 		margin:  0 0 1em;
 		padding: $gutter-v $gutter-h 0;
 
@@ -192,33 +205,46 @@ sidebar-one
 }
 
 
-
 /*----------
 sidebar-two
 ----------*/
 #sidebar-two {
 	@extend .sidebar;
+
 	@include body-item-box-shadow();
-	flex: 0 0 $sidebar-width;;
 
-	.film-h {
-
+	.film-v {
+		img {
+			width: $sidebar-two-width;
+			height: auto;
+		}
 	}	
 }
 
+#sidebar-three {
+	@extend .sidebar;
+
+	@include body-item-box-shadow();
+
+	.film-h {
+		img {
+			width: auto;
+			height: $sidebar-three-height;
+		}
+	}	
+}
 
 
 /*----------
 main
 ----------*/
 main {
-	flex-flow: ltr wrap;	
-	flex: 1 1 ($max-width - $sidebar-width - $spacer-width);
-
-	@include body-item-box-shadow();
 
 	padding: $gutter-v $gutter-h;
 	min-height: 900px;
+
+	@include non-background-color();
+	@include body-item-box-shadow();
 
 	.tag-list {
 
@@ -230,6 +256,4 @@ main {
 spacers
 ----------*/
 
-.spacer-one, .spacer-two {
-	flex: 0 0 $spacer-width;
-}
+
