@@ -49,7 +49,7 @@ Navbar top affixing with js.
   position: fixed;
   top: 0px;
   z-index: 99;
-  box-shadow: 0px 4px 2px -2px #888;
+  box-shadow: 0px 6px 3px -3px #888;
 
 }
 
@@ -157,6 +157,43 @@ nav {
 
 
 /*----------
+filmstrips
+----------*/
+
+.filmstrip {
+	overflow: hidden;
+}
+
+#filmstrip-h-1, #filmstrip-h-2 {
+	@extend .filmstrip;
+
+	.filmstrip-h-element {
+		background-image: image-url("filmstrip_horizontal_1.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		img {
+		}
+	}
+}
+
+
+#filmstrip-v-1, #filmstrip-v-2 {
+	@extend .filmstrip;
+	margin: (-$gutter-v) 0;
+
+
+	.filmstrip-v-element {
+		background-image: image-url("filmstrip_vertical_1.png");
+		background-size: contain;
+		img {
+			
+		}
+	}	
+}
+
+
+/*----------
 likeasomebodeeh
 ----------*/
 
@@ -164,21 +201,15 @@ likeasomebodeeh
 	padding: $gutter-v 0 ;
 }
 
-/*----------
-sidebars
-----------*/
-.sidebar {
-	@include non-background-color();
-}
 
 /*----------
 sidebar-one
 ----------*/
 
 #sidebar-one {
-	@extend .sidebar;
-		
+
 	@include body-item-box-shadow();
+	@include non-background-color();
 
 	#spritzer {
 		margin: 0 (-$gutter-h) $gutter-v;
@@ -204,35 +235,6 @@ sidebar-one
 	}
 }
 
-
-/*----------
-sidebar-two
-----------*/
-#sidebar-two {
-	@extend .sidebar;
-
-	@include body-item-box-shadow();
-
-	.film-v {
-		img {
-			width: $sidebar-two-width;
-			height: auto;
-		}
-	}	
-}
-
-#sidebar-three {
-	@extend .sidebar;
-
-	@include body-item-box-shadow();
-
-	.film-h {
-		img {
-			width: auto;
-			height: $sidebar-three-height;
-		}
-	}	
-}
 
 
 /*----------

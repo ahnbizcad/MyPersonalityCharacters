@@ -25,13 +25,13 @@ positioning elements
 }
 
 .wrapper {	
-	width: 100%;
 	display: flex;
+	width: 100%;
 	justify-content: center;
 }
 .wrap {
-	width: 100%;
 	display: flex;	
+	width: 100%;
 	padding: 0em $gutter-h;
 }
 
@@ -55,9 +55,47 @@ nav {
 		}
 	}
 }
+
+#filmstrip-h-1, #filmstrip-h-2 {
+	display: flex;
+	flex: 1 1 100%;
+	flex-flow: row nowrap;
+	
+	.filmstrip-h-element {
+		display: flex;
+		flex: 1 1 12.5%;
+		justify-content: center;
+		align-content: center;
+		padding: 14% 0%;
+
+		img {
+			
+		}
+	}
+}
+
+#filmstrip-v-1, #filmstrip-v-2 {
+	display: none;
+	flex-flow: column nowrap;
+	flex: 0 0 $filmstrip-size;
+
+	.filmstrip-v-element {
+		display: flex;
+		flex: 0 0 $filmstrip-size;
+		height: auto;
+
+		img {
+			display: block;
+		}
+	}
+}
+
+
+
 #likeasomebodeeh {
 	
 }
+
 #sidebar-one {
 	display: none;
 
@@ -72,22 +110,11 @@ nav {
 	}
 }
 
-#sidebar-two {
+
+.spacer-zero {
 	display: none;
-	flex-flow: column nowrap;
-	flex: 0 0 $sidebar-two-width;
-	.film-v {
-		flex: 0 0 auto;
-	}
+	flex: 0 0 $spacer-width;
 }
-
-#sidebar-three {
-	display: flex;
-	flex-flow: row nowrap;
-	
-}
-
-
 .spacer-one {
 	display: none;
 	flex: 0 0 $spacer-width;
@@ -97,9 +124,10 @@ nav {
 	flex: 0 0 $spacer-width;
 }
 
+
 main {
 	flex-flow: row wrap;	
-	flex: 1 1 ($max-width - $sidebar-one-width - $spacer-width);
+	flex: 1 1 auto;
 }
 
 
@@ -135,16 +163,18 @@ lg devices (large desktops, 1200px and up)
 		max-width: $max-width;
 	}
 
+	.spacer-zero {
+		display: flex;
+	}
 	.spacer-two {
 		display: flex;
 	}
 
-	#sidebar-two {
-		display: flex;
-	}	
-	#sidebar-three {
+	#filmstrip-h-1, #filmstrip-h-2 {
 		display: none;
 	}
-
+	#filmstrip-v-1, #filmstrip-v-2 {
+		display: flex;
+	}
 }
 	

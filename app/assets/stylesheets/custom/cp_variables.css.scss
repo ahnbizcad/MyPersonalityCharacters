@@ -18,15 +18,14 @@ Responsive widths
 /* 
 likeasomebodeeh widths
 */
-$max-width: 		1200px;
+$max-width: 				1200px;
 $sidebar-one-width: 260px;
-$sidebar-two-width: 140px;
-$sidebar-three-height: 140px;
-/*must be px for addition*/
-$spacer-width: 	10px;
+$filmstrip-size: 		140px;
+/*must be px for addition... unless calc() is used*/
+$spacer-width: 			10px;
 
-$nav-icon-width: 2em;
-$nav-icon-height: 2em;
+$nav-icon-width: 		2em;
+$nav-icon-height: 	2em;
 
 
 

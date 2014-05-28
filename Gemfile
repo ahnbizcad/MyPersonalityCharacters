@@ -44,7 +44,7 @@ gem 'devise'#, '3.2.3'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
 # Autocomplete form.
-gem 'select2-rails'
+gem 'select2-rails', '~> 3.5.7'
 
 group :development do
 	# For html2haml mass conversion

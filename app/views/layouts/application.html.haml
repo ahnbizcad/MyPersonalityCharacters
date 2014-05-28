@@ -27,8 +27,17 @@
       .wrap
         %notice= notice
         %alert= alert
+    .wrapper
+      %aside#filmstrip-h-1
+        = render 'layouts/filmstrip_h_1'
     #likasomebodeeh.wrapper
       .wrap
+        -# Uncomment for symmetric filmstrip on left also.
+        -#%aside#filmstrip-v-1
+          -#= render 'layouts/filmstrip_v_1'
+
+        -#.spacer-zero
+
         %aside#sidebar-one
           = render 'layouts/sidebar_one'
 
@@ -39,12 +48,11 @@
 
         .spacer-two
 
-        %aside#sidebar-two
-          = render 'layouts/sidebar_two'
-    .wrapper
-      .wrap        
-        %aside#sidebar-three
-          = render 'layouts/sidebar_three'
+        %aside#filmstrip-v-2
+          = render 'layouts/filmstrip_v_2'
+    .wrapper      
+      %aside#filmstrip-h-2
+        = render 'layouts/filmstrip_h_2'
     %footer.wrapper
       .wrap
         = render 'layouts/footer'
