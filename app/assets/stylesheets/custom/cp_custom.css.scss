@@ -76,35 +76,35 @@ nav {
 		white-space: nowrap;
 
 		#characters-navbar {
-			background: url("character_pikachu.png");
+			background: image-url("character_pikachu.png");
 			@include navbar-icon;
 		}
 		#universes-navbar {
-			background: url("universe.jpg");
+			background: image-url("universe.jpg");
 			@include navbar-icon;
 		}
 		#celebrities-navbar {
-			background: url("star_blue_1.png");
+			background: image-url("star_blue_1.png");
 			@include navbar-icon;
 		}
 		#friends-navbar {
-			background: url("node_1.jpg");
+			background: image-url("node_1.jpg");
 			@include navbar-icon;
 		}
 		#personalites-navbar {
-			background: url("puzzle_personality_1.jpg");
+			background: image-url("puzzle_personality_1.jpg");
 			@include navbar-icon;
 		}
 		#tests-navbar {
-			background: url("clipboard_3d.jpg");
+			background: image-url("clipboard_3d.jpg");
 			@include navbar-icon;
 		}
 		#tools-navbar {
-			background: url("tools_1.png");
+			background: image-url("tools_1.png");
 			@include navbar-icon;
 		}
 		#login-navbar {
-			background: url("log_1.jpg");
+			background: image-url("log_1.jpg");
 			@include navbar-icon;
 		}
 

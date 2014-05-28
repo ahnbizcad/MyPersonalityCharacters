@@ -11,12 +11,15 @@
  */
 @import "resets";
 @import "bootstrap";
+
+
 @import "custom/cp_variables";
 
 @import "custom/cp_custom";
 @import "custom/cp_responsive";
 
 @import "spritz";
+@import "select2";
 /*
  *= require select2
  *= require select2-bootstrap
