@@ -60,7 +60,7 @@ nav {
 	display: flex;
 	flex: 1 1 100%;
 	flex-flow: row nowrap;
-	
+
 	.filmstrip-h-element {
 		display: flex;
 		flex: 1 1 auto;
@@ -91,7 +91,7 @@ nav {
 		align-content: center;
 		
 		.proportional {
-			padding: 14% 14%;
+			padding: 1% 14%;
 			
 			img {
 				max-width: 100%;
@@ -165,7 +165,6 @@ md devices (desktops, 992px to 1199px)
 }
 
 
-
 /*----------------------------------------
 lg devices (large desktops, 1200px and up)
 ----------------------------------------*/
@@ -188,4 +187,4 @@ lg devices (large desktops, 1200px and up)
 		display: flex;
 	}
 }
-	
+

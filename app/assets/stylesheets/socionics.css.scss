@@ -1,7 +1,55 @@
-// Place all the styles related to the Socionics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.outer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 
-main {
-		outline: 10px solid blue;
+	background-color: white;
+
+	.inner {
+		display: flex;
+		flex-flow: row wrap;
+		flex: 0 1 640px;
+
+		background-color: black;
+
+		.tile {
+			flex: 0 0 23%;
+			height: 150px;
+			margin: 1%;
+
+			box-sizing: border-box;
+
+			background-color: white;
+			color: black;
+		}
+		.quadra-alpha {
+			box-shadow: 0em 0em 0.4em red inset;
+		}
+		.quadra-beta {
+			box-shadow: 0em 0em 0.4em yellow inset;
+		}
+		.quadra-gamma {
+					box-shadow: 0em 0em 0.4em green inset;
+		}
+		.quadra-delta {
+			box-shadow: 0em 0em 0.4em blue inset;
+		}
+	}
 }
+
+.order-1 {order: 1;}
+.order-2 {order: 2;}
+.order-3 {order: 3;}
+.order-4 {order: 4;}
+.order-5 {order: 5;}
+.order-6 {order: 6;}
+.order-7 {order: 7;}
+.order-8 {order: 8;}
+.order-9 {order: 9;}
+.order-10 {order: 10;}
+.order-11 {order: 11;}
+.order-12 {order: 12;}
+.order-13 {order: 13;}
+.order-14 {order: 14;}
+.order-15 {order: 15;}
+.order-16 {order: 16;}

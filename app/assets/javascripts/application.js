@@ -22,6 +22,7 @@
 //
 // Place files above 
 //= require_self
-//= require_tree .
+
 //= require turbolinks
+//= require_tree .
 
