@@ -169,8 +169,8 @@ filmstrips
 
 	.filmstrip-h-element {
 		background-image: image-url("filmstrip_horizontal_1.png");
-		background-size: contain;
 		background-repeat: no-repeat;
+		background-size: contain;
 
 		img {
 		}
@@ -185,7 +185,9 @@ filmstrips
 
 	.filmstrip-v-element {
 		background-image: image-url("filmstrip_vertical_1.png");
+		background-repeat: no-repeat;
 		background-size: contain;
+
 		img {
 			
 		}
@@ -243,7 +245,7 @@ main
 main {
 
 	padding: $gutter-v $gutter-h;
-	min-height: 900px;
+	min-height: 1000px;
 
 	@include non-background-color();
 	@include body-item-box-shadow();

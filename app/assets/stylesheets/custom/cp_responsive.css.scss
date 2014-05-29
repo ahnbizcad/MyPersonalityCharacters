@@ -63,16 +63,21 @@ nav {
 	
 	.filmstrip-h-element {
 		display: flex;
-		flex: 1 1 12.5%;
+		flex: 1 1 auto;
 		justify-content: center;
 		align-content: center;
-		padding: 14% 0%;
 
-		img {
-			
+		.proportional {
+			padding: 14% 1%;
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 	}
 }
+
 
 #filmstrip-v-1, #filmstrip-v-2 {
 	display: none;
@@ -82,10 +87,16 @@ nav {
 	.filmstrip-v-element {
 		display: flex;
 		flex: 0 0 $filmstrip-size;
-		height: auto;
-
-		img {
-			display: block;
+		justify-content: center;
+		align-content: center;
+		
+		.proportional {
+			padding: 14% 14%;
+			
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 	}
 }

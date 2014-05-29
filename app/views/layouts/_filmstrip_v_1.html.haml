@@ -1,19 +1,20 @@
 - 10.times do
 	.filmstrip-v-element
-		=link_to image_tag("homer_drool.jpg"), "#"
-		=# image_tag("", :alt => "filmstrip background", :title => "filmstrip background")
+		.proportional
+			=link_to image_tag("homer_drool.jpg"), "#"
+			=# image_tag("", :alt => "filmstrip background", :title => "filmstrip background")
 
 
-		=#link_to image_tag(character.imageurl(:medium)), character_path
-		-#recommendations to increase page views 
-		-#(chars from other shows)
-		-#(other XXXX chars with same type as current)
-		-#(similar shows)
-		-#(celebs and voice actors of current type)
-		-#(members)	
+			=#link_to image_tag(character.imageurl(:medium)), character_path
+			-#recommendations to increase page views 
+			-#(chars from other shows)
+			-#(other XXXX chars with same type as current)
+			-#(similar shows)
+			-#(celebs and voice actors of current type)
+			-#(members)	
 
--#image: width fills % of parent element. remains proportional. cutoff extra height.
+			-#image: width fills % of parent element. height changes to be proportional to width. cut off extra height.
 
--#element: height shrinks to to content image + padding. distributes entire page width equally.
+			-#element: height shrinks to to content image + padding. distributes entire page width equally.
 
--#asidewrapper: height shrinks to contents. 
+			-#asidewrapper: height shrinks to contents. 
