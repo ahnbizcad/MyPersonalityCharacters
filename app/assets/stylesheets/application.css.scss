@@ -11,18 +11,18 @@
  */
 @import "resets";
 @import "bootstrap";
-
+/* blanket styles */
 @import "custom/cp_variables";
-
 @import "custom/cp_custom";
 @import "custom/cp_responsive";
-
+/* controller-specific styles */
+@import "socionics";
+/* plugin styles */
 @import "spritz";
 @import "select2";
+@import "select2-bootstrap";
 /*
  *= require select2
  *= require select2-bootstrap
- *
  *= require_self
- *= require_tree .
  */

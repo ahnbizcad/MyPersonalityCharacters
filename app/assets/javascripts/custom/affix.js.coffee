@@ -6,3 +6,4 @@ windowReady = ->
 
 $(window).load(windowReady);
 $(window).on('page:load', windowReady);
+

@@ -141,6 +141,11 @@ main {
 	flex: 1 1 auto;
 }
 
+footer {
+	ul {
+		flex: 1 0 33%;
+	}
+}
 
 /*----------------------------------------
 sm devices (tablets, 768px to 991px)
