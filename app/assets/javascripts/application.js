@@ -19,6 +19,7 @@
 //= require bootstrap
 //= require select2
 //= require spritz
+//= require socionics
 //
 // Place files above 
 //= require_self
