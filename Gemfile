@@ -47,6 +47,11 @@ gem 'acts_as_votable', '~> 0.9.0'
 gem 'select2-rails', '~> 3.5.7'
 
 group :development do
+	# Better errors
+	gem 'better_errors'
+	# See nested duck typed caller function names.
+	#gem "binding_of_caller"
+
 	# For html2haml mass conversion
 	# erubis is already included in action pack
 	gem 'ruby_parser', '~> 3.1.1'

@@ -36,6 +36,8 @@ class CharactersController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @character.errors, status: :unprocessable_entity }
       end
+
+      # save associated entries also.
     end
   end
 

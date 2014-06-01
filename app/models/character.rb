@@ -26,6 +26,14 @@ class Character < ActiveRecord::Base
 
 	#
 
+  def universe_ids
+
+  end
+
+  def celebrity_ids
+
+  end
+  
   def to_param
     "#{id}-#{name}"
   end

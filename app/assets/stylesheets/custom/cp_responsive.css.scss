@@ -57,13 +57,15 @@ nav {
 }
 
 #filmstrip-h-1, #filmstrip-h-2 {
-	display: flex;
 	flex: 1 1 100%;
+
+	display: flex;
 	flex-flow: row nowrap;
 
 	.filmstrip-h-element {
-		display: flex;
 		flex: 1 1 auto;
+		
+		display: flex;
 		justify-content: center;
 		align-content: center;
 
@@ -85,8 +87,9 @@ nav {
 	flex: 0 0 $filmstrip-size;
 
 	.filmstrip-v-element {
-		display: flex;
 		flex: 0 0 $filmstrip-size;
+
+		display: flex;
 		justify-content: center;
 		align-content: center;
 		

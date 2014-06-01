@@ -3,7 +3,7 @@ STYLING
 **************************/
 
 /*----------
-custom-reset
+Essentially global stuff
 ----------*/
 
 body {
@@ -11,6 +11,36 @@ body {
 	font-family: sans-serif;
 	background-image: url("45degreee_fabric_2x.png");
 }
+
+
+.si {
+	display: inline- block;
+}
+.se {
+	display: inline- block;
+}
+.ni {
+	display: inline- block;
+}
+.ne {
+	display: inline- block;
+}
+.ti {
+	display: inline- block;
+}
+.te {
+	display: inline- block;
+}
+.fi {
+	display: inline- block;
+}
+.fe {
+	display: inline- block;
+}
+
+
+
+
 
 
 
@@ -161,6 +191,7 @@ filmstrips
 		background-size: contain;
 
 		img {
+
 		}
 	}
 }
