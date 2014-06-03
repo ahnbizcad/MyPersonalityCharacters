@@ -41,10 +41,15 @@ gem 'paperclip', '~> 3.0'
 gem 'paperclip-dropbox', '>= 1.1.7'
 # Authentication.
 gem 'devise'#, '3.2.3'
-# Votes.
-gem 'acts_as_votable', '~> 0.9.0'
+# Simple form markup.
+gem 'simple_form'
 # Autocomplete form.
 gem 'select2-rails', '~> 3.5.7'
+# Comments with threading
+gem 'acts_as_commentable_with_threading'
+# Votes.
+gem 'acts_as_votable', '~> 0.9.0'
+
 
 group :development do
 	# Better errors

@@ -1,4 +1,5 @@
 class Character < ActiveRecord::Base
+  acts_as_commentable
   acts_as_votable
 
   belongs_to :socionics_type
@@ -33,7 +34,7 @@ class Character < ActiveRecord::Base
   def celebrity_ids
 
   end
-  
+
   def to_param
     "#{id}-#{name}"
   end

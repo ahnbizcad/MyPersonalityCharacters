@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
   before_action :set_universes,   only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
 
+
   # GET /characters
   # GET /characters.json
   def index
@@ -12,11 +13,16 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
+    # Later, access votes table to display by highest votes.
+    # @comments is @all_comments
+    @comments = @character.comment_threads.order('created_at DESC')
+    new_comment = Comment.build_from(@character, current_user, "")
   end
 
   # GET /characters/new
   def new
     @character = Character.new
+
   end
 
   # GET /characters/1/edit

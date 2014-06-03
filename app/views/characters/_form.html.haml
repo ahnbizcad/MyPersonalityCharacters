@@ -1,26 +1,26 @@
 = form_for(@character, :html => { :multipart => true }) do |f|
-	- if @character.errors.any?
-		#error_explanation
-			%h2= "#{pluralize(@character.errors.count, "error")} prohibited this character from being saved:"
-			%ul
-				- @character.errors.full_messages.each do |msg|
-					%li= msg
+  - if @character.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@character.errors.count, "error")} prohibited this character from being saved:"
+      %ul
+        - @character.errors.full_messages.each do |msg|
+          %li= msg
 
-	#stripe_error.alert.alert-danger{ :style => "display:none" }
-		%noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+  #stripe_error.alert.alert-danger{ :style => "display:none" }
+    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 
-	.form-group
-		= f.label :name
-		= f.text_field :name, autofocus: true
-	.form-group
-		= f.label :image
-		= f.file_field :image
-		
-	.form-group
-		= f.label :universe_ids, "Link Universes"
-		= f.collection_select :universe_ids, Universe.order(:name), :id, :name, { include_blank: true }, { multiple: true }
-	.form-group
-		= f.label :celebrity_ids, "Link Celebrities"
-		= f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, { include_blank: true }, { multiple: true}
-	.actions
-		= f.submit
+  .form-group
+    = f.label :name
+    = f.text_field :name, autofocus: true
+  .form-group
+    = f.label :image
+    = f.file_field :image
+    
+  .form-group
+    = f.label :universe_ids, "Link Universes"
+    = f.collection_select :universe_ids, Universe.order(:name), :id, :name, { include_blank: true }, { multiple: true }
+  .form-group
+    = f.label :celebrity_ids, "Link Celebrities"
+    = f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, { include_blank: true }, { multiple: true}
+  .actions
+    = f.submit

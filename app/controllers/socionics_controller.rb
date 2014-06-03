@@ -1,171 +1,171 @@
 class SocionicsController < ApplicationController
-	before_action :set_socionics_types
+  before_action :set_socionics_types
 
-	def index
-		
-	end
+  def index
+    
+  end
 
 # Information elements.
-	def information_elements
+  def information_elements
 
-	end
+  end
 
-	def si
+  def si
 
-	end
+  end
 
-	def se
+  def se
 
-	end
+  end
 
-	def ni
+  def ni
 
-	end
+  end
 
-	def ne
+  def ne
 
-	end
+  end
 
-	def ti
+  def ti
 
-	end
+  end
 
-	def te
+  def te
 
-	end
+  end
 
-	def fi
+  def fi
 
-	end
+  end
 
-	def fe
+  def fe
 
-	end
+  end
 
 # Functions.
-	def functions
+  def functions
 
-	end
+  end
 
-	def function_dichotomies
+  def function_dichotomies
 
-	end
+  end
 
 # Dichotomies.
-	def dichotomies
+  def dichotomies
 
-	end
+  end
 
-	def jungian_dichotomies
+  def jungian_dichotomies
 
-	end
+  end
 
-	def reinin_dichotomies
+  def reinin_dichotomies
 
-	end
+  end
 
 # Small Groups.
-	def small_groups
+  def small_groups
 
-	end
+  end
 
-	def quadra
+  def quadra
 
-	end
+  end
 
-	def clubs
+  def clubs
 
-	end
+  end
 
-	def temperaments
+  def temperaments
 
-	end
+  end
 
-	def communication_styles
+  def communication_styles
 
-	end
+  end
 
-	def romance_styles
+  def romance_styles
 
-	end
+  end
 
 # Intertype Relations
-	def intertype_relations
-		
-	end
+  def intertype_relations
+    
+  end
 
 # Types
 # Alpha quadra.
-	def neti
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Ti')
-	end
+  def neti
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Ti')
+  end
 
-	def sife
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Si-Fe')
-	end
+  def sife
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Si-Fe')
+  end
 
-	def fesi
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Si')
-	end
+  def fesi
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Si')
+  end
 
-	def tine
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Ne')
-	end
+  def tine
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Ne')
+  end
 
 # Beta quadra.
-	def feni
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Ni')
-	end
+  def feni
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Fe-Ni')
+  end
 
-	def tise
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Se')
-	end
+  def tise
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ti-Se')
+  end
 
-	def seti
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Se-Ti')
-	end
+  def seti
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Se-Ti')
+  end
 
-	def nife
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Fe')
-	end
+  def nife
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Fe')
+  end
 
 # Gamma quadra.
-	def sefi
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Se-Fi')
-	end
+  def sefi
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Se-Fi')
+  end
 
-	def nite
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Te')
-	end
+  def nite
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ni-Te')
+  end
 
-	def teni
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Te-Ni')
-	end
+  def teni
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Te-Ni')
+  end
 
-	def fise
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Se')
-	end
+  def fise
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Se')
+  end
 
 # Delta quadra.
-	def tesi
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Te-Si')
-	end
+  def tesi
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Te-Si')
+  end
 
-	def fine
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Ne')
-	end
+  def fine
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Fi-Ne')
+  end
 
-	def nefi
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Fi')
-	end
+  def nefi
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Ne-Fi')
+  end
 
-	def site
-		@socionics_type = SocionicsType.find_by(type_two_im: 'Si-Te')
-	end
+  def site
+    @socionics_type = SocionicsType.find_by(type_two_im: 'Si-Te')
+  end
 
-	private
-		def set_socionics_types
-			@socionics_types = SocionicsType.all
-		end
+  private
+    def set_socionics_types
+      @socionics_types = SocionicsType.all
+    end
 
 end

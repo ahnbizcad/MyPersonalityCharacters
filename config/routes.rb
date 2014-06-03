@@ -86,17 +86,13 @@ MyPersonalityCharacters::Application.routes.draw do
   end
 
   resources :universes
-  namespace :universes do
-  end
-
   resources :characters
-
   resources :celebrities
-  namespace :celebrities do
-  end
-
   resources :users
   
+  # Is this correct, even if you don't have all standard restful actions?
+  resources :comments, only: [:create, :destroy]
+
   #devise_scope :user do
   #  get '/login', to: "devise/sessions#new", as: :login
   #  delete '/logout', to: "devise/sessions#destroy", as: :logout
