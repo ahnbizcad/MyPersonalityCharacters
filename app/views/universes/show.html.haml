@@ -2,17 +2,23 @@
 
 %br/
 .tag_list
-	Characters: 
-	- if @characters.empty?
-		none
-		= link_to "Add", edit_universe_path
-	-else
-		- @characters.each do |char|
-			= link_to image_tag(char.image.url(:thumb)), char
-			= link_to char.name, char
-			%br/
+  Characters: 
+  - if @characters.empty?
+    none
+    = link_to "Add", edit_universe_path
+  -else
+    - @characters.each do |char|
+      = link_to image_tag(char.image.url(:thumb)), char
+      = link_to char.name, char
+      %br/
 
 %br/
 = link_to 'Edit', edit_universe_path(@universe)
 \|
 = link_to 'Destroy', @universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br/
+.comments
+  %h2 Comments
+  = render partial: 'comments/form', locals: { comment: @new_comment }
+  = render partial: 'comments/comment', collection: @comments, as: :comment

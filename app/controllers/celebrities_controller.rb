@@ -12,7 +12,10 @@ class CelebritiesController < ApplicationController
   # GET /celebrities/1
   # GET /celebrities/1.json
   def show
-
+    # Later, access votes table to display by highest votes.
+    # @comments is @all_comments
+    @comments = @celebrity.comment_threads.order('created_at DESC')
+    @new_comment = Comment.build_from(@celebrity, current_user.id, "")
   end
 
   # GET /celebrities/new

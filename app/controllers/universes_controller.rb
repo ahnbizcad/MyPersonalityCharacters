@@ -16,6 +16,10 @@ class UniversesController < ApplicationController
   # GET /universes/1
   # GET /universes/1.json
   def show
+    # Later, access votes table to display by highest votes.
+    # @comments is @all_comments
+    @comments = @universe.comment_threads.order('created_at DESC')
+    @new_comment = Comment.build_from(@universe, current_user, "")
   end
 
   # GET /universes/new

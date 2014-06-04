@@ -9,19 +9,25 @@
 
 %br/
 .tag_list
-	Characters: 
-	- if @characters.empty?
-		none
-		= link_to "Add", edit_universe_path
-	-else
-		- @characters.each do |char|
-			= link_to image_tag(char.image.url(:thumb)), char
-			= link_to char.name, char
-			%br/
+  Characters: 
+  - if @characters.empty?
+    none
+    = link_to "Add", edit_universe_path
+  -else
+    - @characters.each do |char|
+      = link_to image_tag(char.image.url(:thumb)), char
+      = link_to char.name, char
+      %br/
 
 - if @universes
-	Universes: 
-	%br/
-	- @universes.each do |univ|
-		= link_to univ.name, univ
-		%br/
+  Universes: 
+  %br/
+  - @universes.each do |univ|
+    = link_to univ.name, univ
+    %br/
+
+%br/
+.comments
+  %h2 Comments
+  = render partial: 'comments/form', locals: { comment: @new_comment }
+  = render partial: 'comments/comment', collection: @comments, as: :comment
