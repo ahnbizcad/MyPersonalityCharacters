@@ -1,11 +1,52 @@
 %h1 Information Elements
 
-%ul
-	%li= link_to "(Si) Introverted Sensing", socionics_si_path
-	%li= link_to "(Se) Introverted Sensing", socionics_se_path
-	%li= link_to "(Ni) Introverted Sensing", socionics_ni_path
-	%li= link_to "(Ne) Introverted Sensing", socionics_ne_path
-	%li= link_to "(Ti) Introverted Sensing", socionics_ti_path
-	%li= link_to "(Te) Introverted Sensing", socionics_te_path
-	%li= link_to "(Fi) Introverted Sensing", socionics_fi_path
-	%li= link_to "(Fe) Introverted Sensing", socionics_fe_path
+%p
+  The concept of information elements is foundational to socionics theory. For a given personality type (socion), information elements act as different functions, defining the personality type.
+%p
+  There are 8 information elements in total.
+%section
+  .elements-header
+    .item p
+    .item j
+  .extraverted-elements
+    .item e
+    .item= link_to image_tag("ni.png"), socionics_se_path
+    .item= link_to image_tag("ni.png"), socionics_ne_path
+    .item= link_to image_tag("ni.png"), socionics_te_path
+    .item= link_to image_tag("ni.png"), socionics_fe_path
+  .introverted-elements
+    .item i
+    .item= link_to image_tag("ni.png"), socionics_si_path
+    .item= link_to image_tag("ni.png"), socionics_ni_path
+    .item= link_to image_tag("ni.png"), socionics_ti_path
+    .item= link_to image_tag("ni.png"), socionics_fi_path
+
+%section
+  %h6 Perceiving ("Irrational") Information Elements
+
+  .block
+    = link_to image_tag("ni.png"), socionics_se_path
+    = link_to "(Se) Extraverted Sensing", socionics_se_path
+  .block
+    = link_to image_tag("ni.png"), socionics_si_path
+    = link_to "(Si) Introverted Sensing", socionics_si_path
+  .block
+    = link_to image_tag("ni.png"), socionics_ne_path
+    = link_to "(Ne) Extraverted Intuiting", socionics_ne_path
+  .block
+    = link_to image_tag("ni.png"), socionics_ni_path
+    = link_to "(Ni) Introverted Intuiting", socionics_ni_path
+
+  %h6 Judging ("Rational") Information Elements
+  .block
+    = link_to image_tag("ni.png"), socionics_te_path
+    = link_to "(Te) Extraverted Thinking", socionics_te_path
+  .block
+    = link_to image_tag("ni.png"), socionics_ti_path
+    = link_to "(Ti) Introverted Thinking", socionics_ti_path
+  .block
+    = link_to image_tag("ni.png"), socionics_fe_path
+    = link_to "(Fe) Extraverted Feeling", socionics_fe_path
+  .block
+    = link_to image_tag("ni.png"), socionics_fi_path
+    = link_to "(Fi) Introverted Feeling", socionics_fi_path

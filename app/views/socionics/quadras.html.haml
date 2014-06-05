@@ -1,1 +1,58 @@
 %h1 Quadras
+
+%p 
+  :erb
+    Quadras group the 16 <%= link_to "personality types (socion)", socionics_socion_path %> by information elements that are <%= link_to "valued functions", socionics_function_dichotomies_path %> (functions 1, 2, 6, 5).
+
+%section
+  %h5 Alpha Quadra
+  %div= ni
+    .Si 
+    .Ne 
+    .Ti 
+    .Fe
+  %ul
+    %li ENTp Ne Ti
+    %li ISFp Si Fe
+    %li ESFj Fe Si
+    %li INTj Ti Ne
+
+%section
+  %h3 Beta Quadra
+  %div
+    .Se 
+    .Ni 
+    .Ti 
+    .Fe
+  %ul
+    %li ENFj Fe Ni
+    %li ISTj Ti Se
+    %li ESTp Se Ti
+    %li INFp Ni Fe
+    
+%section
+  %h3 Gamma Quadra
+  %div
+    .Se 
+    .Ni 
+    .Te 
+    .Fi
+  %%ul
+    %li ESFp Se Fi
+    %li INTp Ni Te
+    %li ENTj Te Ni
+    %li ISFj Fi Se
+    
+%section
+  %h3 Delta Delta
+  %div
+    .Si 
+    .Ne 
+    .Te 
+    .Fi
+  %ul
+    %li ESTj Te Si
+    %li INFj Fi Ne
+    %li ENFp Ne Fi
+    %li ISTp Si Te
+    

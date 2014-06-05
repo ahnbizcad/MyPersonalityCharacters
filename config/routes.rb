@@ -51,8 +51,8 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'nefi'
     get 'site'
 
-    # Intertype Relations.
-    get 'intertype_relations'
+    # Socion
+    get 'socion'
     # Information Elements.
     get 'information_elements'
     get 'si'
@@ -77,6 +77,8 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'temperaments'
     get 'communication_styles'
     get 'romance_styles'
+    # Intertype Relations.
+    get 'intertype_relations'
   end  
 
   get 'mbti', to: 'mbti#index', as: 'mbti'

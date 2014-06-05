@@ -1,45 +1,36 @@
 %h1 Socionics Theory
 
+%section Socionics Theory - Map Diagram.
+
+%section
+	(Information element) + (functions) = (Socion)
+
+	Function dichotomies
+
+	Socion model A
+	Socion dichotomies
+	socion small groups
+
+	Intertype relations
+
+%section
+	= link_to "Personality Types (Socion)", socionics_socion_path
+%section
+	= link_to "Intertype Relations", socionics_intertype_relations_path
+%section
+	= link_to "Information Elements", socionics_information_elements_path
+%section
+	= link_to "Functions", socionics_functions_path
+
+
+%section
+	= link_to "Function Dichotomies", socionics_function_dichotomies_path
+%section
+	= link_to "Type Dichotomies", socionics_type_dichotomies_path
+%section
+	= link_to "Small Groups", socionics_small_groups_path
+
+
 %h1 Intertype Relations
 
-= render 'intertype_relations'
-
-%section 
-	%p 
-		Meet the 16 Socionics types
-		= link_to "ENTp (Ne-Ti)", socionics_neti_path
-
-	#spritzText 
-		A sample paragraph.
-		A sample paragraph.
-
-	%table
-		- @socionics_types.each do |type|
-			%tr
-				%td= type.type_four_letter
-				%td= type.type_three_letter
-				%td= type.type_two_im
-
-%section 
-	(app)
-
-%section Socionics Theory - Map
-
-%section
-	=link_to "Information Elements", socionics_information_elements_path
-%section
-	=link_to "Functions", socionics_functions_path
-%section
-	=link_to "Function Dichotomies", socionics_function_dichotomies_path
-%section
-	=link_to "Personality Types", "#"
-%section
-	=link_to "Type Dichotomies", socionics_type_dichotomies_path
-%section
-	=link_to "Small Groups", socionics_small_groups_path
-%section
-	=link_to "Intertype Relations", socionics_intertype_relations_path
-
-
-
-
+= render 'tool_intertype_relations'

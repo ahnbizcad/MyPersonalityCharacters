@@ -57,5 +57,4 @@
 .comments
   %h2 Comments
   = render partial: 'comments/form', locals: { comment: @new_comment }
-  -# Get collection of comments and treat each as comment.
   = render partial: 'comments/comment', collection: @comments, as: :comment

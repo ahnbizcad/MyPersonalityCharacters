@@ -7,41 +7,48 @@ Essentially global stuff
 ----------*/
 
 body {
-	@include font-size(16px);
-	font-family: sans-serif;
-	background-image: url("45degreee_fabric_2x.png");
+  @include font-size(16px);
+  font-family: sans-serif;
+  background-image: url("45degreee_fabric_2x.png");
 }
-h1 { font-size: 1.6em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.4em; }
-h4 { font-size: 1.3em; }
-h5 { font-size: 1.2em; }
-h6 { font-size: 1.1em; }
-
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.3em; }
+h6 { font-size: 1.2em; }
 
 .si {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("si.png");
 }
 .se {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("se.png");
 }
 .ni {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("ni.png");
 }
 .ne {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("ne.png");
 }
 .ti {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("ti.png");
 }
 .te {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("te.png");
 }
 .fi {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("fi.png");
 }
 .fe {
-	display: inline- block;
+  display: inline-block;
+  background-image: image-url("fe.png");
 }
 
 
@@ -55,14 +62,14 @@ h6 { font-size: 1.1em; }
 header
 ----------*/
 header {
-	overflow: hidden;
-	background-color: rgb(0,0,0);
-	a {
-		height: auto;
-	}
-	#logo {
-		position: absolute;
-	}
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  a {
+    height: auto;
+  }
+  #logo {
+    position: absolute;
+  }
 }
 
 
@@ -77,8 +84,8 @@ Navbar top affixing with js.
 
 }
 
-.affixable {		
-	@include nav-background-color();
+.affixable {    
+  @include nav-background-color();
 }
 
 /*----------
@@ -86,96 +93,96 @@ nav
 ----------*/
 
 nav {
-	align-items: center;
+  align-items: center;
 
-	@include nav-background-color();
-	font-family: Helvetica;
-	font-weight: 500;
-	font-size: 1.2em;
-	width: 100%;
+  @include nav-background-color();
+  font-family: Helvetica;
+  font-weight: 500;
+  font-size: 1.2em;
+  width: 100%;
 
-	ul {
-		align-items: center;
-		@extend .list-inline;
-		white-space: nowrap;
+  ul {
+    align-items: center;
+    @extend .list-inline;
+    white-space: nowrap;
 
-		#characters-navbar {
-			background: image-url("character_pikachu.png");
-			@include navbar-icon;
-		}
-		#universes-navbar {
-			background: image-url("universe.jpg");
-			@include navbar-icon;
-		}
-		#celebrities-navbar {
-			background: image-url("star_blue_1.png");
-			@include navbar-icon;
-		}
-		#friends-navbar {
-			background: image-url("node_1.jpg");
-			@include navbar-icon;
-		}
-		#personalites-navbar {
-			background: image-url("puzzle_personality_1.jpg");
-			@include navbar-icon;
-		}
-		#tests-navbar {
-			background: image-url("clipboard_3d.jpg");
-			@include navbar-icon;
-		}
-		#tools-navbar {
-			background: image-url("tools_1.png");
-			@include navbar-icon;
-		}
-		#login-navbar {
-			background: image-url("log_1.jpg");
-			@include navbar-icon;
-		}
+    #characters-navbar {
+      background: image-url("character_pikachu.png");
+      @include navbar-icon;
+    }
+    #universes-navbar {
+      background: image-url("universe.jpg");
+      @include navbar-icon;
+    }
+    #celebrities-navbar {
+      background: image-url("star_blue_1.png");
+      @include navbar-icon;
+    }
+    #friends-navbar {
+      background: image-url("node_1.jpg");
+      @include navbar-icon;
+    }
+    #personalites-navbar {
+      background: image-url("puzzle_personality_1.jpg");
+      @include navbar-icon;
+    }
+    #tests-navbar {
+      background: image-url("clipboard_3d.jpg");
+      @include navbar-icon;
+    }
+    #tools-navbar {
+      background: image-url("tools_1.png");
+      @include navbar-icon;
+    }
+    #login-navbar {
+      background: image-url("log_1.jpg");
+      @include navbar-icon;
+    }
 
-		li {
-			list-style: none;
+    li {
+      list-style: none;
 
-			a {
-				display: block;
+      a {
+        display: block;
 
-				&:hover {
-					text-decoration: none;
-				}				
-				&:focus {
-					text-decoration: none;
-				}
-			}
-			ul.dropdown-menu {
-				padding: 0;
+        &:hover {
+          text-decoration: none;
+        }       
+        &:focus {
+          text-decoration: none;
+        }
+      }
+      ul.dropdown-menu {
+        padding: 0;
 
-				li {
-					display: block;
-					padding: 0;
-				}
-			}
-		}
-	}
-	ul#links {
+        li {
+          display: block;
+          padding: 0;
+        }
+      }
+    }
+  }
+  ul#links {
 
-		form {
-			@extend .navbar-form;
+    form {
+      @extend .navbar-form;
 
-			.form-group {
+      .form-group {
 
-				input {
-					@extend .form-control;
-				}
+        input {
+          @extend .form-control;
+        }
 
-				button {
-					@extend .btn;
-					@extend .btn-default ;
-					@extend .form-control;
-				}
-			}
-		}
-	}
-	ul#login {
-	}
+        button {
+          @extend .btn;
+          @extend .btn-default ;
+          @extend .form-control;
+        }
+      }
+    }
+  }
+  ul#login {
+  }
 }
 
 
@@ -185,38 +192,38 @@ filmstrips
 ----------*/
 
 .filmstrip {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 #filmstrip-h-1, #filmstrip-h-2 {
-	@extend .filmstrip;
+  @extend .filmstrip;
 
-	.filmstrip-h-element {
-		background-image: image-url("filmstrip_horizontal_1.png");
-		background-repeat: no-repeat;
-		background-size: contain;
+  .filmstrip-h-element {
+    background-image: image-url("filmstrip_horizontal_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 
-		img {
+    img {
 
-		}
-	}
+    }
+  }
 }
 
 
 #filmstrip-v-1, #filmstrip-v-2 {
-	@extend .filmstrip;
-	margin: (-$gutter-v) 0;
+  @extend .filmstrip;
+  margin: (-$gutter-v) 0;
 
 
-	.filmstrip-v-element {
-		background-image: image-url("filmstrip_vertical_1.png");
-		background-repeat: no-repeat;
-		background-size: contain;
+  .filmstrip-v-element {
+    background-image: image-url("filmstrip_vertical_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 
-		img {
-			
-		}
-	}	
+    img {
+      
+    }
+  } 
 }
 
 
@@ -225,7 +232,7 @@ likeasomebodeeh
 ----------*/
 
 #likasomebodeeh {
-	padding: $gutter-v 0 ;
+  padding: $gutter-v 0 ;
 }
 
 
@@ -235,31 +242,31 @@ sidebar-one
 
 #sidebar-one {
 
-	@include body-item-box-shadow();
-	@include non-background-color();
+  @include body-item-box-shadow();
+  @include non-background-color();
 
-	#spritzer {
-		margin: 0 (-$gutter-h) $gutter-v;
-	}
+  #spritzer {
+    margin: 0 (-$gutter-h) $gutter-v;
+  }
 
-	.sidebar-one-element {
-				
-		margin:  0 0 1em;
-		padding: $gutter-v $gutter-h 0;
+  .sidebar-one-element {
+        
+    margin:  0 0 1em;
+    padding: $gutter-v $gutter-h 0;
 
-		@include sidebar-top-corners();
+    @include sidebar-top-corners();
 
-		.element-title {
-			margin:  (-$gutter-v) (-$gutter-h) 2*$gutter-v;
-			padding: $gutter-v $gutter-h;
+    .element-title {
+      margin:  (-$gutter-v) (-$gutter-h) 2*$gutter-v;
+      padding: $gutter-v $gutter-h;
 
-			text-align: center;
-			font-weight: 600;
-			color: white;
-			background-color: rgb(0, 100, 200);
-			@include sidebar-top-corners();
-		}
-	}
+      text-align: center;
+      font-weight: 600;
+      color: white;
+      background-color: rgb(0, 100, 200);
+      @include sidebar-top-corners();
+    }
+  }
 }
 
 
@@ -269,15 +276,15 @@ main
 ----------*/
 main {
 
-	padding: $gutter-v $gutter-h;
-	min-height: 1000px;
+  padding: $gutter-v $gutter-h;
+  min-height: 1000px;
 
-	@include non-background-color();
-	@include body-item-box-shadow();
+  @include non-background-color();
+  @include body-item-box-shadow();
 
-	.tag-list {
+  .tag-list {
 
-	}
+  }
 }
 
 
@@ -290,13 +297,13 @@ spacers
 footer
 ----------*/
 footer {
-	background-color: rgb(0,50,125);
+  background-color: rgb(0,50,125);
 
-	ul#links {
-		li {
-			list-style: none;
-		}
-	}
+  ul#links {
+    li {
+      list-style: none;
+    }
+  }
 }
 
 
@@ -305,7 +312,7 @@ footer {
 misc.
 ----------*/
 .comment-form {
-	text-area {
-		width:100%;
-	}
+  text-area {
+    width:100%;
+  }
 }

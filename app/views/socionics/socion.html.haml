@@ -1,0 +1,16 @@
+%h1 Socion
+%section 
+  %p 
+    Meet the 16 Socionics types
+    = link_to "ENTp (Ne-Ti)", socionics_neti_path
+
+  #spritzText 
+    A sample paragraph.
+    A sample paragraph.
+
+  %table
+    - @socionics_types.each do |type|
+      %tr
+        %td= type.type_four_letter
+        %td= type.type_three_letter
+        %td= type.type_two_im
