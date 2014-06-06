@@ -16,8 +16,12 @@ class CharactersController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @character.comment_threads.order('created_at DESC')
-    @new_comment = Comment.build_from(@character, current_user.id, "")
+    if user_signed_in?
+      @user_id_var = current_user.id
+      @new_comment = Comment.build_from(@character, @user_id_var, "")
+    end
   end
+
   # GET /characters/new
   def new
     @character = Character.new

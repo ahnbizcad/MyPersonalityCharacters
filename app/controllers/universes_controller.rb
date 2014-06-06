@@ -19,7 +19,10 @@ class UniversesController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @universe.comment_threads.order('created_at DESC')
-    @new_comment = Comment.build_from(@universe, current_user, "")
+    if user_signed_in?
+      @@user_id_var = current_user.id
+      @new_comment = Comment.build_from(@universe, @user_id_var, "")
+    end
   end
 
   # GET /universes/new

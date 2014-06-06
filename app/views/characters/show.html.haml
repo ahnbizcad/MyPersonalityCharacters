@@ -50,11 +50,7 @@
 = link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br/
-- @comments.each do |c|
-  = c.body
-
-%br/
 .comments
-  %h2 Comments
-  = render partial: 'comments/form', locals: { comment: @new_comment }
+  %h2 Comments  
+  = render partial: 'comments/form', locals: { comment: @new_comment } if user_signed_in?
   = render partial: 'comments/comment', collection: @comments, as: :comment

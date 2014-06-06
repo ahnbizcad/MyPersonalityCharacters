@@ -9,7 +9,10 @@ class UsersController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @user.comment_threads.order('created_at DESC')
-    @new_comment = Comment.build_from(@user, current_user.id, "")
+    if user_signed_in?
+      @user_id_var = current_user.id
+      @new_comment = Comment.build_from(@user, @user_id_var, "")
+    end
   end
 
   def edit
