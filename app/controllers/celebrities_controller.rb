@@ -35,6 +35,8 @@ class CelebritiesController < ApplicationController
     @votes_fine = @celebrity.get_upvotes(:vote_scope => 'fine').sum(:vote_weight)
     @votes_nefi = @celebrity.get_upvotes(:vote_scope => 'nefi').sum(:vote_weight)
     @votes_site = @celebrity.get_upvotes(:vote_scope => 'site').sum(:vote_weight)
+
+    
   end
 
   # GET /celebrities/new
