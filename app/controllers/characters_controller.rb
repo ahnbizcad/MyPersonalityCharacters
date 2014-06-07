@@ -20,6 +20,44 @@ class CharactersController < ApplicationController
       @user_id_var = current_user.id
       @new_comment = Comment.build_from(@character, @user_id_var, "")
     end
+
+    @votes_neti = @character.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
+    @votes_sife = @character.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)
+    @votes_fesi = @character.get_upvotes(:vote_scope => 'fesi').sum(:vote_weight)
+    @votes_tine = @character.get_upvotes(:vote_scope => 'tine').sum(:vote_weight)
+    @votes_feni = @character.get_upvotes(:vote_scope => 'feni').sum(:vote_weight)
+    @votes_tise = @character.get_upvotes(:vote_scope => 'tise').sum(:vote_weight)
+    @votes_seti = @character.get_upvotes(:vote_scope => 'seti').sum(:vote_weight)
+    @votes_nife = @character.get_upvotes(:vote_scope => 'nife').sum(:vote_weight)
+    @votes_sefi = @character.get_upvotes(:vote_scope => 'sefi').sum(:vote_weight)
+    @votes_nite = @character.get_upvotes(:vote_scope => 'nite').sum(:vote_weight)
+    @votes_teni = @character.get_upvotes(:vote_scope => 'teni').sum(:vote_weight)
+    @votes_fise = @character.get_upvotes(:vote_scope => 'fise').sum(:vote_weight)
+    @votes_tesi = @character.get_upvotes(:vote_scope => 'tesi').sum(:vote_weight)
+    @votes_fine = @character.get_upvotes(:vote_scope => 'fine').sum(:vote_weight)
+    @votes_nefi = @character.get_upvotes(:vote_scope => 'nefi').sum(:vote_weight)
+    @votes_site = @character.get_upvotes(:vote_scope => 'site').sum(:vote_weight)
+
+    @votes_total = @character.get_upvotes.sum(:vote_weight)
+    #@votes_neti + @votes_sife + @votes_fesi + @votes_tine + @votes_feni + @votes_tise + @votes_seti + @votes_nife + @votes_sefi + @votes_nite + @votes_teni + @votes_fise + @votes_tesi + @votes_fine + @votes_nefi + @votes_site
+
+    @percentage_neti = @votes_neti / @votes_total
+    @percentage_sife = @votes_sife / @votes_total
+    @percentage_fesi = @votes_fesi / @votes_total
+    @percentage_tine = @votes_tine / @votes_total
+    @percentage_feni = @votes_feni / @votes_total
+    @percentage_tise = @votes_tise / @votes_total
+    @percentage_seti = @votes_seti / @votes_total
+    @percentage_nife = @votes_nife / @votes_total
+    @percentage_sefi = @votes_sefi / @votes_total
+    @percentage_nite = @votes_nite / @votes_total
+    @percentage_teni = @votes_teni / @votes_total
+    @percentage_fise = @votes_fise / @votes_total
+    @percentage_tesi = @votes_tesi / @votes_total
+    @percentage_fine = @votes_fine / @votes_total
+    @percentage_nefi = @votes_nefi / @votes_total
+    @percentage_site = @votes_site / @votes_total
+
   end
 
   # GET /characters/new

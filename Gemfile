@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 #
 gem 'rails', '4.0.0'
+gem 'angularjs-rails'
 #
 gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
@@ -30,7 +31,7 @@ end
 # International localization.
 #gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # For spritemapping, and more.
-gem 'compass'
+#gem 'compass'
 #
 gem 'nokogiri', '~> 1.6.0'
 # Secret keys.
