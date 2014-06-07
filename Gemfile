@@ -31,7 +31,7 @@ end
 # International localization.
 #gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # For spritemapping, and more.
-#gem 'compass'
+gem 'compass'
 #
 gem 'nokogiri', '~> 1.6.0'
 # Secret keys.
