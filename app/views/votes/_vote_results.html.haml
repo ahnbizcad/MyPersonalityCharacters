@@ -1,0 +1,141 @@
+=# content_tag "div", id: "vote-results", data: { votables: Character.limit(10) } do 
+-# @character. do |type|
+
+#vote-data{ :style => "display: none;" }
+  = @percentage_neti.to_json
+
+.vote-chart
+  .vote-buttons
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), "#"
+
+  .vote-bar-labels
+    .vote-bar-label
+      Ne-Ti
+    .vote-bar-label
+      Si-Fe
+    .vote-bar-label
+      Fe-Si
+    .vote-bar-label
+      Ti-Ne
+    .vote-bar-label
+      Fe-Ni
+    .vote-bar-label
+      Ti-Se
+    .vote-bar-label
+      Se-Ti
+    .vote-bar-label
+      Ni-Fe
+    .vote-bar-label
+      Se-Fi
+    .vote-bar-label
+      Ni-Te
+    .vote-bar-label
+      Te-Ni
+    .vote-bar-label
+      Se-Fi
+    .vote-bar-label
+      Te-Si
+    .vote-bar-label
+      Fi-Ne
+    .vote-bar-label
+      Ne-Fi
+    .vote-bar-label
+      Si-Te
+      
+  .vote-bars
+    .vote-bar
+      .bar-neti
+    .vote-bar
+      .bar-sife
+    .vote-bar
+      .bar-fesi
+    .vote-bar
+      .bar-tine
+    .vote-bar
+      .bar-feni
+    .vote-bar
+      .bar-tise
+    .vote-bar
+      .bar-seti
+    .vote-bar
+      .bar-nife
+    .vote-bar
+      .bar-sefi
+    .vote-bar
+      .bar-nite
+    .vote-bar
+      .bar-teni
+    .vote-bar
+      .bar-fise
+    .vote-bar
+      .bar-tesi
+    .vote-bar
+      .bar-fine
+    .vote-bar
+      .bar-nefi
+    .vote-bar
+      .bar-site
+  .vote-readouts
+    .vote-readout
+      = @percentage_neti
+      \%
+    .vote-readout
+      = @percentage_sife
+      \%
+    .vote-readout
+      = @percentage_fesi
+      \%
+    .vote-readout
+      = @percentage_tine
+      \%
+    .vote-readout
+      = @percentage_feni 
+      \%
+    .vote-readout
+      = @percentage_tise
+      \%
+    .vote-readout
+      = @percentage_seti
+      \%
+    .vote-readout
+      = @percentage_nife
+      \%
+    .vote-readout
+      = @percentage_sefi
+      \%
+    .vote-readout
+      = @percentage_nite
+      \%
+    .vote-readout
+      = @percentage_teni
+      \%
+    .vote-readout
+      = @percentage_fise
+      \%
+    .vote-readout
+      = @percentage_tesi
+      \%
+    .vote-readout
+      = @percentage_fine
+      \%
+    .vote-readout
+      = @percentage_nefi
+      \%
+    .vote-readout
+      = @percentage_site 
+      \%

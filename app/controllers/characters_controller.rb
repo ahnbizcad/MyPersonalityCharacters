@@ -41,22 +41,41 @@ class CharactersController < ApplicationController
     @votes_total = @character.get_upvotes.sum(:vote_weight)
     #@votes_neti + @votes_sife + @votes_fesi + @votes_tine + @votes_feni + @votes_tise + @votes_seti + @votes_nife + @votes_sefi + @votes_nite + @votes_teni + @votes_fise + @votes_tesi + @votes_fine + @votes_nefi + @votes_site
 
-    @percentage_neti = @votes_neti / @votes_total
-    @percentage_sife = @votes_sife / @votes_total
-    @percentage_fesi = @votes_fesi / @votes_total
-    @percentage_tine = @votes_tine / @votes_total
-    @percentage_feni = @votes_feni / @votes_total
-    @percentage_tise = @votes_tise / @votes_total
-    @percentage_seti = @votes_seti / @votes_total
-    @percentage_nife = @votes_nife / @votes_total
-    @percentage_sefi = @votes_sefi / @votes_total
-    @percentage_nite = @votes_nite / @votes_total
-    @percentage_teni = @votes_teni / @votes_total
-    @percentage_fise = @votes_fise / @votes_total
-    @percentage_tesi = @votes_tesi / @votes_total
-    @percentage_fine = @votes_fine / @votes_total
-    @percentage_nefi = @votes_nefi / @votes_total
-    @percentage_site = @votes_site / @votes_total
+    if @votes_total == 0
+      @percentage_neti = 0
+      @percentage_sife = 0
+      @percentage_fesi = 0
+      @percentage_tine = 0
+      @percentage_feni = 0
+      @percentage_tise = 0
+      @percentage_seti = 0
+      @percentage_nife = 0
+      @percentage_sefi = 0
+      @percentage_nite = 0
+      @percentage_teni = 0
+      @percentage_fise = 0
+      @percentage_tesi = 0
+      @percentage_fine = 0
+      @percentage_nefi = 0
+      @percentage_site = 0
+    else
+      @percentage_neti = @votes_neti / @votes_total
+      @percentage_sife = @votes_sife / @votes_total
+      @percentage_fesi = @votes_fesi / @votes_total
+      @percentage_tine = @votes_tine / @votes_total
+      @percentage_feni = @votes_feni / @votes_total
+      @percentage_tise = @votes_tise / @votes_total
+      @percentage_seti = @votes_seti / @votes_total
+      @percentage_nife = @votes_nife / @votes_total
+      @percentage_sefi = @votes_sefi / @votes_total
+      @percentage_nite = @votes_nite / @votes_total
+      @percentage_teni = @votes_teni / @votes_total
+      @percentage_fise = @votes_fise / @votes_total
+      @percentage_tesi = @votes_tesi / @votes_total
+      @percentage_fine = @votes_fine / @votes_total
+      @percentage_nefi = @votes_nefi / @votes_total
+      @percentage_site = @votes_site / @votes_total
+    end
 
   end
 

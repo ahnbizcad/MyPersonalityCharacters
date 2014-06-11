@@ -1,0 +1,4 @@
+.vote-buttons
+  = link_to image_tag("upvote.png"), path, method: post, remote: true
+  %span=# @votable.vote.size
+  = link_to image_tag("downvote.png"), path, method: post, remote: true

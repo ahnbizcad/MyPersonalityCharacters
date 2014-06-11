@@ -48,6 +48,7 @@ class UniversesController < ApplicationController
         format.json { render json: @universe.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /universes/1

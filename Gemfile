@@ -9,8 +9,8 @@ gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
 #
 gem 'sass-rails', '~> 4.0.0'
-gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'autoprefixer-rails'
 #
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -53,8 +53,10 @@ gem 'acts_as_votable', '~> 0.9.0'
 
 
 group :development do
-	# Better errors
+	# Better errors on browser
 	gem 'better_errors'
+  # config better errors
+  #gem 'sprockets_better_errors'
 	# See nested duck typed caller function names.
 	#gem "binding_of_caller"
 

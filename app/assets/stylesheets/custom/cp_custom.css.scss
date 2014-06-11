@@ -53,9 +53,18 @@ h6 { font-size: 1.2em; }
 
 
 
+/*----------
+footer
+----------*/
+footer {
+  background-color: rgb(0,50,125);
 
-
-
+  ul#links {
+    li {
+      list-style: none;
+    }
+  }
+}
 
 
 /*----------
@@ -237,6 +246,11 @@ likeasomebodeeh
 
 
 /*----------
+filmstrips
+----------*/
+
+
+/*----------
 sidebar-one
 ----------*/
 
@@ -269,6 +283,9 @@ sidebar-one
   }
 }
 
+/*----------
+spacers
+----------*/
 
 
 /*----------
@@ -289,22 +306,88 @@ main {
 
 
 /*----------
-spacers
+vote bars
 ----------*/
 
+.vote-chart {
 
-/*----------
-footer
-----------*/
-footer {
-  background-color: rgb(0,50,125);
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: stretch;
 
-  ul#links {
-    li {
-      list-style: none;
+  .vote-buttons {
+    flex: 0 0 20px;
+    img {
+      width: 100%;
+    }
+  }
+  .vote-bar-labels {
+    flex: 0 0 50px;
+    .vote-bar-label {
+
+    }
+  }
+  .vote-bars {
+    flex: 1 1 85%;
+
+    display: flex;
+    flex-flow: row wrap;    
+
+    .vote-bar {
+      flex: 1 1 100%;
+      height: 20px;
+
+      background: linear-gradient(rgba(240,240,240,1), rgba(250,250,250,1)); 
+      box-shadow: 0px 1px 2px, rgba(0,0,0,0.3) inset;
+
+      > *{
+        height: 100%;
+      }
+
+      .bar-neti {
+      }
+      .bar-sife {
+      }
+      .bar-fesi {
+      }
+      .bar-tine {
+      }
+      .bar-feni {
+      }
+      .bar-tise {
+      }
+      .bar-seti {
+      }
+      .bar-nife {
+      }
+      .bar-sefi {
+      }
+      .bar-nite {
+      }
+      .bar-teni {
+      }
+      .bar-fise {
+      }
+      .bar-te-si {
+      }
+      .bar-fi-ne {
+      }
+      .bar-ne-fi {
+      }
+      .bar-si-te {
+      }
+    }
+  }
+  .vote-readouts {
+    flex: 0 0 50px;
+    
+    .vote-readout {
+      
     }
   }
 }
+
+
 
 
 
@@ -312,7 +395,7 @@ footer {
 misc.
 ----------*/
 .comment-form {
-  text-area {
+  .text-area {
     width:100%;
   }
 }

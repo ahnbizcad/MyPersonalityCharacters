@@ -19,6 +19,7 @@ class CelebritiesController < ApplicationController
       @user_id_var = current_user.id
       @new_comment = Comment.build_from(@celebrity, @user_id_var, "")
     end
+
     @votes_neti = @celebrity.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
     @votes_sife = @celebrity.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)
     @votes_fesi = @celebrity.get_upvotes(:vote_scope => 'fesi').sum(:vote_weight)
@@ -36,7 +37,6 @@ class CelebritiesController < ApplicationController
     @votes_nefi = @celebrity.get_upvotes(:vote_scope => 'nefi').sum(:vote_weight)
     @votes_site = @celebrity.get_upvotes(:vote_scope => 'site').sum(:vote_weight)
 
-    
   end
 
   # GET /celebrities/new

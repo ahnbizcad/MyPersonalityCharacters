@@ -25,7 +25,11 @@
       %br/
 
 %br/
+= render partial: 'votes/vote_results'
+
+%br/
 = image_tag @character.image.url(:medium)
+
 
 =# @character.vote_by voter: current_user, vote_scope: 'neti'
 =# @character.vote_by voter: current_user, vote_scope: 'sife'
