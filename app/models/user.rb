@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   acts_as_votable
   acts_as_voter
 
+#
+
 	belongs_to :socionics_type
 
   # Include default devise modules. Others available are:
@@ -12,5 +14,9 @@ class User < ActiveRecord::Base
   #
 
   validates :username, presence: true
+
+  def to_param
+    "#{id}-#{username}"
+  end
 
 end

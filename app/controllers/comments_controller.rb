@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include VotesController
   
   def create
     @comment_hash = params[:comment]

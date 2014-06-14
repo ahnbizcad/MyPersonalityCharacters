@@ -1,4 +1,6 @@
 class CelebritiesController < ApplicationController
+  include VotesController
+
   before_action :set_celebrity,   only: [:show, :edit, :update, :destroy]
   before_action :set_characters,  only: [:show, :edit, :update, :destroy]
   before_action :set_universes,   only: [:show, :edit, :update, :destroy]
@@ -15,10 +17,9 @@ class CelebritiesController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @celebrity.comment_threads.order('created_at DESC')
-    if user_signed_in?
-      @user_id_var = current_user.id
-      @new_comment = Comment.build_from(@celebrity, @user_id_var, "")
-    end
+    @new_comment = Comment.build_from(@celebrity, current_user.id, "") if user_signed_in?
+
+    @votable_name = Celebrity.new.class.name.downcase
 
     @votes_neti = @celebrity.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
     @votes_sife = @celebrity.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)

@@ -2,6 +2,8 @@ class Character < ActiveRecord::Base
   acts_as_commentable
   acts_as_votable
 
+#
+
   belongs_to :socionics_type
 
   has_many :universes, through: :univ_char_joins
@@ -33,6 +35,15 @@ class Character < ActiveRecord::Base
 
   def celebrity_ids
 
+  end
+
+  #
+
+  # needs to be public, but not an action. extend votes model?
+  # can this method be accessed from views?
+  def votable_name
+    model = Character.new 
+    @votable_name = model.class.name.downcase
   end
 
   def to_param

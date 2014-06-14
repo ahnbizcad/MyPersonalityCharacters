@@ -1,4 +1,3 @@
 jQuery ->
-  percentages = JSON.parse($('#vote-data'))
-  document.write(percentages)
-  $('.bar-neti').css("width", 50)
+  percentage_neti = JSON.parse($('#vote-data'))
+  $('.bar-neti').css("width", percentage_neti + '%')

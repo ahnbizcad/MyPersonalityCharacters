@@ -1,9 +1,11 @@
 .comment-form
-  = simple_form_for comment, :remote => true do |f|
+  = simple_form_for new_comment, :remote => true do |f|
     = f.error_notification
+    %h4
+    = current_user.username
     = f.input :body, :label => false#, :input_html => { :rows => "3" } #needs to be 100% width #need to preserve line formating
-    = f.input :commentable_type, :as => :hidden, :value => comment.commentable_type
-    = f.input :commentable_id, :as => :hidden, :value => comment.commentable_id
+    = f.input :commentable_type, :as => :hidden, :value => new_comment.commentable_type
+    = f.input :commentable_id, :as => :hidden, :value => new_comment.commentable_id
     = f.input :user_id, :as => :hidden, :value => current_user.id
     -# hitting reply button of a comment creates a hidden "parent_id" field here via AJAX. ?
     = f.error :base

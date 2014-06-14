@@ -1,7 +1,9 @@
 class Celebrity < ActiveRecord::Base
   acts_as_commentable
   acts_as_votable
-  
+
+#
+
 	belongs_to :socionics_type
 
 	has_many :characters, through: :char_celeb_joins

@@ -4,6 +4,8 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   acts_as_votable
 
+#
+
   belongs_to :commentable, :polymorphic => true
 
   belongs_to :user
@@ -45,4 +47,5 @@ class Comment < ActiveRecord::Base
   def self.find_commentable(commentable_str, commentable_id)
     commentable_str.constantize.find(commentable_id)
   end
+
 end

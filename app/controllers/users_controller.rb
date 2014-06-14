@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include VotesController
+
   before_action :set_user, only: [:show, :edit, :update]
 
   def index
@@ -9,10 +11,7 @@ class UsersController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @user.comment_threads.order('created_at DESC')
-    if user_signed_in?
-      @user_id_var = current_user.id
-      @new_comment = Comment.build_from(@user, @user_id_var, "")
-    end
+    @new_comment = Comment.build_from(@user, current_user.id, "") if user_signed_in?
     
     @votes_neti = @user.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
     @votes_sife = @user.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)

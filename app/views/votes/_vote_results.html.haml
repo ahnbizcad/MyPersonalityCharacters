@@ -1,27 +1,28 @@
 =# content_tag "div", id: "vote-results", data: { votables: Character.limit(10) } do 
 -# @character. do |type|
 
-#vote-data{ :style => "display: none;" }
+#vote-data{ style: "display: none;" }
   = @percentage_neti.to_json
 
 .vote-chart
+  -# do this in a loop? it would be shorter and elegant, but this one doesn't query database.
   .vote-buttons
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
-    = link_to image_tag("ni.png"), "#"
+    = link_to image_tag("ni.png"), votes_neti_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_sife_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_fesi_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_tine_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_feni_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_tise_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_seti_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_nife_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_sefi_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_nite_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_teni_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_fise_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_tesi_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_fine_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_nefi_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), votes_site_path(), method: :post, remote: true
 
   .vote-bar-labels
     .vote-bar-label

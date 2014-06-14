@@ -31,7 +31,7 @@ MyPersonalityCharacters::Application.routes.draw do
   get 'socionics', to: 'socionics#index', as: 'socionics'
   namespace :socionics do
     # Types.
-    get 'neti'
+    get 'neti', to: 'socionics#neti'
     get 'sife'
     get 'fesi'
     get 'tine'
@@ -87,19 +87,33 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'tests'
   end
 
+  namespace :votes do
+    get 'upvote', to: 'votes#upvote', as: 'upvote'
+    get 'downvote', to: 'votes#downvote', as: 'downvote'
+    get 'neti', to: 'votes#neti', as: 'neti'
+    get 'sife', to: 'votes#sife', as: 'sife'
+    get 'fesi', to: 'votes#fesi', as: 'fesi'
+    get 'tine', to: 'votes#tine', as: 'tine'
+    get 'feni', to: 'votes#feni', as: 'feni'
+    get 'tise', to: 'votes#tise', as: 'tise'
+    get 'seti', to: 'votes#seti', as: 'seti'
+    get 'nife', to: 'votes#nife', as: 'nife'
+    get 'sefi', to: 'votes#sefi', as: 'sefi'
+    get 'nite', to: 'votes#nite', as: 'nite'
+    get 'teni', to: 'votes#teni', as: 'teni'
+    get 'fise', to: 'votes#fise', as: 'fise'
+    get 'tesi', to: 'votes#tesi', as: 'tesi'
+    get 'fine', to: 'votes#fine', as: 'fine'
+    get 'nefi', to: 'votes#nefi', as: 'nefi'
+    get 'site', to: 'votes#site', as: 'site'
+  end
+
+  resources :comments, only: [:create, :destroy] 
+
   resources :universes
   resources :characters
   resources :celebrities
   resources :users
-  
-  # Is this correct, even if you don't have all standard restful actions?
-  resources :comments, only: [:create, :destroy]
-
-  #devise_scope :user do
-  #  get '/login', to: "devise/sessions#new", as: :login
-  #  delete '/logout', to: "devise/sessions#destroy", as: :logout
-  #  get '/sign_up', to: "devise/registration#new", as: :sign_up
-  #end
   
   devise_for :users, :skip => [:sessions, :registration]
 
@@ -107,12 +121,17 @@ MyPersonalityCharacters::Application.routes.draw do
                                                   :sign_out => "logout", 
                                                   :sign_up => "register", 
                                                   :account_update => "account-settings" }
+  #devise_scope :user do
+  #  get '/login', to: "devise/sessions#new", as: :login
+  #  delete '/logout', to: "devise/sessions#destroy", as: :logout
+  #  get '/sign_up', to: "devise/registration#new", as: :sign_up
+  #end
+
   #as :user do
   #    get    "/login"  => "devise/sessions#new",     :as => :new_user_session
   #    post   "/login"  => "devise/sessions#create",  :as => :user_session
   #    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #end
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

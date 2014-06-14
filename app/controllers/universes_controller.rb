@@ -1,4 +1,6 @@
 class UniversesController < ApplicationController
+  include VotesController
+
   before_action :set_universe,    only: [:show, :edit, :update, :destroy]
   before_action :set_characters,  only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
@@ -19,10 +21,9 @@ class UniversesController < ApplicationController
     # Later, access votes table to display by highest votes.
     # @comments is @all_comments
     @comments = @universe.comment_threads.order('created_at DESC')
-    if user_signed_in?
-      @@user_id_var = current_user.id
-      @new_comment = Comment.build_from(@universe, @user_id_var, "")
-    end
+    @new_comment = Comment.build_from(@universe, current_user.id, "") if user_signed_in?
+
+    @votable_name = Universe.new.class.name.downcase
   end
 
   # GET /universes/new
@@ -48,7 +49,7 @@ class UniversesController < ApplicationController
         format.json { render json: @universe.errors, status: :unprocessable_entity }
       end
     end
-    
+
   end
 
   # PATCH/PUT /universes/1

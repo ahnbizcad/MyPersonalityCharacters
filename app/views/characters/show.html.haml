@@ -1,6 +1,9 @@
 %h1= @character.name
 
 %br/
+= image_tag @character.image.url(:medium)
+
+%br/
 .tag_list
   Universes: 
   - if @universes.empty?
@@ -27,9 +30,6 @@
 %br/
 = render partial: 'votes/vote_results'
 
-%br/
-= image_tag @character.image.url(:medium)
-
 
 =# @character.vote_by voter: current_user, vote_scope: 'neti'
 =# @character.vote_by voter: current_user, vote_scope: 'sife'
@@ -55,6 +55,7 @@
 
 %br/
 .comments
-  %h2 Comments  
-  = render partial: 'comments/form', locals: { comment: @new_comment } if user_signed_in?
+  %h2 What is <%= @character.name %>'s Personality Type?
+  = render partial: 'comments/form', locals: { new_comment: @new_comment } if user_signed_in?
+  
   = render partial: 'comments/comment', collection: @comments, as: :comment
