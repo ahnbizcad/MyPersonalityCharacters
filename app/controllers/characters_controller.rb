@@ -1,10 +1,9 @@
 class CharactersController < ApplicationController
-  include VotesController
+  include SocionicsVotesController
 
   before_action :set_character,   only: [:show, :edit, :update, :destroy]
   before_action :set_universes,   only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
-
 
   # GET /characters
   # GET /characters.json
@@ -19,8 +18,6 @@ class CharactersController < ApplicationController
     # @comments is @all_comments
     @comments = @character.comment_threads.order('created_at DESC')
     @new_comment = Comment.build_from(@character, current_user.id, "") if user_signed_in?
-
-    @votable_name = Character.new.class.name.downcase
 
     @votes_neti = @character.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
     @votes_sife = @character.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)

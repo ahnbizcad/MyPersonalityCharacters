@@ -7,22 +7,22 @@
 .vote-chart
   -# do this in a loop? it would be shorter and elegant, but this one doesn't query database.
   .vote-buttons
-    = link_to image_tag("ni.png"), votes_neti_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_sife_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_fesi_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_tine_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_feni_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_tise_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_seti_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_nife_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_sefi_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_nite_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_teni_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_fise_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_tesi_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_fine_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_nefi_path(), method: :post, remote: true
-    = link_to image_tag("ni.png"), votes_site_path(), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_neti_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_sife_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_fesi_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_tine_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_feni_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_tise_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_seti_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_nife_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_sefi_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_nite_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_teni_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_fise_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_tesi_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_fine_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_nefi_path", votable), method: :post, remote: true
+    = link_to image_tag("ni.png"), send("#{votable_name}_site_path", votable), method: :post, remote: true
 
   .vote-bar-labels
     .vote-bar-label

@@ -1,5 +1,5 @@
 class CelebritiesController < ApplicationController
-  include VotesController
+  include SocionicsVotesController
 
   before_action :set_celebrity,   only: [:show, :edit, :update, :destroy]
   before_action :set_characters,  only: [:show, :edit, :update, :destroy]
@@ -18,8 +18,6 @@ class CelebritiesController < ApplicationController
     # @comments is @all_comments
     @comments = @celebrity.comment_threads.order('created_at DESC')
     @new_comment = Comment.build_from(@celebrity, current_user.id, "") if user_signed_in?
-
-    @votable_name = Celebrity.new.class.name.downcase
 
     @votes_neti = @celebrity.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
     @votes_sife = @celebrity.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)

@@ -1,40 +1,12 @@
-module VotesController
+module SocionicsVotesController
   extend ActiveSupport::Concern
   # Contains actions for voting for comments, and for personality types.
   # Actions not specified elsewhere will not be used.
   # Routes will specify which actions can be called from which scope.
 
   included do
-    before_action :set_votable, only: [:upvote, :downvote,
-                                      :neti,
-                                      :sife,
-                                      :fesi,
-                                      :tine,
-                                      :feni,
-                                      :tise,
-                                      :seti,
-                                      :nife,
-                                      :sefi,
-                                      :nite,
-                                      :teni,
-                                      :fise,
-                                      :tesi,
-                                      :fine,
-                                      :nefi,
-                                      :site]
-  end
-    
-  def upvote
-    if current_user
-      current_user.unvote_for Comment.params[:id] if current_user.voted_on? @comment
-      @votable.vote_up current_user
-    end
-  end
-  def downvote
-    if current_user
-      current_user.unvote_for Comment.params[:id] if current_user.voted_on? @comment
-      @votable.vote_down current_user
-    end
+    before_action :set_votable, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
+    before_action :set_votable_name, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
   end
 
   def neti
@@ -140,8 +112,7 @@ module VotesController
       @votable = votable_constant.find(params[:id])
     end
 
-    def model_constant
-      @model_constant = controller_name.singularize.camelize.downcase
+    def set_votable_name
+      @votable_name = controller_name.singularize.downcase
     end
-
 end

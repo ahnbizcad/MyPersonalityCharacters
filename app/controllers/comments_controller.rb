@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  include VotesController
-  
+  include CommentVotesController
+
   def create
     @comment_hash = params[:comment]
     #@comment = comment.new(comment_params)

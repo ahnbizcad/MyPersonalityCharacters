@@ -28,25 +28,7 @@
       %br/
 
 %br/
-= render partial: 'votes/vote_results'
-
-
-=# @character.vote_by voter: current_user, vote_scope: 'neti'
-=# @character.vote_by voter: current_user, vote_scope: 'sife'
-=# @character.vote_by voter: current_user, vote_scope: 'fesi'
-=# @character.vote_by voter: current_user, vote_scope: 'tine'
-=# @character.vote_by voter: current_user, vote_scope: 'feni'
-=# @character.vote_by voter: current_user, vote_scope: 'tise'
-=# @character.vote_by voter: current_user, vote_scope: 'seti'
-=# @character.vote_by voter: current_user, vote_scope: 'nife'
-=# @character.vote_by voter: current_user, vote_scope: 'sefi'
-=# @character.vote_by voter: current_user, vote_scope: 'nite'
-=# @character.vote_by voter: current_user, vote_scope: 'teni'
-=# @character.vote_by voter: current_user, vote_scope: 'fise'
-=# @character.vote_by voter: current_user, vote_scope: 'tesi'
-=# @character.vote_by voter: current_user, vote_scope: 'fine'
-=# @character.vote_by voter: current_user, vote_scope: 'nefi'
-=# @character.vote_by voter: current_user, vote_scope: 'site'
+= render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name }
 
 %br/
 = link_to 'Edit', edit_character_path(@character)
@@ -55,7 +37,9 @@
 
 %br/
 .comments
-  %h2 What is <%= @character.name %>'s Personality Type?
+  %h2 
+    :plain
+      What is <%= @character.name %>'s Personality Type?
   = render partial: 'comments/form', locals: { new_comment: @new_comment } if user_signed_in?
-  
+
   = render partial: 'comments/comment', collection: @comments, as: :comment

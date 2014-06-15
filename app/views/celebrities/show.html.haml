@@ -3,11 +3,6 @@
 = image_tag @celebrity.image.url(:medium)
 
 %br/
-= link_to 'Edit', edit_celebrity_path(@celebrity)
-\|
-= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br/
 .tag_list
   Characters: 
   - if @characters.empty?
@@ -25,6 +20,14 @@
   - @universes.each do |univ|
     = link_to univ.name, univ
     %br/
+
+%br/
+= render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name }
+
+%br/
+= link_to 'Edit', edit_celebrity_path(@celebrity)
+\|
+= link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br/
 .comments

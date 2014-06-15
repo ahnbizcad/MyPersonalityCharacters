@@ -87,33 +87,36 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'tests'
   end
 
-  namespace :votes do
-    get 'upvote', to: 'votes#upvote', as: 'upvote'
-    get 'downvote', to: 'votes#downvote', as: 'downvote'
-    get 'neti', to: 'votes#neti', as: 'neti'
-    get 'sife', to: 'votes#sife', as: 'sife'
-    get 'fesi', to: 'votes#fesi', as: 'fesi'
-    get 'tine', to: 'votes#tine', as: 'tine'
-    get 'feni', to: 'votes#feni', as: 'feni'
-    get 'tise', to: 'votes#tise', as: 'tise'
-    get 'seti', to: 'votes#seti', as: 'seti'
-    get 'nife', to: 'votes#nife', as: 'nife'
-    get 'sefi', to: 'votes#sefi', as: 'sefi'
-    get 'nite', to: 'votes#nite', as: 'nite'
-    get 'teni', to: 'votes#teni', as: 'teni'
-    get 'fise', to: 'votes#fise', as: 'fise'
-    get 'tesi', to: 'votes#tesi', as: 'tesi'
-    get 'fine', to: 'votes#fine', as: 'fine'
-    get 'nefi', to: 'votes#nefi', as: 'nefi'
-    get 'site', to: 'votes#site', as: 'site'
+  concern :socionics_votes do
+    get 'neti'
+    get 'sife'
+    get 'fesi'
+    get 'tine'
+    get 'feni'
+    get 'tise'
+    get 'seti'
+    get 'nife'
+    get 'sefi'
+    get 'nite'
+    get 'teni'
+    get 'fise'
+    get 'tesi'
+    get 'fine'
+    get 'nefi'
+    get 'site'
   end
 
-  resources :comments, only: [:create, :destroy] 
+  concern :comment_votes do
+    get 'upvote'
+    get 'downvote'
+  end
+
+  resources :comments, only: [:create, :destroy], concerns: :comment_votes
 
   resources :universes
-  resources :characters
-  resources :celebrities
-  resources :users
+  resources :characters, concerns: :socionics_votes
+  resources :celebrities, concerns: :socionics_votes
+  resources :users, concerns: :socionics_votes
   
   devise_for :users, :skip => [:sessions, :registration]
 

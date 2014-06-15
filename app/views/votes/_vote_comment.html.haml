@@ -1,4 +1,4 @@
 .vote-comment-buttons
-  = link_to image_tag("upvote.png"), votes_upvote_path(comment), method: :post, remote: true
+  = link_to image_tag("upvote.png"), send("comment_upvote_path", comment), method: :post, remote: true
   %span=# @comment.get_upvotes.sum(:vote_weight)
-  = link_to image_tag("downvote.png"), votes_downvote_path(comment), method: :post, remote: true
+  = link_to image_tag("downvote.png"), send("comment_downvote_path", comment), method: :post, remote: true
