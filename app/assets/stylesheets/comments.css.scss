@@ -3,17 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment {
-  display: flex;
 
-  .vote-comment-buttons {
-    img {
+  .comment-main {
+    display: flex;
 
+    .vote-comment-buttons {
+      flex: 0 1 5%;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+
+      * {        
+        width: 100%;
+      }
+    }
+
+    .comment-body {
+      flex: 0 1 95%;
     }
   }
-
-  .comment-body {
-
-  }
-
-
 }

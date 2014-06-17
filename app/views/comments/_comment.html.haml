@@ -4,14 +4,16 @@
 
   -# if this comment belongs to the current_user, show destroy link
   = link_to "×", comment_path(comment), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", :disable_with => "×", :class => 'close'
-  
-  = render partial: 'votes/vote_comment', locals: { comment: comment }
-  
-  %h4
+
+  %h5
     = comment.user.username
     =# socionics Votes.type comment.user.vote ???
     %small= comment.updated_at
-  .comment-body
-    %p= comment.body
-  %h4 
+
+  .comment-main
+    = render partial: 'votes/vote_comment', locals: { comment: comment }
+
+    .comment-body
+      %p= comment.body
+
     =# link_to "Reply", AJAX stuff
