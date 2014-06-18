@@ -1,41 +1,39 @@
 %h1= @character.name
 
-%br/
-= image_tag @character.image.url(:medium)
+.container-horizontal
+  .portrait
 
-%br/
-.tag_list
-  Universes: 
-  - if @universes.empty?
-    none
-    = link_to "Add", edit_character_path
-  -else
-    - @universes.each do |univ| 
-      = link_to image_tag(univ.image.url(:thumb)), univ
-      = link_to univ.name, univ
-      %br/
+    .picture
+      = image_tag @character.image.url(:medium)
 
-%br/
-.tag_list
-  Celebrities: 
-  - if @celebrities.empty?
-    none
-    = link_to "Add", edit_character_path
-  -else
-    - @celebrities.each do |celeb|  
-      = link_to image_tag(celeb.image.url(:thumb)), celeb
-      = link_to celeb.name, celeb
-      %br/
+    .tag_list
+      Universes: 
+      - if @universes.empty?
+        = link_to "+", edit_character_path
+      - else
+        - @universes.each do |univ| 
+          = link_to image_tag(univ.image.url(:thumb)), univ
+          = link_to univ.name, univ
+          %br/
 
-%br/
-= render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name }
+    .tag_list
+      Celebrities:
+      - if @celebrities.empty?
+        = link_to "+", edit_character_path
+      - else
+        - @celebrities.each do |celeb|  
+          = link_to image_tag(celeb.image.url(:thumb)), celeb
+          = link_to celeb.name, celeb
+          %br/
 
-%br/
-= link_to 'Edit', edit_character_path(@character)
-\|
-= link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .edit
+      = link_to 'Edit', edit_character_path(@character)
+      \|
+      = link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    
 
-%br/
+  = render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
+
 .comments
   %h2 
     :plain

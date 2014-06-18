@@ -304,37 +304,48 @@ main {
   }
 }
 
+.container-horizontal {
+  display: flex;
+}
+
+.portrait {
+  flex: 1 0 250px;
+
+}
 
 /*----------
 vote chart
 ----------*/
 
 .vote-chart {
+  flex: 1 1 250px;
 
   display: flex;
-  flex-flow: row nowrap;
-  align-content: stretch;
+  flex-flow: row wrap;
+  align-content: flex-start;
 
-  .vote-buttons {
-    flex: 0 0 20px;
-    img {
-      width: 100%;
-    }
-  }
-  .vote-bar-labels {
-    flex: 0 0 50px;
-    .vote-bar-label {
-
-    }
-  }
-  .vote-bars {
-    flex: 1 1 85%;
+  .vote-chart-item {
+    flex: 1 1 100%;
+    height: 1.6em;
 
     display: flex;
-    flex-flow: row wrap;    
+    flex-flow: row nowrap;
+
+    .vote-button {
+      flex: 0 0 1.25em;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .vote-bar-label {
+      flex: 0 0 3em;
+
+    }
 
     .vote-bar {
-      flex: 1 1 100%;
+      flex: 1 1 85%;    
       height: 1.25em;
 
       background: linear-gradient(rgba(240,240,240,1), rgba(250,250,250,1)); 
@@ -393,14 +404,13 @@ vote chart
         @include vote-bar-color();
       }
     }
-  }
-  .vote-readouts {
-    flex: 0 0 50px;
-    
-    .vote-readout {
 
+    .vote-readout {
+      flex: 0 0 4em;
+      
     }
   }
+    
 }
 
 

@@ -7,6 +7,7 @@ module SocionicsVotesController
   included do
     before_action :set_votable, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
     before_action :set_votable_name, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
+    before_action :get_socionics, only: [:show]
   end
 
   def neti
@@ -106,6 +107,8 @@ module SocionicsVotesController
     end
   end 
 
+
+
   private
     def set_votable
       votable_constant = controller_name.singularize.camelize.constantize
@@ -115,4 +118,14 @@ module SocionicsVotesController
     def set_votable_name
       @votable_name = controller_name.singularize.downcase
     end
+
+    def get_socionics
+      @socionics = SocionicsType.all
+    end
+
+    def tally_votes
+      
+    end
+
+
 end

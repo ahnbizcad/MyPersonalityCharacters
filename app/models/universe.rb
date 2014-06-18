@@ -1,7 +1,7 @@
 class Universe < ActiveRecord::Base
   acts_as_commentable
 
-#
+  #
 
 	has_many :characters, through: :univ_char_joins
 	has_many :univ_char_joins

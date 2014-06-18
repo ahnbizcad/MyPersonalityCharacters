@@ -1,21 +1,35 @@
 %h1= @universe.name
 
-%br/
-.tag_list
-  Characters: 
-  - if @characters.empty?
-    none
-    = link_to "Add", edit_universe_path
-  -else
-    - @characters.each do |char|
-      = link_to image_tag(char.image.url(:thumb)), char
-      = link_to char.name, char
-      %br/
+.container-horizontal
+  .portrait
 
-%br/
-= link_to 'Edit', edit_universe_path(@universe)
-\|
-= link_to 'Destroy', @universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .picture
+      = image_tag @universe.image.url(:medium)
+
+    .tag_list
+      Characters: 
+      - if @characters.empty?
+        = link_to "+", edit_universe_path
+      - else
+        - @characters.each do |char|
+          = link_to image_tag(char.image.url(:thumb)), char
+          = link_to char.name, char
+          %br/
+
+    .tag_list
+      Celebrities:
+      - if @celebrities.empty?
+        = link_to "+", edit_universe_path
+      - else
+        - @celebrities.each do |celeb|  
+          = link_to image_tag(celeb.image.url(:thumb)), celeb
+          = link_to celeb.name, celeb
+          %br/
+
+    .edit
+      = link_to 'Edit', edit_universe_path(@universe)
+      \|
+      = link_to 'Destroy', @universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br/
 .comments

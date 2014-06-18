@@ -2,7 +2,7 @@ class Character < ActiveRecord::Base
   acts_as_commentable
   acts_as_votable
 
-#
+  #
 
   belongs_to :socionics_type
 
