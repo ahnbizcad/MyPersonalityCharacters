@@ -401,6 +401,4 @@
       $('#fine').addClass "order-3"
       $('#nefi').addClass "order-2"
       $('#site').addClass('order-1')
-      return nil
-    return nil
 ).call this

@@ -11,22 +11,23 @@
  */
 @import "resets";
 @import "bootstrap";
-/* blanket styles */
+/* Blanket Styles */
 @import "custom/cp_variables";
 @import "custom/cp_custom";
 @import "custom/cp_responsive";
-/* controller-specific styles */
-@import "socionics";
-@import "characters";
-/* cross-controller styles */
-@import "comments";
-@import "votes";
-/* plugin styles */
+/* Plugin Styles */
 @import "spritz";
 @import "select2";
 @import "select2-bootstrap";
 /*
  *= require_self
- *= require_tree .
  */
-
+@import "celebrities";
+@import "characters";
+@import "comments";
+@import "mbti";
+@import "pages ";
+@import "socionics";
+@import "universes";
+@import "users";
+@import "votes";

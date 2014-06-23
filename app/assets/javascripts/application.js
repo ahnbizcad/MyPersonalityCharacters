@@ -23,6 +23,18 @@
 //
 // Place files above 
 //= require_self
-//= require_tree .
+//
+// Require_Tree Substitute
+//= require celebrities
+//= require characters
+//= require comments
+//= require mbti
+//= require pages 
+//= require socionics
+//= require universes
+//= require users
+//= require votes
+//= require custom/affix
+//
 //= require turbolinks
 //
