@@ -1,8 +1,4 @@
 (->
-  
-).call this
-
-(->
   clearOrder = ->
     $('.tile').removeClass "order-1 order-2 order-3 order-4 order-5 order-6 order-7 order-8 order-9 order-10 order-11 order-12 order-13 order-14 order-15 order-16"
 
@@ -406,4 +402,5 @@
       $('#nefi').addClass "order-2"
       $('#site').addClass('order-1')
       return nil
+    return nil
 ).call this

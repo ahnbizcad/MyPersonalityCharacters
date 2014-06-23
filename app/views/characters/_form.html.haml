@@ -19,6 +19,7 @@
   .form-group
     = f.label :universe_ids, "Link Universes"
     = f.collection_select :universe_ids, Universe.order(:name), :id, :name, { include_blank: true }, { multiple: true }
+
   .form-group
     = f.label :celebrity_ids, "Link Celebrities"
     = f.collection_select :celebrity_ids, Celebrity.order(:name), :id, :name, { include_blank: true }, { multiple: true}

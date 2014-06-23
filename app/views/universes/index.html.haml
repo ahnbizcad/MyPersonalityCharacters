@@ -3,16 +3,17 @@
 = link_to 'New Universe', new_universe_path
 
 %table
-	%tr
-		%th
-		%th
-		%th
+  %tr
+    %th
+    %th
+    %th
 
-	- @universes.each do |universe|
-		%tr
-			%td= link_to "#{universe.name}", universe
-			%td= link_to 'Edit', edit_universe_path(universe)
-			%td= link_to 'Destroy', universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  - @universes.each do |universe|
+    %tr
+      %td= link_to image_tag(universe.image.url(:thumb)), universe
+      %td= link_to "#{universe.name}", universe
+      %td= link_to 'Edit', edit_universe_path(universe)
+      %td= link_to 'Destroy', universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

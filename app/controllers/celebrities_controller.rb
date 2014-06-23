@@ -19,23 +19,6 @@ class CelebritiesController < ApplicationController
     @comments = @celebrity.comment_threads.order('created_at DESC')
     @new_comment = Comment.build_from(@celebrity, current_user.id, "") if user_signed_in?
 
-    @votes_neti = @celebrity.get_upvotes(:vote_scope => 'neti').sum(:vote_weight)
-    @votes_sife = @celebrity.get_upvotes(:vote_scope => 'sife').sum(:vote_weight)
-    @votes_fesi = @celebrity.get_upvotes(:vote_scope => 'fesi').sum(:vote_weight)
-    @votes_tine = @celebrity.get_upvotes(:vote_scope => 'tine').sum(:vote_weight)
-    @votes_feni = @celebrity.get_upvotes(:vote_scope => 'feni').sum(:vote_weight)
-    @votes_tise = @celebrity.get_upvotes(:vote_scope => 'tise').sum(:vote_weight)
-    @votes_seti = @celebrity.get_upvotes(:vote_scope => 'seti').sum(:vote_weight)
-    @votes_nife = @celebrity.get_upvotes(:vote_scope => 'nife').sum(:vote_weight)
-    @votes_sefi = @celebrity.get_upvotes(:vote_scope => 'sefi').sum(:vote_weight)
-    @votes_nite = @celebrity.get_upvotes(:vote_scope => 'nite').sum(:vote_weight)
-    @votes_teni = @celebrity.get_upvotes(:vote_scope => 'teni').sum(:vote_weight)
-    @votes_fise = @celebrity.get_upvotes(:vote_scope => 'fise').sum(:vote_weight)
-    @votes_tesi = @celebrity.get_upvotes(:vote_scope => 'tesi').sum(:vote_weight)
-    @votes_fine = @celebrity.get_upvotes(:vote_scope => 'fine').sum(:vote_weight)
-    @votes_nefi = @celebrity.get_upvotes(:vote_scope => 'nefi').sum(:vote_weight)
-    @votes_site = @celebrity.get_upvotes(:vote_scope => 'site').sum(:vote_weight)
-
   end
 
   # GET /celebrities/new

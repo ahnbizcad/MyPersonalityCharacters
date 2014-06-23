@@ -1,0 +1,11 @@
+windowReadyy = ->
+  jQuery ($) ->
+    $('.vote-button > a').click ->
+      if (true)
+        $(this).find('img').hide()
+        upvoted = $('<img src="/assets/upvoted.png">')
+        upvoted.appendTo($(this))
+      else 
+
+$(window).load(windowReadyy);
+$(window).on('page:load', windowReadyy);

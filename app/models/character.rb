@@ -13,6 +13,11 @@ class Character < ActiveRecord::Base
   has_many :char_celeb_joins
 
   #
+  
+  accepts_nested_attributes_for :univ_char_joins
+  accepts_nested_attributes_for :char_celeb_joins
+
+  #
 
   if Rails.env.development?
     has_attached_file :image, 

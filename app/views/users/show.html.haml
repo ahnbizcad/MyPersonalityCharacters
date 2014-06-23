@@ -1,9 +1,13 @@
 %h1= @user.username
 
-%br/
-= render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name }
+.container-horizontal
+  .portrait
 
-%br/
+    .picture
+      =#image_tag @user.image.url(:medium)
+
+  = render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
+
 .comments
   %h2 Comments
   = render partial: 'comments/form', locals: { new_comment: @new_comment } if user_signed_in?

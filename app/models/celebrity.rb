@@ -13,6 +13,10 @@ class Celebrity < ActiveRecord::Base
 	
 	#
 
+  accepts_nested_attributes_for :char_celeb_joins
+
+  #
+
 	validates :name, presence: true
 
 	#

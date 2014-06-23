@@ -26,6 +26,7 @@ positioning elements
 
 .flex {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .wrapper {  
@@ -74,7 +75,7 @@ nav {
     align-content: center;
 
     .proportional {
-      padding: 14% 1%;
+      margin: 14% 1%;
 
       img {
         max-width: 100%;

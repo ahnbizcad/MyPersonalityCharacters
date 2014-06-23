@@ -18,6 +18,7 @@
 /* controller-specific styles */
 @import "socionics";
 @import "characters";
+/* cross-controller styles */
 @import "comments";
 @import "votes";
 /* plugin styles */
@@ -25,9 +26,7 @@
 @import "select2";
 @import "select2-bootstrap";
 /*
- *= require select2
- *= require select2-bootstrap
  *= require_self
- *= require tree .
+ *= require_tree .
  */
 

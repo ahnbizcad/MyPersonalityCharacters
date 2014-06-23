@@ -35,9 +35,7 @@
   = render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
 
 .comments
-  %h2 
-    :plain
-      What is <%= @character.name %>'s Personality Type?
+  %h2 Discuss
   = render partial: 'comments/form', locals: { new_comment: @new_comment } if user_signed_in?
 
   = render partial: 'comments/comment', collection: @comments, as: :comment

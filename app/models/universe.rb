@@ -10,6 +10,10 @@ class Universe < ActiveRecord::Base
 
 	#
 
+  accepts_nested_attributes_for :univ_char_joins
+
+  #
+
 	if Rails.env.development?
     has_attached_file :image, 
       								:styles => { :medium => "200x", :thumb => "100x100>" }, 

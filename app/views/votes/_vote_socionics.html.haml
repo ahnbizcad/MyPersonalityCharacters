@@ -5,7 +5,7 @@
   - socionics.each do |s|
     .vote-chart-item
       .vote-button
-        = link_to image_tag("ni.png"), send("#{votable_name}_#{s.type_two_im_raw}_path", votable), method: :post, remote: true
+        = link_to image_tag("ni.png"), send("#{votable_name}_#{s.type_two_im_raw}_path", votable), method: :post, remote: true, id: "vote-#{s.type_two_im_raw}"
       .vote-bar-label
         = s.type_two_im
       .vote-bar
