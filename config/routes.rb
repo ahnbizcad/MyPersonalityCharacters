@@ -7,7 +7,9 @@ MyPersonalityCharacters::Application.routes.draw do
     get "login_success"
     get "example1"
   end
-  
+
+  post '/characters/:id/:vote_id', to: 'characters#socionics_vote'
+
   get 'socionics/entp', to: 'socionics#neti'
   get 'socionics/isfp', to: 'socionics#sife'
   get 'socionics/esfj', to: 'socionics#fesi'

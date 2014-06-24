@@ -73,6 +73,15 @@ class CharactersController < ApplicationController
     end
   end
 
+  def socionics_vote
+    set_votable
+    if current_user
+      current_user.unvote_for @votable if current_user.voted_on? @votable
+      @votable.vote_by voter: current_user, vote_scope: params[:vote_id]
+    end
+    render json: 'successfully'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_character

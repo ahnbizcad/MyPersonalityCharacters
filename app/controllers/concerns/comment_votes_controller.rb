@@ -12,6 +12,7 @@ module CommentVotesController
       comment.vote_up current_user
     end
   end
+  
   def downvote
     if current_user
       comment = Comment.find.params[:id]
