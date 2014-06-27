@@ -73,15 +73,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  def socionics_vote
-    set_votable
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_by voter: current_user, vote_scope: params[:vote_id]
-    end
-    render json: 'successfully'
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_character
@@ -90,7 +81,7 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :image, :universe_ids, :celebrity_ids)
+      params.require(:character).permit(:name, :image, :universe_ids, char_celeb_joins_attributes: [:celebrity_ids, :_destroy], univ_char_joins_attributes: [:universe_ids, :_destroy])
     end
 
     def set_universes

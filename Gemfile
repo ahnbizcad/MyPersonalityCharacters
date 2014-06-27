@@ -15,7 +15,6 @@ gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 #
-gem 'debugger'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~>2.2.2'
 gem 'jquery-turbolinks', '~>2.0.2'
@@ -60,6 +59,9 @@ group :development do
   #gem 'sprockets_better_errors'
 	# See nested duck typed caller function names.
 	#gem "binding_of_caller"
+  gem 'pry-rails'
+  # Debugger. stick with pry-rails.
+  #gem 'debugger'
 
 	# For html2haml mass conversion
 	# erubis is already included in action pack

@@ -14,104 +14,28 @@ module SocionicsVotesController
   # Better to check if voted on, and unvote only if so. 
   # DRY up the check as a before action, only: [...]
   # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
-  def neti
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'neti'
-    end
-  end  
-  def sife
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'sife'
-    end
-  end 
-  def fesi
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'fesi'
-    end
-  end 
-  def tine
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'tine'
-    end
-  end 
-  def feni
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'feni'
-    end
-  end 
-  def tise
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'tise'
-    end
-  end 
-  def seti
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'seti'
-    end
-  end 
-  def nife
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'nife'
-    end
-  end 
-  def sefi
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'sefi'
-    end
-  end 
-  def nite
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'nite'
-    end
-  end 
-  def teni
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'teni'
-    end
-  end 
-  def fise
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'fise'
-    end
-  end 
-  def tesi
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'tesi'
-    end
-  end 
-  def fine
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'fine'
-    end
-  end 
-  def nefi
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'nefi'
-    end
-  end 
-  def site
-    if current_user
-      current_user.unvote_for @votable if current_user.voted_on? @votable
-      @votable.vote_up voter: current_user, vote_scope: 'site'
-    end
-  end 
+  
+#    def neti
+#    if current_user
+#      current_user.unvote_for @votable if current_user.voted_on? @votable
+#      @votable.vote_up voter: current_user, vote_scope: 'neti'
+#    end
+#  end  
 
+  def vote_socionics
+    if current_user
+      if current_user.voted_on? @votable
+        current_user.unvote_for @votable
+        @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
+        redirect_to request.path
+      else
+        @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
+      end      
+    else
+      redirect_to login_path
+    end
 
+  end
 
   private
     def set_votable

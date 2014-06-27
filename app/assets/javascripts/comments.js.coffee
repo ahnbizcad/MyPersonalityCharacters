@@ -1,4 +1,4 @@
-(->
+windowReady = ->
   jQuery ($) -> 
     $(".comment-form")
       .on "ajax:beforeSend", (evt, xhr, settings) ->
@@ -20,4 +20,5 @@
       .on "ajax:error", ".comment", ->
         $(this).fadeTo('fast', 1)
 
-).call this
+$(window).load(windowReady);
+$(window).on('page:load', windowReady);

@@ -1,4 +1,4 @@
-(->
+windowReady = ->
   jQuery ($) -> 
     $("#character_universe_ids").select2(
       placeholder: "Select Universe",
@@ -9,4 +9,5 @@
       allowClear: true,
       tokenSeparators: [",", " "])
 
-).call this
+$(window).load(windowReady);
+$(window).on('page:load', windowReady);

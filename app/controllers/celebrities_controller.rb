@@ -28,6 +28,8 @@ class CelebritiesController < ApplicationController
 
   # GET /celebrities/1/edit
   def edit
+
+    1.times { @celebrity.characters.build }
   end
 
   # POST /celebrities
@@ -78,7 +80,7 @@ class CelebritiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def celebrity_params
-      params.require(:celebrity).permit(:name, :image, :character_ids)
+      params.require(:celebrity).permit(:name, :image, char_celeb_joins_attributes: [:character_ids, :_destroy])
     end
 
     def set_characters

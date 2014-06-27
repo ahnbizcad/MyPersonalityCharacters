@@ -1,6 +1,8 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
+# Static pages
+
   namespace :pages do
     get "about"
     get "contact"
@@ -8,7 +10,7 @@ MyPersonalityCharacters::Application.routes.draw do
     get "example1"
   end
 
-  post '/characters/:id/:vote_id', to: 'characters#socionics_vote'
+# Static pages - socionics
 
   get 'socionics/entp', to: 'socionics#neti'
   get 'socionics/isfp', to: 'socionics#sife'
@@ -31,9 +33,10 @@ MyPersonalityCharacters::Application.routes.draw do
   get 'socionics/istp', to: 'socionics#site'
 
   get 'socionics', to: 'socionics#index', as: 'socionics'
+
   namespace :socionics do
     # Types.
-    get 'neti', to: 'socionics#neti'
+    get 'neti'
     get 'sife'
     get 'fesi'
     get 'tine'
@@ -83,29 +86,18 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'intertype_relations'
   end  
 
+# Static pages - MBTI
+
   get 'mbti', to: 'mbti#index', as: 'mbti'
   namespace :mbti do
     get '', to: 'mbti#index'
     get 'tests'
   end
 
+# Dynamic routes
+
   concern :socionics_votes do
-    get 'neti'
-    get 'sife'
-    get 'fesi'
-    get 'tine'
-    get 'feni'
-    get 'tise'
-    get 'seti'
-    get 'nife'
-    get 'sefi'
-    get 'nite'
-    get 'teni'
-    get 'fise'
-    get 'tesi'
-    get 'fine'
-    get 'nefi'
-    get 'site'
+    get 'vote_socionics'
   end
 
   concern :comment_votes do
@@ -121,7 +113,6 @@ MyPersonalityCharacters::Application.routes.draw do
   resources :users, concerns: :socionics_votes
   
   devise_for :users, :skip => [:sessions, :registration]
-
   devise_for :user, :path => '', :path_names => { :sign_in => "login", 
                                                   :sign_out => "logout", 
                                                   :sign_up => "register", 

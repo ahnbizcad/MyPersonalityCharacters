@@ -82,7 +82,7 @@ class UniversesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def universe_params
-      params.require(:universe).permit(:name, :image, :character_ids)
+      params.require(:universe).permit(:name, :image, univ_char_joins_attributes: [:character_ids, :_destroy])
     end
 
     def set_characters

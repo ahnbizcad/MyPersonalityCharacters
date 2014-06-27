@@ -1,4 +1,4 @@
-(->
+windowReady = ->
   clearOrder = ->
     $('.tile').removeClass "order-1 order-2 order-3 order-4 order-5 order-6 order-7 order-8 order-9 order-10 order-11 order-12 order-13 order-14 order-15 order-16"
 
@@ -26,7 +26,6 @@
       $('#fine').addClass "order-14"
       $('#nefi').addClass "order-15"
       $('#site').addClass "order-16"
-      return nil
 
     $("#sife").dblclick ->
       clearOrder()
@@ -51,7 +50,6 @@
       $('#fine').addClass "order-13"
       $('#nefi').addClass "order-16"
       $('#site').addClass "order-15"
-      return nil
 
     $('#fesi').dblclick ->
       clearOrder()
@@ -76,7 +74,6 @@
       $('#fine').addClass "order-8"
       $('#nefi').addClass "order-5"
       $('#site').addClass "order-6"
-      return nil
 
     $('#tine').dblclick ->
       clearOrder()
@@ -101,7 +98,6 @@
       $('#fine').addClass "order-7"
       $('#nefi').addClass "order-6"
       $('#site').addClass "order-5"
-      return nil
 
     $('#feni').dblclick ->
       clearOrder()
@@ -126,7 +122,6 @@
       $('#fine').addClass "order-10"
       $('#nefi').addClass "order-11"
       $('#site').addClass "order-12"
-      return nil
 
     $('#tise').dblclick ->
       clearOrder()
@@ -151,7 +146,6 @@
       $('#fine').addClass "order-9"
       $('#nefi').addClass "order-12"
       $('#site').addClass "order-11"
-      return nil
 
     $('#seti').dblclick ->
       clearOrder()
@@ -176,7 +170,6 @@
       $('#fine').addClass "order-12"
       $('#nefi').addClass "order-9"
       $('#site').addClass "order-10"
-      return nil
 
     $('#nife').dblclick ->
       clearOrder()
@@ -201,7 +194,6 @@
       $('#fine').addClass "order-11"
       $('#nefi').addClass "order-10"
       $('#site').addClass "order-9"
-      return nil
 
     $('#sefi').dblclick ->
       clearOrder()
@@ -226,7 +218,6 @@
       $('#fine').addClass "order-6"
       $('#nefi').addClass "order-7"
       $('#site').addClass "order-8"
-      return nil
 
     $('#nite').dblclick ->
       clearOrder()
@@ -251,7 +242,6 @@
       $('#fine').addClass "order-5"
       $('#nefi').addClass "order-8"
       $('#site').addClass "order-7"
-      return nil
 
     $('#teni').dblclick ->
       clearOrder()
@@ -276,7 +266,6 @@
       $('#fine').addClass "order-16"
       $('#nefi').addClass "order-13"
       $('#site').addClass "order-14"
-      return nil
 
     $('#fise').dblclick ->
       clearOrder()
@@ -301,7 +290,6 @@
       $('#fine').addClass "order-15"
       $('#nefi').addClass "order-14"
       $('#site').addClass "order-13"
-      return nil
 
     $('#tesi').dblclick ->
       clearOrder()
@@ -326,7 +314,6 @@
       $('#fine').addClass "order-2"
       $('#nefi').addClass "order-3"
       $('#site').addClass "order-4"
-      return nil
 
     $('#fine').dblclick ->
       clearOrder()
@@ -351,7 +338,6 @@
       $('#fine').addClass "order-1"
       $('#nefi').addClass "order-4"
       $('#site').addClass "order-3"
-      return nil
 
     $('#nefi').dblclick ->
       clearOrder()
@@ -376,7 +362,6 @@
       $('#fine').addClass "order-4"
       $('#nefi').addClass "order-1"
       $('#site').addClass "order-2"
-      return nil
 
     $('#site').dblclick ->
       clearOrder()
@@ -400,5 +385,7 @@
       $('#tesi').addClass "order-4"
       $('#fine').addClass "order-3"
       $('#nefi').addClass "order-2"
-      $('#site').addClass('order-1')
-).call this
+      $('#site').addClass "order-1"
+
+$(window).load(windowReady);
+$(window).on('page:load', windowReady);

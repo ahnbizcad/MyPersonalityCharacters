@@ -13,7 +13,7 @@ class Celebrity < ActiveRecord::Base
 	
 	#
 
-  accepts_nested_attributes_for :char_celeb_joins
+  accepts_nested_attributes_for :char_celeb_joins, reject_if: lambda { |a| a[:content].blank? }
 
   #
 
