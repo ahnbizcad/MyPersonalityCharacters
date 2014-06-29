@@ -5,6 +5,7 @@ ruby "2.0.0"
 gem 'rails', '4.0.0'
 gem 'angularjs-rails'
 #
+#gem 'slim'
 gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
 #
@@ -55,13 +56,21 @@ gem 'acts_as_votable', '~> 0.9.0'
 group :development do
 	# Better errors on browser
 	gem 'better_errors'
-  # config better errors
+  # Config better errors
   #gem 'sprockets_better_errors'
 	# See nested duck typed caller function names.
-	#gem "binding_of_caller"
+	#gem "binding_of_caller
+  # Debugging power!
   gem 'pry-rails'
-  # Debugger. stick with pry-rails.
-  #gem 'debugger'
+  # Adds step, next, finish and continue commands and breakpoints to Pry using byebug.
+  gem 'pry-byebug'
+  # Format output
+  gem 'awesome_print'
+  # Suppress assets in server output console
+  gem 'quiet_assets'
+
+  # Display related schema info in models
+  gem 'annotate', ">=2.6.0"
 
 	# For html2haml mass conversion
 	# erubis is already included in action pack
@@ -69,7 +78,10 @@ group :development do
 end
 
 group :test do
-
+  # English specs
+  #gem 'cucumber-rails', :require => false
+  # Databse cleaner to use with cucumber-rails
+  #gem 'database_cleaner'
 end
 
 group :production do

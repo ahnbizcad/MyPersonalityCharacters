@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: celebrities
+#
+#  id                 :integer          not null, primary key
+#  name               :string(255)
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 class Celebrity < ActiveRecord::Base
   acts_as_commentable
   acts_as_votable
