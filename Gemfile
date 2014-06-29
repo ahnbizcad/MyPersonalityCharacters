@@ -57,9 +57,9 @@ group :development do
 	# Better errors on browser
 	gem 'better_errors'
   # Config better errors
-  #gem 'sprockets_better_errors'
+  gem 'sprockets_better_errors'
 	# See nested duck typed caller function names.
-	#gem "binding_of_caller
+	gem "binding_of_caller"
   # Debugging power!
   gem 'pry-rails'
   # Adds step, next, finish and continue commands and breakpoints to Pry using byebug.
