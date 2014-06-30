@@ -16,8 +16,9 @@
     = csrf_meta_tags
     %meta{ :content => "width=device-width", :name => "viewport" }/    
   %body
-    = debug(params) if Rails.env.development?
-    = params.inspect if Rails.env.development?
+    - if Rails.env.development?
+      = debug(params) 
+      = params.inspect
 
     %header.wrapper
       .wrap
@@ -26,10 +27,6 @@
       %nav.wrapper.affixable
         .wrap
           = render 'layouts/navbar'
-    #alerts.wrapper
-      .wrap
-        %notice= notice
-        %alert= alert
     .wrapper
       %aside#filmstrip-h-1
         = render 'layouts/filmstrip_h_1'
@@ -47,6 +44,10 @@
         .spacer-one
 
         %main
+          #alerts.wrapper
+            .wrap
+              %notice= notice
+              %alert= alert
           = yield
 
         .spacer-two
