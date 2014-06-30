@@ -146,6 +146,56 @@ nav {
 
 main {
   flex: 1 1 auto;
+
+  .container-horizontal {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  .portrait {
+    flex: 1 0 250px;
+  
+  }
+
+  .vote-chart-socionics {
+    flex: 1 1 250px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+
+    .vote-chart-item {
+      height: 1.6em;
+
+      flex: 1 1 100%;
+      display: flex;
+      flex-flow: row nowrap;
+
+      .vote-button {
+        flex: 0 0 1.25em;
+
+        img {
+          width: 100%;
+        }
+      }
+      .vote-bar-label {
+        flex: 0 0 3em;
+      }
+      .vote-bar { 
+        height: 1.25em;
+        flex: 1 1 85%;
+
+        > *{
+          height: 100%;
+        }
+      }
+      .vote-readout {
+        flex: 0 0 4em;
+      }
+
+    }
+  }
 }
 
 footer {

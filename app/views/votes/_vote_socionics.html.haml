@@ -1,16 +1,15 @@
 #vote-data{ style: "display: none;" }
   = @percentage_neti.to_json
 
-.vote-chart
+.vote-chart-socionics
   - socionics.each do |s|
     .vote-chart-item
       .vote-button
-        = link_to image_tag("upvote.png"), send("#{votable_name}_vote_socionics_path", votable, vote_type: "#{s.type_two_im_raw}"), method: :post, remote: true, id: "vote-#{s.type_two_im_raw}"
+        = link_to image_tag("upvote.png"), send("#{votable_name}_vote_socionics_path", votable, vote_type: "#{s.type_two_im_raw}"), method: :post, remote: true, id: "vote-#{s.type_two_im_raw}", class: "#{current_user.voted_on?(@votable) ? 'voted' : 'not-voted'}", data: { id: "#{s.type_two_im_raw}" }
       .vote-bar-label
         = s.type_two_im
       .vote-bar
-        = content_tag(:div, "",class: "bar-#{s.type_two_im_raw}") #slow, change later.
+        = content_tag(:div, "", class: "bar-#{s.type_two_im_raw}") #slow, change later.
       .vote-readout
         = @percentage_neti #make this dynamic
         \%
-
