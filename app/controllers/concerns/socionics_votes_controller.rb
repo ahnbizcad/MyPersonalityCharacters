@@ -5,10 +5,10 @@ module SocionicsVotesController
   # Routes will specify which actions can be called from which scope.
 
   included do
-    before_action :set_votable, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
-    before_action :set_votable_name, only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
-    before_action :get_socionics, only: [:show]
-    before_action :tally_socionics_votes, only: [:show]
+    before_action :set_votable,           only: [:show, :vote_socionics, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
+    before_action :set_votable_name,      only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
+    before_action :get_socionics,         only: [:show]
+    #before_action :tally_socionics_votes, only: [:show]
   end
 
   # Better to check if voted on, and unvote only if so. 
@@ -23,16 +23,24 @@ module SocionicsVotesController
 #  end  
 
   def vote_socionics
-    if current_user
-      if current_user.voted_on? @votable
-        current_user.unvote_for @votable
-        @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
-        redirect_to request.path
-      else
-        @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
-      end      
-    else
-      redirect_to login_path
+    #if @votable.vote_by current_user, vote_scope: params(:vote_type)
+
+    respond_to do |format|    
+      format.html { 
+        if user_signed_in?
+        #  if current_user.voted_on? @votable
+        #    current_user.unvote_for @votable
+        #    @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
+        #    redirect_to request.path
+        #  else
+        #    @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
+        #  end
+          redirect_to request.referrer   
+        else
+          redirect_to login_path
+        end }
+      format.js { "/app/assets/javascripts/votes.js.coffee" }
+      #format.json { render json: # get vote weight, vote percentages }
     end
 
   end
@@ -41,6 +49,7 @@ module SocionicsVotesController
     def set_votable
       votable_constant = controller_name.singularize.camelize.constantize
       @votable = votable_constant.find(params[:id])
+
     end
 
     def set_votable_name

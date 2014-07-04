@@ -33,7 +33,6 @@ MyPersonalityCharacters::Application.routes.draw do
   get 'socionics/istp', to: 'socionics#site'
 
   get 'socionics', to: 'socionics#index', as: 'socionics'
-
   namespace :socionics do
     # Types.
     get 'neti'
@@ -84,7 +83,7 @@ MyPersonalityCharacters::Application.routes.draw do
     get 'romance_styles'
     # Intertype Relations.
     get 'intertype_relations'
-  end  
+  end
 
 # Static pages - MBTI
 
@@ -97,12 +96,14 @@ MyPersonalityCharacters::Application.routes.draw do
 # Dynamic routes
 
   concern :socionics_votes do
-    get 'vote_socionics'
+    member do
+      post 'vote_socionics'
+    end
   end
 
   concern :comment_votes do
-    get 'upvote'
-    get 'downvote'
+    get 'vote_up_comment'
+    get 'vote_down_comment'
   end
 
   resources :comments, only: [:create, :destroy], concerns: :comment_votes

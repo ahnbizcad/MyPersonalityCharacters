@@ -5,7 +5,7 @@ module CommentVotesController
     before_action :set_votable_comment, only: [:upvote, :downvote]
   end
 
-  def upvote
+  def vote_up_comment
     if current_user
       comment = Comment.find.params[:id]
       current_user.unvote_for comment if current_user.voted_on? comment
@@ -13,7 +13,7 @@ module CommentVotesController
     end
   end
   
-  def downvote
+  def vote_down_comment
     if current_user
       comment = Comment.find.params[:id]
       current_user.unvote_for comment if current_user.voted_on? comment

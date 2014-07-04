@@ -11,19 +11,14 @@ vote chart
     .vote-button {
 
       .not-voted {
-        img {
-          content-url:("/assets/upvote.png");
-        }
+        content:url("/assets/upvote.png");
+        background-image: image-url("/assets/upvote.png");
       }
 
       .voted {
-        img {
-          content-url:("/assets/upvoted.png");
-        }
+        content:url("/assets/upvoted.png");
+        background-image: image-url("/assets/upvoted.png");
       }
-    }
-
-    .vote-bar-label {
 
     }
 
@@ -82,7 +77,7 @@ vote chart
     }
 
     .vote-readout {
-      
+      text-align: right;
     }
 
   }

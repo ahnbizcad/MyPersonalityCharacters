@@ -4,17 +4,16 @@ windowReady = ->
     # votedOnModel = true if (votes table has record with this votable, and current_user.) How to get this from rails to js? use callback?
     # look up votes table for this user and this votable, and for matching votes, call voteUp() function on the particular one... based on string?
 
-    paintVotedButtons = (e) ->
-      voteData = $(this).attr("data-id")
-
-    $('.vote-button > a').click ->
-      paintVotedButtons
-      $.ajax
+    $('.vote-button > a').on 'click', ->
+      voteData = $(this).attr("data-vote-type")
+      $(this).ajax
         type: "POST",
         url: "/character/:id/vote_socionics",
-        data: { name: "ad" }
+        data: { voteData },
+        dataType: "json",
+        complete: ->
+          $(this).find('div').html('<img src="/assets/upvoted.png" alt="Upvoted">')
+          #why doesn't this work? 
 
-
-          
 $(window).load(windowReady);
 $(window).on('page:load', windowReady);

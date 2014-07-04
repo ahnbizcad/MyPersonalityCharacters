@@ -175,7 +175,7 @@ main {
       .vote-button {
         flex: 0 0 1.25em;
 
-        img {
+        div {
           width: 100%;
         }
       }
@@ -191,7 +191,7 @@ main {
         }
       }
       .vote-readout {
-        flex: 0 0 4em;
+        flex: 0 0 3em;
       }
 
     }

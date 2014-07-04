@@ -24,11 +24,11 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
-
   end
 
   # GET /characters/1/edit
   def edit
+
   end
 
   # POST /characters
