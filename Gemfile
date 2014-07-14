@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 #
 gem 'rails', '4.0.0'
-#gem 'angularjs-rails'
+gem 'angularjs-rails'
 #
-#gem 'slim'
+#gem 'slim' #convert haml to slim later on
 gem 'haml-rails', '0.5.1'
 gem 'html2haml', '~> 1.0.1'
 #
@@ -51,7 +51,8 @@ gem 'select2-rails', '~> 3.5.7'
 gem 'acts_as_commentable_with_threading'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
-
+# Pagination
+gem 'kaminari'
 
 group :development do
 	# Better errors on browser

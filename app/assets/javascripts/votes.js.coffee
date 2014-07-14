@@ -7,13 +7,18 @@ windowReady = ->
     $('.vote-button > a').on 'click', ->
       voteData = $(this).attr("data-vote-type")
       $(this).ajax
-        type: "POST",
-        url: "/character/:id/vote_socionics",
-        data: { voteData },
-        dataType: "json",
-        complete: ->
+        type: "POST"
+        url: "/character/:id/vote_socionics"
+        data: { voteData }
+        dataType: "json"
+        beforeSend: ->
+          $(this).append("sending")
+        always:  (jqXHR, textStatus, errorThrown) ->
+          alert("always")
+        done: (data) ->
           $(this).find('div').html('<img src="/assets/upvoted.png" alt="Upvoted">')
-          #why doesn't this work? 
+        error: (data) ->
+        
 
 $(window).load(windowReady);
 $(window).on('page:load', windowReady);

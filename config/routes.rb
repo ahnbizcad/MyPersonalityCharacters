@@ -1,97 +1,7 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
-# Static pages
 
-  namespace :pages do
-    get "about"
-    get "contact"
-    get "login_success"
-    get "example1"
-  end
-
-# Static pages - socionics
-
-  get 'socionics/entp', to: 'socionics#neti'
-  get 'socionics/isfp', to: 'socionics#sife'
-  get 'socionics/esfj', to: 'socionics#fesi'
-  get 'socionics/intj', to: 'socionics#tine'
-
-  get 'socionics/enfj', to: 'socionics#feni'
-  get 'socionics/istj', to: 'socionics#tise'
-  get 'socionics/estp', to: 'socionics#seti'
-  get 'socionics/infp', to: 'socionics#nife'  
-
-  get 'socionics/esfp', to: 'socionics#sefi'
-  get 'socionics/intp', to: 'socionics#nite'
-  get 'socionics/entj', to: 'socionics#teni'
-  get 'socionics/isfj', to: 'socionics#fise'
-
-  get 'socionics/estj', to: 'socionics#tesi'
-  get 'socionics/infj', to: 'socionics#fine'
-  get 'socionics/enfp', to: 'socionics#nefi'
-  get 'socionics/istp', to: 'socionics#site'
-
-  get 'socionics', to: 'socionics#index', as: 'socionics'
-  namespace :socionics do
-    # Types.
-    get 'neti'
-    get 'sife'
-    get 'fesi'
-    get 'tine'
-
-    get 'feni'
-    get 'tise'
-    get 'seti'
-    get 'nife'
-
-    get 'sefi'
-    get 'nite'
-    get 'teni'
-    get 'fise'
-
-    get 'tesi'
-    get 'fine'
-    get 'nefi'
-    get 'site'
-
-    # Socion
-    get 'socion'
-    # Information Elements.
-    get 'information_elements'
-    get 'si'
-    get 'se'
-    get 'ni'
-    get 'ne'
-    get 'ti'
-    get 'te'
-    get 'fi'
-    get 'fe'
-    # Functions.
-    get 'functions'
-    get 'function_dichotomies'
-    # Type Dichotomies.
-    get 'type_dichotomies'
-    get 'jungian_dichotomies'
-    get 'socionics_jungian_dichotomies'
-    # Small groups.
-    get 'small_groups'
-    get 'quadras'
-    get 'clubs'
-    get 'temperaments'
-    get 'communication_styles'
-    get 'romance_styles'
-    # Intertype Relations.
-    get 'intertype_relations'
-  end
-
-# Static pages - MBTI
-
-  get 'mbti', to: 'mbti#index', as: 'mbti'
-  namespace :mbti do
-    get '', to: 'mbti#index'
-    get 'tests'
-  end
 
 # Dynamic routes
 
@@ -184,4 +94,97 @@ MyPersonalityCharacters::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+  # Static pages
+  
+    namespace :pages do
+      get "about"
+      get "contact"
+      get "login_success"
+      get "example1"
+    end
+
+  # Static pages - socionics
+
+    get 'socionics/entp', to: 'socionics#neti'
+    get 'socionics/isfp', to: 'socionics#sife'
+    get 'socionics/esfj', to: 'socionics#fesi'
+    get 'socionics/intj', to: 'socionics#tine'
+
+    get 'socionics/enfj', to: 'socionics#feni'
+    get 'socionics/istj', to: 'socionics#tise'
+    get 'socionics/estp', to: 'socionics#seti'
+    get 'socionics/infp', to: 'socionics#nife'  
+
+    get 'socionics/esfp', to: 'socionics#sefi'
+    get 'socionics/intp', to: 'socionics#nite'
+    get 'socionics/entj', to: 'socionics#teni'
+    get 'socionics/isfj', to: 'socionics#fise'
+
+    get 'socionics/estj', to: 'socionics#tesi'
+    get 'socionics/infj', to: 'socionics#fine'
+    get 'socionics/enfp', to: 'socionics#nefi'
+    get 'socionics/istp', to: 'socionics#site'
+
+    get 'socionics', to: 'socionics#index', as: 'socionics'
+    namespace :socionics do
+      # Types.
+      get 'neti'
+      get 'sife'
+      get 'fesi'
+      get 'tine'
+
+      get 'feni'
+      get 'tise'
+      get 'seti'
+      get 'nife'
+
+      get 'sefi'
+      get 'nite'
+      get 'teni'
+      get 'fise'
+
+      get 'tesi'
+      get 'fine'
+      get 'nefi'
+      get 'site'
+
+      # Socion
+      get 'socion'
+      # Information Elements.
+      get 'information_elements'
+      get 'si'
+      get 'se'
+      get 'ni'
+      get 'ne'
+      get 'ti'
+      get 'te'
+      get 'fi'
+      get 'fe'
+      # Functions.
+      get 'functions'
+      get 'function_dichotomies'
+      # Type Dichotomies.
+      get 'type_dichotomies'
+      get 'jungian_dichotomies'
+      get 'socionics_jungian_dichotomies'
+      # Small groups.
+      get 'small_groups'
+      get 'quadras'
+      get 'clubs'
+      get 'temperaments'
+      get 'communication_styles'
+      get 'romance_styles'
+      # Intertype Relations.
+      get 'intertype_relations'
+    end
+
+  # Static pages - MBTI
+
+    get 'mbti', to: 'mbti#index', as: 'mbti'
+    namespace :mbti do
+      get '', to: 'mbti#index'
+      get 'tests'
+    end
 end

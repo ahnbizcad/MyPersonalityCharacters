@@ -6,7 +6,7 @@
     .vote-chart-item
       .vote-button
         -# Are :vote_type and data-id redundant or necessary for graceful degradation?
-        = link_to content_tag(:div), send("vote_socionics_#{votable_name}_path", votable, vote_type: "#{s.type_two_im_raw}"), 
+        = link_to image_tag("upvote.png"), send("vote_socionics_#{votable_name}_path", votable, vote_type: "#{s.type_two_im_raw}"), 
           id: "vote-#{s.type_two_im_raw}", 
           class: "#{current_user.voted_on?(votable) ? 'voted' : 'not-voted'}",
           method: :post, 

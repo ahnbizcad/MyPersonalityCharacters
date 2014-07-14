@@ -16,7 +16,8 @@
 //= require jquery_ujs
 //
 // Place files below 
-// angular
+//= require angular
+//= require angular-resource
 //= require bootstrap
 //= require select2
 //= require spritz

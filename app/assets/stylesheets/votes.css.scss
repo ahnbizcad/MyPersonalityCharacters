@@ -10,8 +10,10 @@ vote chart
 
     .vote-button {
 
+      img {
+        width: 100%;
+      }
       .not-voted {
-        content:url("/assets/upvote.png");
         background-image: image-url("/assets/upvote.png");
       }
 

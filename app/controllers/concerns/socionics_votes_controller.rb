@@ -7,10 +7,11 @@ module SocionicsVotesController
   included do
     before_action :set_votable,           only: [:show, :vote_socionics, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
     before_action :set_votable_name,      only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
-    before_action :get_socionics,         only: [:show]
+    before_action :get_socionics,         only: [:show, :vote_socionics]
     #before_action :tally_socionics_votes, only: [:show]
   end
 
+  respond_to :html, :json
   # Better to check if voted on, and unvote only if so. 
   # DRY up the check as a before action, only: [...]
   # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
@@ -23,22 +24,22 @@ module SocionicsVotesController
 #  end  
 
   def vote_socionics
-    #if @votable.vote_by current_user, vote_scope: params(:vote_type)
+    #binding.pry#if @votable.vote_by current_user, vote_scope: params(:vote_type)
+#    if user_signed_in?
+#      if current_user.voted_on? @votable
+#        current_user.unvote_for @votable
+#        @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
+#        redirect_to request.path
+#      else
+#        @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
+#      end
+#      redirect_to request.referrer   
+#    else
+#      redirect_to login_path
+#    end
 
-    respond_to do |format|    
-      format.html { 
-        if user_signed_in?
-        #  if current_user.voted_on? @votable
-        #    current_user.unvote_for @votable
-        #    @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
-        #    redirect_to request.path
-        #  else
-        #    @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
-        #  end
-          redirect_to request.referrer   
-        else
-          redirect_to login_path
-        end }
+    respond_to do |format| 
+      format.html { redirect_to request.referrer }
       format.js { "/app/assets/javascripts/votes.js.coffee" }
       #format.json { render json: # get vote weight, vote percentages }
     end
