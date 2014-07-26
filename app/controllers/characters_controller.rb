@@ -1,9 +1,12 @@
 class CharactersController < ApplicationController
-  include SocionicsVotesController
+  include SocionicsVotesConcern
 
   before_action :set_character,   only: [:show, :edit, :update, :destroy]
   before_action :set_universes,   only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
+
+  #respond_to :html, :js, :json, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
 
   # GET /characters
   # GET /characters.json

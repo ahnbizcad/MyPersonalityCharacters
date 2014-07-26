@@ -1,5 +1,6 @@
-module SocionicsVotesController
+module SocionicsVotesConcern
   extend ActiveSupport::Concern
+
   # Contains actions for voting for comments, and for personality types.
   # Actions not specified elsewhere will not be used.
   # Routes will specify which actions can be called from which scope.
@@ -8,49 +9,32 @@ module SocionicsVotesController
     before_action :set_votable,           only: [:show, :vote_socionics, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
     before_action :set_votable_name,      only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
     before_action :get_socionics,         only: [:show, :vote_socionics]
+    before_action :set_socionics_voted_status,    only: [:show]
     #before_action :tally_socionics_votes, only: [:show]
-  end
+    #before_action :voted?,                only: [:show, :index, :vote_socionics]
+    
 
-  respond_to :html, :json
-  # Better to check if voted on, and unvote only if so. 
-  # DRY up the check as a before action, only: [...]
-  # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
-  
-#    def neti
-#    if current_user
-#      current_user.unvote_for @votable if current_user.voted_on? @votable
-#      @votable.vote_up voter: current_user, vote_scope: 'neti'
-#    end
-#  end  
+    def vote_socionics
+      @vote_type = params[:vote_type]    
 
-  def vote_socionics
-    #binding.pry#if @votable.vote_by current_user, vote_scope: params(:vote_type)
-#    if user_signed_in?
-#      if current_user.voted_on? @votable
-#        current_user.unvote_for @votable
-#        @votable.vote_up voter: current_user, vote_scope: params[:vote_type] unless current_user.voted_on? @votable, vote_scope: params[:vote_type]
-#        redirect_to request.path
-#      else
-#        @votable.vote_up voter: current_user, vote_scope: params[:vote_type]
-#      end
-#      redirect_to request.referrer   
-#    else
-#      redirect_to login_path
-#    end
-
-    respond_to do |format| 
-      format.html { redirect_to request.referrer }
-      format.js { "/app/assets/javascripts/votes.js.coffee" }
-      #format.json { render json: # get vote weight, vote percentages }
+      respond_to do |format|
+        format.js { render 'concerns/socionics_votes/vote_socionics' }
+      end
+      
     end
 
   end
+
+  # Better to check if voted on, and unvote only if so. 
+  # DRY up the check as a before action, only: [...]
+  # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
+
+
 
   private
     def set_votable
       votable_constant = controller_name.singularize.camelize.constantize
       @votable = votable_constant.find(params[:id])
-
     end
 
     def set_votable_name
@@ -59,6 +43,14 @@ module SocionicsVotesController
 
     def get_socionics
       @socionics = SocionicsType.all
+    end
+
+    def set_socionics_voted_status
+      if signed_in?
+        @voted_status = "voted" if current_user.voted_on? @votable#, vote_scope: @vote_type #problem is with @votable not being available.
+      else
+        @voted_status = "not-voted"
+      end
     end
 
     def tally_socionics_votes
@@ -117,6 +109,7 @@ module SocionicsVotesController
         @percentage_nefi = @votes_nefi / @votes_total
         @percentage_site = @votes_site / @votes_total
       end
-    end
-    
+    end    
+
+ 
 end

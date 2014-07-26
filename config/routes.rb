@@ -1,9 +1,16 @@
 MyPersonalityCharacters::Application.routes.draw do
   root "characters#index"
 
-
+  #namespace :characters do 
+  #  get 'whatever'
+  #end
 
 # Dynamic routes
+
+  concern :comment_votes do
+    get 'vote_up_comment'
+    get 'vote_down_comment'
+  end
 
   concern :socionics_votes do
     member do
@@ -11,17 +18,12 @@ MyPersonalityCharacters::Application.routes.draw do
     end
   end
 
-  concern :comment_votes do
-    get 'vote_up_comment'
-    get 'vote_down_comment'
-  end
-
   resources :comments, only: [:create, :destroy], concerns: :comment_votes
 
   resources :universes
-  resources :characters, concerns: :socionics_votes
+  resources :characters,  concerns: :socionics_votes
   resources :celebrities, concerns: :socionics_votes
-  resources :users, concerns: :socionics_votes
+  resources :users,       concerns: :socionics_votes
   
   devise_for :users, :skip => [:sessions, :registration]
   devise_for :user, :path => '', :path_names => { :sign_in => "login", 

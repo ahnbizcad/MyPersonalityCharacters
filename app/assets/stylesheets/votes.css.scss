@@ -9,16 +9,18 @@ vote chart
   .vote-chart-item {
 
     .vote-button {
-
-      img {
-        width: 100%;
+      a {
+        img {
+          width: 100%;
+        }
       }
       .not-voted {
+        border: 1px solid red;
         background-image: image-url("/assets/upvote.png");
       }
 
       .voted {
-        content:url("/assets/upvoted.png");
+        border: 1px solid green;
         background-image: image-url("/assets/upvoted.png");
       }
 

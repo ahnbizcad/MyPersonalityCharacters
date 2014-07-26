@@ -265,7 +265,8 @@ sidebar-one
 
   .sidebar-one-element {
         
-    margin:  0 0 1em;
+    margin:  0 0 0.5em;
+    border: 1px solid blue;
     padding: $gutter-v $gutter-h 0;
 
     @include sidebar-top-corners();

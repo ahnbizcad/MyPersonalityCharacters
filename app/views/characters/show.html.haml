@@ -34,8 +34,9 @@
 
   = render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
 
+%br/
 .comments
-  %h2 Discuss
-  = render partial: 'comments/form', locals: { new_comment: @new_comment }
+  %h2 Discussion
+  = render partial: 'comments/form', locals: { new_comment: @new_comment } if user_signed_in?
 
   = render partial: 'comments/comment', collection: @comments, as: :comment

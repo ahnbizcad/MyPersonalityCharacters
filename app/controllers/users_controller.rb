@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include SocionicsVotesController
+  include SocionicsVotesConcern
 
   before_action :set_user, only: [:show, :edit, :update]
 

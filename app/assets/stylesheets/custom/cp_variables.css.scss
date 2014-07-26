@@ -68,6 +68,10 @@ Mixins - Colors, Styling
   background: linear-gradient(rgba($r, $g, $b, $t), rgba(0, 0, 127, 1) 90%, rgba(0, 50, 127, 0.8)); 
 }
 
+@mixin vote-bar-color($r:240, $g:193, $b:75){
+  background-color: rgb($r,$g,$b);
+}
+
 
 @mixin body-item-box-shadow($horizontal: 1px, $vertical: 1px, $blur: 3px, $spread: 1px, $color: #888) {
   box-shadow:         $horizontal $vertical $blur $spread $color;
@@ -79,7 +83,4 @@ Mixins - Colors, Styling
   border-top-right-radius: $radius;
 }
 
-@mixin vote-bar-color($r:240, $g:193, $b:75){
-  background-color: rgb($r,$g,$b);
-}
 

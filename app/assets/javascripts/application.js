@@ -34,7 +34,6 @@
 //= require socionics
 //= require universes
 //= require users
-//= require votes
 //= require custom/affix
 //
 //= require turbolinks

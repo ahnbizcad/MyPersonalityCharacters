@@ -1,4 +1,4 @@
-module CommentVotesController
+module CommentVotesConcern
   extend ActiveSupport::Concern
 
   included do

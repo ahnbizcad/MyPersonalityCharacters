@@ -1,5 +1,5 @@
 class CelebritiesController < ApplicationController
-  include SocionicsVotesController
+  include SocionicsVotesConcern
 
   before_action :set_celebrity,   only: [:show, :edit, :update, :destroy]
   before_action :set_characters,  only: [:show, :edit, :update, :destroy]
