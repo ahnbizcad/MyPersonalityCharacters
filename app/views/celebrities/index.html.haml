@@ -2,6 +2,8 @@
 
 = link_to 'New Celebrity', new_celebrity_path
 
+= paginate @celebrities
+
 %table
 	%tr
 		%th
@@ -17,5 +19,7 @@
 			%td= link_to 'Destroy', celeb, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
+
+= paginate @celebrities
 
 

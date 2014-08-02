@@ -2,6 +2,8 @@
 
 = link_to 'New Universe', new_universe_path
 
+= paginate @universes
+
 %table
   %tr
     %th
@@ -17,3 +19,4 @@
 
 %br
 
+= paginate @universes

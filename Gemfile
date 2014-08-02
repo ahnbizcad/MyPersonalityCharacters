@@ -23,7 +23,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 #
 gem 'pg', '0.17.1'
+gem 'seed-fu', '~> 2.3'
 #
+gem 'devise'#, '3.2.3'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -41,18 +44,19 @@ gem 'figaro', '~> 0.7.0'
 gem 'paperclip', '~> 3.0'
 # Image storage.
 gem 'paperclip-dropbox', '>= 1.1.7'
-# Authentication.
-gem 'devise'#, '3.2.3'
+
 # Simple form markup.
 gem 'simple_form'
 # Autocomplete form.
 gem 'select2-rails', '~> 3.5.7'
+# Pagination
+gem 'kaminari'
+
 # Comments with threading
 gem 'acts_as_commentable_with_threading'
 # Votes.
 gem 'acts_as_votable', '~> 0.9.0'
-# Pagination
-gem 'kaminari'
+
 
 group :development do
 	# Better errors on browser

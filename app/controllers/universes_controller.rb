@@ -7,7 +7,7 @@ class UniversesController < ApplicationController
   # GET /universes
   # GET /universes.json
   def index
-    @universes = Universe.all
+    @universes = Universe.all.page(params[:page]).per(25)
     respond_to do |format|
       format.html
       format.json { render json: @universes }

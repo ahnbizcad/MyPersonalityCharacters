@@ -8,7 +8,7 @@ class CelebritiesController < ApplicationController
   # GET /celebrities
   # GET /celebrities.json
   def index
-    @celebrities = Celebrity.all
+    @celebrities = Celebrity.all.page(params[:page]).per(25)
   end
 
   # GET /celebrities/1

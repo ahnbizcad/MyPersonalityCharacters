@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
+    @characters = Character.all.page(params[:page]).per(25)
   end
 
   # GET /characters/1

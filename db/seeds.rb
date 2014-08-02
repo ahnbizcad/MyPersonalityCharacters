@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#
-# Socionics Types
+#########################
+# FIXED, NECESSARY DATA
+#########################
+
+
 #                    0      1       2        3      4     5     6     7     8     9    10    11      12         13           14           15         16
 socionics_neti = ["ENTp", "ILE", "Ne-Ti", "neti", "Ne", "Ti", "Se", "Fi", "Si", "Fe", "Ni", "Te", "alpha", "infantile", "researchers",   "EP", "firm",        ]
 socionics_sife = ["ISFp", "SEI", "Si-Fe", "sife", "Si", "Fe", "Ni", "Te", "Ne", "Ti", "Se", "Fi", "alpha", "caregiver", "socials",       "IP", "sincere",     ]
@@ -49,30 +52,31 @@ socionics_types = [socionics_neti,
 									 socionics_nefi,
 									 socionics_site]
 
-def socionics_type_factory(socionics_types)
+def seed_socionics_types(socionics_types)
 	socionics_types.each do |type|
-		SocionicsType.create(type_four_letter:     type[0], 
-												 type_three_letter:    type[1], 
-												 type_two_im:          type[2],
-                         type_two_im_raw:      type[3],
-												 im_1st:               type[4], 
-												 im_2nd:               type[5], 
-												 im_3rd:               type[6], 
-												 im_4th:               type[7], 
-												 im_5th:               type[8], 
-												 im_6th:               type[9], 
-												 im_7th:               type[10], 
-												 im_8th:               type[11], 
-												 quadra:               type[12], 
-												 romance_style:        type[13],
-												 club:                 type[14], 
-												 temperament:          type[15], 
-												 communication_style:  type[16],
-												 )
+		SocionicsType.find_or_create_by(
+                                type_four_letter:     type[0], 
+        												type_three_letter:    type[1], 
+        												type_two_im:          type[2],
+                                type_two_im_raw:      type[3],
+        												im_1st:               type[4], 
+        												im_2nd:               type[5], 
+        												im_3rd:               type[6], 
+        												im_4th:               type[7], 
+        												im_5th:               type[8], 
+        												im_6th:               type[9], 
+        												im_7th:               type[10], 
+        												im_8th:               type[11], 
+        												quadra:               type[12], 
+        												romance_style:        type[13],
+        												club:                 type[14], 
+        												temperament:          type[15], 
+        												communication_style:  type[16],
+        												)
 	end
 end
 
-socionics_type_factory(socionics_types)
+seed_socionics_types(socionics_types)
 
 #												 e:                   type[16],
 												 #n:                   type[17],
@@ -89,3 +93,33 @@ socionics_type_factory(socionics_types)
 												 #etp:                 type[28],
 												 #ntp:                 type[29],
 												 #entp:                type[30]
+
+
+
+#########################
+# SAMPLE DUMMY DATA
+#########################
+
+def dummy_characters
+  50.times do |num|
+    Character.find_or_create_by(name: "character-#{num}")
+  end
+end
+
+dummy_characters
+
+def dummy_celebrities
+  50.times do |num|
+    Celebrity.find_or_create_by(name: "celebrity-#{num}")
+  end
+end
+
+dummy_celebrities
+
+def dummy_universes
+  50.times do |num|
+    Universe.find_or_create_by(name: "universe-#{num}")
+  end
+end
+
+dummy_universes

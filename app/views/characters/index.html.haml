@@ -1,6 +1,8 @@
 %h1 Characters
-클레임관리 목록
+
 = link_to 'New Character', new_character_path
+
+= paginate @characters
 
 %table
   %tr
@@ -16,5 +18,4 @@
       %td= link_to 'Edit', edit_character_path(character)
       %td= link_to 'Destroy', character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-
-
+= paginate @characters
