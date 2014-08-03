@@ -24,12 +24,12 @@ class CelebritiesController < ApplicationController
   # GET /celebrities/new
   def new
     @celebrity = Celebrity.new
+    @char_celeb_joins = @celebrity.char_celeb_joins.build
   end
 
   # GET /celebrities/1/edit
   def edit
-
-    1.times { @celebrity.characters.build }
+    @char_celeb_joins = @celebrity.char_celeb_joins.build
   end
 
   # POST /celebrities
@@ -73,15 +73,18 @@ class CelebritiesController < ApplicationController
   end
 
   private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def celebrity_params
+      params.require(:celebrity).permit(:name, 
+                                        :image, 
+                                        character_ids: []
+                                        )
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_celebrity
       @celebrity = Celebrity.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def celebrity_params
-      params.require(:celebrity).permit(:name, :image, char_celeb_joins_attributes: [:character_ids, :_destroy])
-    end
+    end    
 
     def set_characters
       @characters = Celebrity.find(params[:id]).characters

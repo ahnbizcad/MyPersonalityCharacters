@@ -20,27 +20,31 @@ class Character < ActiveRecord::Base
 
   belongs_to :socionics_type
 
-  has_many :universes, through: :univ_char_joins
+  has_many :universes, 
+           through: :univ_char_joins
   has_many :univ_char_joins
 
-  has_many :celebrities, through: :char_celeb_joins
+  has_many :celebrities, 
+           through: :char_celeb_joins
   has_many :char_celeb_joins
 
   #
   
-  accepts_nested_attributes_for :univ_char_joins
-  accepts_nested_attributes_for :char_celeb_joins
+  accepts_nested_attributes_for :universes
+  #univ_char_joins, reject_if: lambda { |a| a[:content].blank? }
+  accepts_nested_attributes_for :celebrities
+  #:char_celeb_joins, reject_if: lambda { |a| a[:content].blank? }
 
   #
 
   if Rails.env.development?
     has_attached_file :image, 
-      								:styles => { :medium => "200x", :thumb => "100x100>" }, 
-      								:default_url => "_default_character.jpg"
+      								:styles => { :medium => "200x", :thumb => "50x50>" }, 
+      								:default_url => "_default_character.png"
   else
     has_attached_file :image, 
-        							:styles => { :medium => "200x", :thumb => "100x100>" }, 
-        							:default_url => "_default_character.jpg",
+        							:styles => { :medium => "200x", :thumb => "50x50>" }, 
+        							:default_url => "_default_character.png",
         							:storage => :dropbox,
         							:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
         							:path => "/characters/:filename_:id_:style"
@@ -68,5 +72,7 @@ class Character < ActiveRecord::Base
   def to_param
     "#{id}-#{name}"
   end
+
+  # Turn all " " in names to "_" slug and table, but not for displaying for viewers
 
 end

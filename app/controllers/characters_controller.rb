@@ -5,9 +5,6 @@ class CharactersController < ApplicationController
   before_action :set_universes,   only: [:show, :edit, :update, :destroy]
   before_action :set_celebrities, only: [:show, :edit, :update, :destroy]
 
-  #respond_to :html, :js, :json, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
-
   # GET /characters
   # GET /characters.json
   def index
@@ -27,11 +24,14 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
+    @univ_char_joins = @character.univ_char_joins.build
+    @char_celeb_joins = @character.char_celeb_joins.build
   end
 
   # GET /characters/1/edit
   def edit
-
+    @character.univ_char_joins.build
+    @character.char_celeb_joins.build
   end
 
   # POST /characters
@@ -77,14 +77,18 @@ class CharactersController < ApplicationController
   end
 
   private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def character_params
+      params.require(:character).permit(:name, 
+                                        :image, 
+                                        celebrity_ids: [],
+                                        universe_ids: []
+                                        )
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_character
       @character = Character.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def character_params
-      params.require(:character).permit(:name, :image, :universe_ids, char_celeb_joins_attributes: [:celebrity_ids, :_destroy], univ_char_joins_attributes: [:universe_ids, :_destroy])
     end
 
     def set_universes
@@ -95,8 +99,4 @@ class CharactersController < ApplicationController
       @celebrities = Character.find(params[:id]).celebrities
     end
 
-    def set_character_socionics_type
-      # get max vote of character's type, and get corresponding socionics type.
-      #@socionics_type = SocionicsType.find(...)
-    end
 end

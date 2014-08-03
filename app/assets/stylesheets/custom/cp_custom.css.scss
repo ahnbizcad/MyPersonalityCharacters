@@ -116,15 +116,15 @@ nav {
     white-space: nowrap;
 
     #characters-navbar {
-      background: image-url("character_pikachu.png");
+      background: image-url("_default_character.png");
       @include navbar-icon;
     }
     #universes-navbar {
-      background: image-url("universe.jpg");
+      background: image-url("_default_universe.jpg");
       @include navbar-icon;
     }
     #celebrities-navbar {
-      background: image-url("star_blue_1.png");
+      background: image-url("_default_celebrity.png");
       @include navbar-icon;
     }
     #friends-navbar {

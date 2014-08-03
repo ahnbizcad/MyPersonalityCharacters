@@ -1,10 +1,5 @@
 %h1= @character.name
-- @universes.each do |univ|
-	= univ.name
-%br/
-- @celebrities.each do |celeb|
-	= celeb.name
-%br/
+
 = image_tag @character.image.url(:medium)
 
 = render 'form'
@@ -12,3 +7,15 @@
 = link_to 'Show', @character
 \|
 = link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+.current_universes
+  - @universes.each do |univ|
+    = image_tag univ.image.url(:thumb)
+    = link_to univ.name, univ
+
+.current_celebrities
+  - @celebrities.each do |celeb|
+    = image_tag celeb.image.url(:thumb)
+    = link_to celeb.name, celeb

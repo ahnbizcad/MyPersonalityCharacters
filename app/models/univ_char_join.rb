@@ -14,4 +14,11 @@ class UnivCharJoin < ActiveRecord::Base
 
   #
 
+  accepts_nested_attributes_for :character
+  accepts_nested_attributes_for :universe
+
+  #
+
+  
+
 end

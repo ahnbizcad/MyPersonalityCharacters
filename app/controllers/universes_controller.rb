@@ -27,10 +27,12 @@ class UniversesController < ApplicationController
   # GET /universes/new
   def new
     @universe = Universe.new    
+    @univ_char_joins = @universe.univ_char_joins.build
   end
 
   # GET /universes/1/edit
   def edit
+    @univ_char_joins = @universe.univ_char_joins.build
   end
 
   # POST /universes
@@ -75,14 +77,17 @@ class UniversesController < ApplicationController
   end
 
   private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def universe_params
+      params.require(:universe).permit(:name, 
+                                       :image, 
+                                       character_ids: []
+                                       )
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_universe
       @universe = Universe.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def universe_params
-      params.require(:universe).permit(:name, :image, univ_char_joins_attributes: [:character_ids, :_destroy])
     end
 
     def set_characters

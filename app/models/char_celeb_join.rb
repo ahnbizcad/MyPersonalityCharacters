@@ -14,4 +14,11 @@ class CharCelebJoin < ActiveRecord::Base
 
   #
 
+  accepts_nested_attributes_for :celebrity
+  accepts_nested_attributes_for :character
+
+  #
+
+  
+  
 end

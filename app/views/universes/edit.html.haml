@@ -8,6 +8,9 @@
 \|
 = link_to 'Destroy', @universe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-- @characters.each do |char|
-  = image_tag char.image.url(:thumb)
-  = link_to char.name, char
+%br
+
+.current_characters
+  - @characters.each do |char|
+    = image_tag char.image.url(:thumb)
+    = link_to char.name, char
