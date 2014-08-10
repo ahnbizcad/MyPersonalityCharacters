@@ -16,7 +16,7 @@
 class Universe < ActiveRecord::Base
   acts_as_commentable
 
-  #
+#
 
 	has_many :characters, 
            through: :univ_char_joins
@@ -25,12 +25,12 @@ class Universe < ActiveRecord::Base
 	has_many :celebrities, 
            through: :characters
 
-	#
+#
 
   accepts_nested_attributes_for :characters
   #:univ_char_joins, reject_if: lambda { |a| a[:content].blank? }
 
-  #
+#
 
 	if Rails.env.development?
     has_attached_file :image, 
@@ -45,12 +45,12 @@ class Universe < ActiveRecord::Base
         							:path => "/universes/:filename_:id_:style"
   end
 
-	#
+#
 
 	def to_param
 		"#{id}-#{name}"
 	end
   
-  # Turn all " " in names to "_" slug and table, but not for displaying for viewers
-  
+# Turn all " " in names to "_" slug and table, but not for displaying for viewers
+
 end

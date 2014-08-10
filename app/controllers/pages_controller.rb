@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def login_success
 	end
 	
-	def example1
+	def spritz_test_1
 	end
 
 end

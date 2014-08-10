@@ -9,9 +9,9 @@
 #
 
 class CharCelebJoin < ActiveRecord::Base
-	belongs_to :character
 	belongs_to :celebrity
-
+  belongs_to :character
+	
   #
 
   accepts_nested_attributes_for :celebrity
@@ -19,6 +19,6 @@ class CharCelebJoin < ActiveRecord::Base
 
   #
 
-  
-  
+
+
 end

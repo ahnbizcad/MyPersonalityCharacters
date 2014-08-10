@@ -103,8 +103,8 @@ MyPersonalityCharacters::Application.routes.draw do
     namespace :pages do
       get "about"
       get "contact"
-      get "login_success"
-      get "example1"
+      get "spritz_login_success"
+      get "spritz_test_1"
     end
 
   # Static pages - socionics

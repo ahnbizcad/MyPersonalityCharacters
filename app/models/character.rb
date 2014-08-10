@@ -31,9 +31,7 @@ class Character < ActiveRecord::Base
   #
   
   accepts_nested_attributes_for :universes
-  #univ_char_joins, reject_if: lambda { |a| a[:content].blank? }
   accepts_nested_attributes_for :celebrities
-  #:char_celeb_joins, reject_if: lambda { |a| a[:content].blank? }
 
   #
 

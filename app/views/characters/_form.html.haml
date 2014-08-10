@@ -11,15 +11,11 @@
 
   .form-group
     = f.input :name, autofocus: true
-
   .form-group
-    = f.file_field :image
-    
+    = f.input :image
   .form-group
     = f.association :universes, label: "Link Universes"
-    
   .form-group
     = f.association :celebrities, label: "Link Celebrities"
-    
   .actions
     = f.submit

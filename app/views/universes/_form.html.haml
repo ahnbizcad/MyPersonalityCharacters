@@ -10,15 +10,10 @@
     %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 
   .form-group
-    = f.text_field :name, autofocus: true
-    
+    = f.input :name, autofocus: true
   .form-group
-    = f.file_field :image
-    
+    = f.input :image
   .form-group
     = f.association :characters, label: "Link Characters"
-
-    =# f.collection_select :character_ids, Character.order(:name), :id, :name, {}, { multiple: true }
-
   .actions  
     = f.submit
