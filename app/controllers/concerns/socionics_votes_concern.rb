@@ -6,21 +6,31 @@ module SocionicsVotesConcern
   # Routes will specify which actions can be called from which scope.
 
   included do
-    before_action :set_votable,           only: [:show, :vote_socionics, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
-    before_action :set_votable_name,      only: [:show, :neti, :sife, :fesi, :tine, :feni, :tise, :seti, :nife, :sefi, :nite, :teni, :fise, :tesi, :fine, :nefi, :site]
-    before_action :get_socionics,         only: [:show, :vote_socionics]
-    before_action :set_socionics_voted_status,    only: [:show]
-    #before_action :tally_socionics_votes, only: [:show]
-    #before_action :voted?,                only: [:show, :index, :vote_socionics]
+    before_action :set_votable,                only: [:show, :vote_socionics]
+    before_action :set_votable_name,           only: [:show, :vote_socionics]
+    before_action :get_all_socionics,          only: [:show, :vote_socionics]
+    before_action :set_socionics_voted_status, only: [:show]
+    #before_action :tally_socionics_votes,      only: [:show]
+    #before_action :voted?,                     only: [:show, :index, :vote_socionics]
     
 
     def vote_socionics
-      @vote_type = params[:vote_type]    
+      @vote_type = params[:vote_type]
 
-      respond_to do |format|
-        format.js { render 'concerns/socionics_votes/vote_socionics' }
+      if user_signed_in?
+        if current_user.voted_for? @votable, vote_scope: @vote_type
+          current_user.unvote_for @votable, vote_scope: @vote_type
+        else
+          @socionics.each do |s|
+            current_user.unvote_for @votable, vote_scope: s.type_two_im_raw
+            # Inefficient. revotes later on.
+            # Make unvote method that unvotes all votes with that scope in modified acts_as_votable gem
+          end
+          @votable.vote_up current_user, vote_scope: @vote_type  
+        end        
       end
-      
+
+      render action: show
     end
 
   end
@@ -41,15 +51,14 @@ module SocionicsVotesConcern
       @votable_name = controller_name.singularize.downcase
     end
 
-    def get_socionics
+    def get_all_socionics
       @socionics = SocionicsType.all
     end
 
     def set_socionics_voted_status
-      if signed_in?
-        @voted_status = "voted" if current_user.voted_on? @votable#, vote_scope: @vote_type #problem is with @votable not being available.
-      else
-        @voted_status = "not-voted"
+      @voted_status = ""
+      if user_signed_in?
+        @voted_status = "voted" if current_user.voted_on? @votable#, vote_scope: @vote_type #problem is with @votable not being available.       
       end
     end
 
@@ -111,5 +120,4 @@ module SocionicsVotesConcern
       end
     end    
 
- 
 end
