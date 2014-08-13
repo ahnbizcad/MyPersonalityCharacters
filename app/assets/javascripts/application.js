@@ -26,6 +26,7 @@
 //= require_self
 //
 // Require_Tree Substitute
+//= require custom/affix
 //= require celebrities
 //= require characters
 //= require comments
@@ -34,7 +35,7 @@
 //= require socionics
 //= require universes
 //= require users
-//= require custom/affix
+//= require vote_socionics
 //
 //= require turbolinks
 //

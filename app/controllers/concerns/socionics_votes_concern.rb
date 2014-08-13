@@ -9,7 +9,7 @@ module SocionicsVotesConcern
     before_action :set_votable,                only: [:show, :vote_socionics]
     before_action :set_votable_name,           only: [:show, :vote_socionics]
     before_action :get_all_socionics,          only: [:show, :vote_socionics]
-    before_action :set_socionics_voted_status, only: [:show]
+    before_action :set_socionics_voted_status, only: [:show, :vote_socionics]
     #before_action :tally_socionics_votes,      only: [:show]
     #before_action :voted?,                     only: [:show, :index, :vote_socionics]
     
@@ -30,7 +30,7 @@ module SocionicsVotesConcern
         end        
       end
 
-      render action: show
+      render :json => { voted: @voted_status }
     end
 
   end
@@ -38,7 +38,6 @@ module SocionicsVotesConcern
   # Better to check if voted on, and unvote only if so. 
   # DRY up the check as a before action, only: [...]
   # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
-
 
 
   private
@@ -52,14 +51,11 @@ module SocionicsVotesConcern
     end
 
     def get_all_socionics
-      @socionics = SocionicsType.all
+      @socionics = SocionicsType.all.order(:id)
     end
 
     def set_socionics_voted_status
-      @voted_status = ""
-      if user_signed_in?
-        @voted_status = "voted" if current_user.voted_on? @votable#, vote_scope: @vote_type #problem is with @votable not being available.       
-      end
+      @voted_status = current_user.voted_for? @votable, vote_scope: s.type_two_im_raw if user_signed_in?
     end
 
     def tally_socionics_votes

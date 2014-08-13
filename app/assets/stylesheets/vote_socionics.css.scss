@@ -1,7 +1,11 @@
 /*----------
 vote chart
 ----------*/
-
+main.voted {
+  background-image: image-url("/assets/upvoted.png");
+  background-size: contain;
+}
+    
 .vote-chart-socionics {
 
   box-shadow: 1px 1px 1px 1px #000;
@@ -10,21 +14,15 @@ vote chart
 
     .vote-button {
       a {
-        img {
-          width: 100%;
-        }
-      }
-      .not-voted {
-        border: 1px solid red;
         background-image: image-url("/assets/upvote.png");
+        background-size: contain;
       }
-
-      .voted {
-        border: 1px solid green;
+      a.voted {
         background-image: image-url("/assets/upvoted.png");
+        background-size: contain;
       }
-
     }
+    
 
     .vote-bar {
       background: linear-gradient(rgba(240,240,240,1), rgba(250,250,250,1)); 

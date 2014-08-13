@@ -25,7 +25,7 @@ socionics_nife = ["INFp", "IEI", "Ni-Fe", "nife", "Ni", "Fe", "Si", "Te", "Se", 
 socionics_sefi = ["ESFp", "SEE", "Se-Fi", "sefi", "Se", "Fi", "Ne", "Ti", "Ni", "Te", "Si", "Fe", "gamma", "aggressor", "socials",       "EP", "passionate",  ]
 socionics_nite = ["INTp", "ILI", "Ni-Te", "nite", "Ni", "Te", "Si", "Fe", "Se", "Fi", "Ne", "Ti", "gamma", "victim",    "researchers",   "IP", "cold-blooded",]
 socionics_teni = ["ENTj", "LIE", "Te-Ni", "teni", "Te", "Ni", "Fe", "Si", "Fi", "Se", "Ti", "Ne", "gamma", "victim",    "researchers",   "EJ", "firm",        ]
-socionics_fise = ["ISFj", "ESI", "Se-Fi", "fise", "Fi", "Se", "Ti", "Ne", "Te", "Ni", "Fe", "Si", "gamma", "aggressor", "socials",       "IJ", "sincere",     ]
+socionics_fise = ["ISFj", "ESI", "Fi-Se", "fise", "Fi", "Se", "Ti", "Ne", "Te", "Ni", "Fe", "Si", "gamma", "aggressor", "socials",       "IJ", "sincere",     ]
 
 socionics_tesi = ["ESTj", "LSE", "Te-Si", "tesi", "Te", "Si", "Fe", "Ni", "Fi", "Ne", "Ti", "Se", "delta", "caregiver", "pragmatists",   "EJ", "firm",        ]
 socionics_fine = ["INFJ", "EII", "Fi-Ne", "fine", "Fi", "Ne", "Ti", "Se", "Te", "Si", "Fe", "Ni", "delta", "infantile", "humanitarians", "IJ", "sincere",     ]
