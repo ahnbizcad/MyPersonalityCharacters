@@ -8,7 +8,7 @@ module CommentVotesConcern
   def vote_up_comment
     if current_user
       comment = Comment.find.params[:id]
-      current_user.unvote_for comment if current_user.voted_on? comment
+      current_user.unvote_for comment if current_user.voted_for? comment
       comment.vote_up current_user
     end
   end
@@ -16,7 +16,7 @@ module CommentVotesConcern
   def vote_down_comment
     if current_user
       comment = Comment.find.params[:id]
-      current_user.unvote_for comment if current_user.voted_on? comment
+      current_user.unvote_for comment if current_user.voted_for? comment
       comment.vote_down current_user
     end
   end
@@ -27,7 +27,5 @@ module CommentVotesConcern
       #comment_constant = params[:commentable_type].camelize.constantize
       #@votable_comment = comment_constant.find(params[:id])
     end
-
-    
 
 end

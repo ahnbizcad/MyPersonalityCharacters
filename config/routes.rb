@@ -8,8 +8,10 @@ MyPersonalityCharacters::Application.routes.draw do
 # Dynamic routes
 
   concern :comment_votes do
-    get 'vote_up_comment'
-    get 'vote_down_comment'
+    member do
+      get 'vote_up_comment'
+      get 'vote_down_comment'
+    end
   end
 
   concern :socionics_votes do
@@ -98,8 +100,7 @@ MyPersonalityCharacters::Application.routes.draw do
   #   end
 
 
-  # Static pages
-  
+  # Static pages  
     namespace :pages do
       get "about"
       get "contact"
@@ -108,30 +109,36 @@ MyPersonalityCharacters::Application.routes.draw do
     end
 
   # Static pages - socionics
+  resources :socionics_pages do 
+    collection do        
 
-    get 'socionics/entp', to: 'socionics#neti'
-    get 'socionics/isfp', to: 'socionics#sife'
-    get 'socionics/esfj', to: 'socionics#fesi'
-    get 'socionics/intj', to: 'socionics#tine'
+      # Socions Aliases.
+      get 'entp', to: 'socionics_pages#neti'
+      get 'isfp', to: 'socionics_pages#sife'
+      get 'esfj', to: 'socionics_pages#fesi'
+      get 'intj', to: 'socionics_pages#tine'
 
-    get 'socionics/enfj', to: 'socionics#feni'
-    get 'socionics/istj', to: 'socionics#tise'
-    get 'socionics/estp', to: 'socionics#seti'
-    get 'socionics/infp', to: 'socionics#nife'  
+      get 'enfj', to: 'socionics_pages#feni'
+      get 'istj', to: 'socionics_pages#tise'
+      get 'estp', to: 'socionics_pages#seti'
+      get 'infp', to: 'socionics_pages#nife'  
 
-    get 'socionics/esfp', to: 'socionics#sefi'
-    get 'socionics/intp', to: 'socionics#nite'
-    get 'socionics/entj', to: 'socionics#teni'
-    get 'socionics/isfj', to: 'socionics#fise'
+      get 'esfp', to: 'socionics_pages#sefi'
+      get 'intp', to: 'socionics_pages#nite'
+      get 'entj', to: 'socionics_pages#teni'
+      get 'isfj', to: 'socionics_pages#fise'
 
-    get 'socionics/estj', to: 'socionics#tesi'
-    get 'socionics/infj', to: 'socionics#fine'
-    get 'socionics/enfp', to: 'socionics#nefi'
-    get 'socionics/istp', to: 'socionics#site'
+      get 'estj', to: 'socionics_pages#tesi'
+      get 'infj', to: 'socionics_pages#fine'
+      get 'enfp', to: 'socionics_pages#nefi'
+      get 'istp', to: 'socionics_pages#site'        
+      
+      # Index.
+      get 'socionics', to: 'socionics#index'
 
-    get 'socionics', to: 'socionics#index', as: 'socionics'
-    namespace :socionics do
-      # Types.
+      # Socions.
+      get 'socion'
+
       get 'neti'
       get 'sife'
       get 'fesi'
@@ -152,8 +159,6 @@ MyPersonalityCharacters::Application.routes.draw do
       get 'nefi'
       get 'site'
 
-      # Socion
-      get 'socion'
       # Information Elements.
       get 'information_elements'
       get 'si'
@@ -164,29 +169,28 @@ MyPersonalityCharacters::Application.routes.draw do
       get 'te'
       get 'fi'
       get 'fe'
+
       # Functions.
       get 'functions'
       get 'function_dichotomies'
+
       # Type Dichotomies.
       get 'type_dichotomies'
       get 'jungian_dichotomies'
       get 'socionics_jungian_dichotomies'
-      # Small groups.
+
+      # Small Groups.
       get 'small_groups'
       get 'quadras'
       get 'clubs'
       get 'temperaments'
       get 'communication_styles'
       get 'romance_styles'
+
       # Intertype Relations.
       get 'intertype_relations'
-    end
 
-  # Static pages - MBTI
-
-    get 'mbti', to: 'mbti#index', as: 'mbti'
-    namespace :mbti do
-      get '', to: 'mbti#index'
-      get 'tests'
     end
+  end
+
 end

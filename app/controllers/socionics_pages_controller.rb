@@ -1,4 +1,4 @@
-class SocionicsController < ApplicationController
+class SocionicsPagesController < ApplicationController
   before_action :set_socionics_types
 
   def index

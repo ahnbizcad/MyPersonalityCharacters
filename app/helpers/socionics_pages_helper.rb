@@ -1,2 +1,2 @@
-module SocionicsHelper
+module SocionicsPagesHelper
 end

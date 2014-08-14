@@ -30,7 +30,7 @@ module SocionicsVotesConcern
         end        
       end
 
-      render :json => { voted: @voted_status }
+      render :json => {id: @voteable.id, voted: @voted_status}
     end
 
   end

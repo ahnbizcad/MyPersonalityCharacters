@@ -30,9 +30,8 @@
 //= require celebrities
 //= require characters
 //= require comments
-//= require mbti
 //= require pages 
-//= require socionics
+//= require socionics_pages
 //= require universes
 //= require users
 //= require vote_socionics
