@@ -20,5 +20,5 @@ windowReady = ->
       .on "ajax:error", ".comment", ->
         $(this).fadeTo('fast', 1)
 
-$(window).load(windowReady);
-$(window).on('page:load', windowReady);
+$(window).load(windowReady)
+$(window).on('page:load', windowReady)

@@ -1,10 +1,16 @@
 windowReady = ->
   jQuery ($) -> 
-    $('.vote-button a').on "ajax:success", (evt, data, status, xhr) ->
-      $('.vote-button a').removeClass('voted')
-      alert('debugger')
-      if ( data.voted == false )
-        $('this').addClass('voted')
+    $voteLinks = $('.vote-button a')
+
+    $voteLinks.each (i, current) ->
+      if $(current).data('voted') == true
+        $(current).addClass('voted')
+
+    $voteLinks.on "ajax:complete", (evt, data, status, xhr) ->
+      $voteLinks.removeClass('voted')
+      $voteLinks.each (i, current)->
+        if $(current).data('voted') == false
+          $(current).addClass('voted')
 
 $(window).load(windowReady);
 $(window).on('page:load', windowReady);

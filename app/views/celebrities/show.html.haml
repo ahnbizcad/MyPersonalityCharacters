@@ -31,7 +31,7 @@
       \|
       = link_to 'Destroy', @celebrity, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  = render partial: 'votes/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
+  = render partial: 'concerns/vote_socionics', locals: { votable: @votable, votable_name: @votable_name, socionics: @socionics }
 
 %br/
 .comments

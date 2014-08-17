@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 #
 gem 'rails', '4.0.0'
-gem 'angularjs-rails'
+#gem 'angularjs-rails'
 #
 #gem 'slim' #convert haml to slim later on
 gem 'haml-rails', '0.5.1'

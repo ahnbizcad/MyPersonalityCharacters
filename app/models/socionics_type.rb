@@ -28,6 +28,8 @@ class SocionicsType < ActiveRecord::Base
 	has_many :users
 	has_many :characters
 	has_many :celebrities
+	
+	scope :in_order, all.order(:id)
 
 	def reinin_e
 		if type_four_letter_downcase[0] == "e"

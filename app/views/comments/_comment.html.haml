@@ -11,7 +11,7 @@
     %small= comment.updated_at
 
   .comment-main
-    = render partial: 'votes/vote_comment', locals: { comment: comment }
+    = render partial: 'concerns/vote_comment', locals: { comment: comment }
 
     .comment-body
       %p= comment.body

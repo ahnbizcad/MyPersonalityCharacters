@@ -9,35 +9,27 @@ module SocionicsVotesConcern
     before_action :set_votable,                only: [:show, :vote_socionics]
     before_action :set_votable_name,           only: [:show, :vote_socionics]
     before_action :get_all_socionics,          only: [:show, :vote_socionics]
-    before_action :set_socionics_voted_status, only: [:show, :vote_socionics]
+    before_action :set_socionics_voted_statuses, only: [:show, :vote_socionics]
+
     #before_action :tally_socionics_votes,      only: [:show]
     #before_action :voted?,                     only: [:show, :index, :vote_socionics]
     
 
     def vote_socionics
       @vote_type = params[:vote_type]
-
       if user_signed_in?
         if current_user.voted_for? @votable, vote_scope: @vote_type
           current_user.unvote_for @votable, vote_scope: @vote_type
         else
           @socionics.each do |s|
             current_user.unvote_for @votable, vote_scope: s.type_two_im_raw
-            # Inefficient. revotes later on.
-            # Make unvote method that unvotes all votes with that scope in modified acts_as_votable gem
           end
           @votable.vote_up current_user, vote_scope: @vote_type  
         end        
       end
-
-      render :json => {id: @voteable.id, voted: @voted_status}
     end
 
   end
-
-  # Better to check if voted on, and unvote only if so. 
-  # DRY up the check as a before action, only: [...]
-  # Possibly combine into single method, and replace vote_scope value with dynamic string from element id via JS.
 
 
   private
@@ -51,11 +43,11 @@ module SocionicsVotesConcern
     end
 
     def get_all_socionics
-      @socionics = SocionicsType.all.order(:id)
+      @socionics = SocionicsType.in_order
     end
 
-    def set_socionics_voted_status
-      @voted_status = current_user.voted_for? @votable, vote_scope: s.type_two_im_raw if user_signed_in?
+    def set_socionics_voted_statuses
+      @voted_statuses = SocionicsType.in_order.map { |s| current_user.voted_for? @votable, vote_scope: s.type_two_im_raw if user_signed_in? }
     end
 
     def tally_socionics_votes

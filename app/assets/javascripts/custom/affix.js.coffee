@@ -3,5 +3,5 @@ windowReady = ->
 	$('.affixable-wrapper > .affixable').affix
 		offset: { top: $('.affixable-wrapper > .affixable').offset().top };
 
-$(window).load(windowReady);
-$(window).on('page:load', windowReady);
+$(window).load(windowReady)
+$(window).on('page:load ready', windowReady)

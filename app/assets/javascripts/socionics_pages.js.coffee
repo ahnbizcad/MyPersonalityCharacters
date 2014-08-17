@@ -387,5 +387,5 @@ windowReady = ->
       $('#nefi').addClass "order-2"
       $('#site').addClass "order-1"
 
-$(window).load(windowReady);
-$(window).on('page:load', windowReady);
+$(window).load(windowReady)
+$(window).on('page:load', windowReady)

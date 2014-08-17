@@ -5,5 +5,5 @@ windowReady = ->
       allowClear: true,
       tokenSeparators: [",", " "])
 
-$(window).load(windowReady);
-$(window).on('page:load', windowReady);
+$(window).load(windowReady)
+$(window).on('page:load', windowReady)
